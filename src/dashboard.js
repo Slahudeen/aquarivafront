@@ -12,11 +12,11 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const navigateToCreatePage = () => {
-    navigate('/create');
+    navigate('/aquarivafront/create');
   };
 
   const navigateToSearchPage = () => {
-    navigate('/search');
+    navigate('/aquarivafront/search');
   };
 
 
@@ -26,10 +26,10 @@ export default function Dashboard() {
         {/* <button onClick={navigateToCreatePage}>Contacts</button> */}
 
         <Routes>
-          <Route path="/create" element={<Create />} />
+          <Route path="/aquarivafront/create" element={<Create />} />
         </Routes>
         <Routes>
-          <Route path="/search" element={<Search />} />
+          <Route path="/aquarivafront/search" element={<Search />} />
         </Routes>
         <form >
           <div className='container2'>
