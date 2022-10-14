@@ -25,12 +25,6 @@ export default function Dashboard() {
      
         {/* <button onClick={navigateToCreatePage}>Contacts</button> */}
 
-        <Routes>
-          <Route path="/aquarivafront/create" element={<Create />} />
-        </Routes>
-        <Routes>
-          <Route path="/aquarivafront/search" element={<Search />} />
-        </Routes>
         <form >
           <div className='container2'>
           <img className="logo" src ={logo}/>

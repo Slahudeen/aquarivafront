@@ -20,8 +20,8 @@ function App () {
   }
   const logout = () => {
     localStorage.removeItem('token');
-    //window.location.reload(false);
-    navigate('/aquarivafront');
+    window.location.reload(false);
+    // navigate('/aquarivafront');
     // setIsLoggedin(false);
   };
   const dashboard = () => {
