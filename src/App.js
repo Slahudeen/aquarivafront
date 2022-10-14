@@ -26,17 +26,17 @@ function App () {
   };
   const dashboard = () => {
     //localStorage.removeItem('token');
-     navigate('/');
+     navigate('/aquariva');
     // setIsLoggedin(false);
   };
   const newRecord = () => {
     //localStorage.removeItem('token');
-     navigate('/create');
+     navigate('/aquariva/create');
     // setIsLoggedin(false);
   };
   const search = () => {
     //localStorage.removeItem('token');
-     navigate('/search');
+     navigate('/aquariva/search');
     // setIsLoggedin(false);
   };
  
@@ -53,9 +53,9 @@ function App () {
         </Route>
         {/* <Route exact path="/login" element={<Login/>}>
         </Route> */}
-        <Route exact path="/create" element={<Create/>}>
+        <Route exact path="/aquariva/create" element={<Create/>}>
         </Route>
-        <Route exact path="/search" element={<Search/>}>
+        <Route exact path="/aquariva/search" element={<Search/>}>
         </Route>
       </Routes>
   </div>
