@@ -48,7 +48,8 @@ function App () {
       <button onClick={logout}>Log out</button>
 
       <Routes>
-        <Route exact path="/" element={<Dashboard/>}>
+      {/* //<Route path='/safetyapp' element={<Home />} /> */}
+        <Route exact path="/aquariva" element={<Dashboard/>}>
         </Route>
         {/* <Route exact path="/login" element={<Login/>}>
         </Route> */}
