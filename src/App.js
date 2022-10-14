@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, HashRouter, useNavigate } from 'react-router-dom'
 import './App.css';
 import Dashboard from './dashboard';
 import Login from './login';
@@ -20,7 +20,7 @@ function App () {
   }
   const logout = () => {
     localStorage.removeItem('token');
-    window.location.reload(false);
+    //window.location.reload(false);
     window.location.href = window.location.href;
     // navigate('/aquarivafront');
     // setIsLoggedin(false);
@@ -48,7 +48,7 @@ function App () {
       <button onClick={search}>Search</button>
       <button onClick={logout}>Log out</button>
 
-      <Routes>
+      <HashRouter>
       {/* //<Route path='/safetyapp' element={<Home />} /> */}
         <Route exact path="/aquarivafront" element={<Dashboard/>}>
         </Route>
@@ -58,7 +58,7 @@ function App () {
         </Route>
         <Route exact path="/aquarivafront/search" element={<Search/>}>
         </Route>
-      </Routes>
+      </HashRouter>
   </div>
   )
 };
