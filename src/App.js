@@ -21,6 +21,7 @@ function App () {
   const logout = () => {
     localStorage.removeItem('token');
     window.location.reload(false);
+    window.location.href = window.location.href;
     // navigate('/aquarivafront');
     // setIsLoggedin(false);
   };
