@@ -22,10 +22,6 @@ const styles = StyleSheet.create({
 
 const InvoiceNo = ({ invoice }) => (
     <Fragment>
-        <View style={styles.invoiceNoContainer}>
-            {/* <Text style={styles.label}>Invoice No:</Text>
-            <Text style={styles.invoiceDate}>{invoice.invoice_no}</Text> */}
-        </View >
         <View style={styles.invoiceDateContainer}>
             <Text style={styles.label}>Date: {invoice.trans_date}</Text>
             {/* <Text >{invoice.trans_date}</Text> */}

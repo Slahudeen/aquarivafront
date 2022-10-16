@@ -31,8 +31,8 @@ const InvoiceTableFooter = ({ items }) => {
         .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
     return (
         <View style={styles.row}>
-            <Text style={styles.description}>TOTAL</Text>
-            <Text style={styles.total}>{Number.parseFloat(total).toFixed(2)}</Text>
+            {/* <Text style={styles.description}>Gesamtbetrag</Text>
+            <Text style={styles.total}>{Number.parseFloat(total).toFixed(2)}</Text> */}
         </View>
     )
 };

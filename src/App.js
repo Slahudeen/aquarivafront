@@ -6,6 +6,7 @@ import Login from './login';
 import useToken from './useToken';
 import Create from './create';
 import Search from './search';
+import CompanyInvoice from './companyInvoice';
 
 
 
@@ -40,12 +41,18 @@ function App () {
      navigate('/aquarivafront/search');
     // setIsLoggedin(false);
   };
+  const companyInvoice = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/companyInvoice');
+    // setIsLoggedin(false);
+  };
  
   return(
     <div >
       <button onClick={dashboard}>Dashboard</button>
       <button onClick={newRecord}>Create</button>
       <button onClick={search}>Search</button>
+      <button onClick={companyInvoice}>Company Invoice</button>
       <button onClick={logout}>Log out</button>
 
       <Routes>
@@ -57,6 +64,8 @@ function App () {
         <Route exact path="/aquarivafront/create" element={<Create/>}>
         </Route>
         <Route exact path="/aquarivafront/search" element={<Search/>}>
+        </Route>
+        <Route exact path="/aquarivafront/companyInvoice" element={<CompanyInvoice/>}>
         </Route>
       </Routes>
   </div>

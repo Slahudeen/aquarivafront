@@ -14,6 +14,7 @@ import moment from 'moment-timezone';
 //     return parsedDateAsUtc.clone().tz(timezone).format("hh:mm");
 // }
 
+
 export default function Dashboard() {
 
   const navigate = useNavigate();
@@ -124,7 +125,116 @@ useEffect(() => {
     // Unterschrift
             <div className="container2 fontweight" key={key}>
                 
-              {"Kennzeichen : " + data.licenseplate }
+                <table id="customers">
+                <tr>
+                    <th>Beschreibung</th>
+                    <th>Bemerkungen</th>
+                    <th>Preis</th>
+                </tr>
+                <tr>
+                    <td>Kennzeichen</td>
+                    <td>{data.licenseplate}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Gesellschaft</td>
+                    <td>{data.company}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Kennzeichen Anhänger/Auflieger</td>
+                    <td>{data.trailorNumber}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>bis 3,5 t</td>
+                    <td>{data.upto3point5tons}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>3,5 t bis 7,5 t</td>
+                    <td>{data.upto7point5tons}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>ab 7,5 t</td>
+                    <td>{data.from7point5tons}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>SZM solo</td>
+                    <td>{data.trucksolo}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>SZM Hänger-zug</td>
+                    <td>{data.trailertrain}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>SZM+Auflieger</td>
+                    <td>{data.trailer}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Innen-reini-gung</td>
+                    <td>{data.interiorcleaning}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Hebe-bühne</td>
+                    <td>{data.liftingplatform}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Spezial-reini-gung mit Säure</td>
+                    <td>{data.cleanignwithacid}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Tank spezial</td>
+                    <td>{data.tankspecial}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Felge spezial</td>
+                    <td>{data.rimspecial}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Fahrer Name</td>
+                    <td>{data.drivername}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Unterschrift</td>
+                    <td>{data.signature}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Kunde</td>
+                    <td>{data.customer}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Anschrift</td>
+                    <td>{data.address}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Gesamtpreis</td>
+                    <td></td>
+                    <td>{data.totalPrice}</td>
+                </tr>
+                <tr>
+                    <td>Datum</td>
+                    <td>{data.date.split("T")[0] + "(" + moment.utc(data.date.split("T")[1].split(".")[0], "HH:mm").tz('Europe/Berlin').format("HH:mm") + ")"}</td>
+                    <td>-</td>
+                </tr>
+                </table>
+
+                
+              {/* {"Kennzeichen : " + data.licenseplate }
               <br/> <br/> 
                 {"bis 3,5 t : " + data.upto3point5tons }
                 <br/> <br/> 
@@ -134,32 +244,33 @@ useEffect(() => {
                 <br/> <br/> 
                 {"SZM solo : " + data.trucksolo}
                 <br/> <br/> 
-                {"SZM Hänger-zug : " + data.trailertrain}
-                <br/> <br/> 
-                {"SZM+Auflieger : " + data.trailer}
-                <br/> <br/> 
-                {"Innen-reini-gung : " + data.interiorcleaning}
-                <br/> <br/> 
-                {"Hebe-bühne : " + data.liftingplatform}
-                <br/> <br/> 
-                {"Spezial-reini-gung mit Säure : " + data.cleanignwithacid}
-                <br/> <br/> 
-                {"Tank spezial : " + data.tankspecial}
-                <br/> <br/> 
-                {"Felge spezial : " + data.rimspecial}
-                <br/> <br/> 
-                {"Fahrer Name : " + data.drivername}
-                <br/> <br/> 
-                {"Unterschrift : " + data.signature}
-                <br/> <br/> 
-                {"Kunde : " + data.customer}
-                <br/> <br/> 
-                {"Anschrift : " + data.address}
-                <br/> <br/> 
+                {"SZM Hänger-zug : " + data.trailertrain} */}
+                {/* <br/> <br/>  */}
+                {/* {"SZM+Auflieger : " + data.trailer} */}
+                {/* <br/> <br/>  */}
+                {/* {"Innen-reini-gung : " + data.interiorcleaning}
+                <br/> <br/>  */}
+                {/* {"Hebe-bühne : " + data.liftingplatform}
+                <br/> <br/>  */}
+                {/* {"Spezial-reini-gung mit Säure : " + data.cleanignwithacid}
+                <br/> <br/>  */}
+                {/* {"Tank spezial : " + data.tankspecial}
+                <br/> <br/>  */}
+                {/* {"Felge spezial : " + data.rimspecial}
+                <br/> <br/>  */}
+                {/* {"Fahrer Name : " + data.drivername}
+                <br/> <br/>  */}
+                {/* {"Unterschrift : " + data.signature}
+                <br/> <br/>  */}
+                {/* {"Kunde : " + data.customer}
+                <br/> <br/>  */}
+                {/* {"Anschrift : " + data.address}
+                <br/> <br/>  */}
                 {/* {"testttt : " + moment.utc(data.date.split("T")[1].split(".")[0], "HH:mm").tz('Europe/Berlin').format("HH:mm")} */}
                 
                 {
-                "Datum : " + data.date.split("T")[0] + "(" + moment.utc(data.date.split("T")[1].split(".")[0], "HH:mm").tz('Europe/Berlin').format("HH:mm") + ")"}
+                // "Datum : " + data.date.split("T")[0] + "(" + moment.utc(data.date.split("T")[1].split(".")[0], "HH:mm").tz('Europe/Berlin').format("HH:mm") + ")"
+            }
             </div>
           );
         })}
