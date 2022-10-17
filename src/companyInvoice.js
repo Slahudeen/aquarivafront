@@ -163,7 +163,7 @@ newToken = newToken.split('"')[0];
             // invoice_no: "201906-28",
             // balance: "$2,283.74",
             fullname: searchTextCompany,
-            phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Juni 2021",
+            phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße",
             email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
             address: address,
             trans_date: moment().format("DD-MM-YYYY"),

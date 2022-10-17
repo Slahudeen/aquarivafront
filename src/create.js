@@ -359,7 +359,7 @@ export default function Dashboard() {
     
     <div className="container1">
         {/* <InvoiceData data={cname}></InvoiceData> */}
-    <h1> Welcome to Aqua Riva</h1>
+    <h1> Welcome to Aqua ARiva</h1>
     <div className='container3'>
     <form id="my-node" onSubmit={handleSubmit}>
         
