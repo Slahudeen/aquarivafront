@@ -3,6 +3,7 @@ import { Page, Document, StyleSheet, Image } from "@react-pdf/renderer";
 import logo from "../assets/logo.png";
 import InvoiceTitle from "./InvoiceTitle";
 import InvoiceNo from "./InvoiceNo";
+import Invoiceheader1 from "./Invoiceheader1";
 import BillTo from "./BillTo";
 import InvoiceThankYouMsg from "./InvoiceThankyouMsg";
 import InvoiceItemsTable from "./InvoiceItemsTable";
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
     page: {
         backgroundColor: '#fff',
         fontFamily: 'Helvetica',
-        fontSize: 11,
+        fontSize: 10,
         paddingTop: 30,
         paddingLeft: 50,
         paddingRight: 50,
@@ -19,8 +20,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     logo: {
-        width: 100,
-        height: 50,
+        width: 150,
+        height: 75,
         marginLeft: 'auto',
         marginRight: 'auto'
     }
@@ -31,6 +32,7 @@ const PdfDocument = ({ invoicedata }) => {
         <Document>
             <Page size="A4" style={styles.page} >
                 <Image style={styles.logo} src ={logo}/>
+                <Invoiceheader1 invoice={invoicedata} />
                 <InvoiceTitle title={'Rechnung'} />
                 <InvoiceNo invoice={invoicedata} />
                 <BillTo invoice={invoicedata} />

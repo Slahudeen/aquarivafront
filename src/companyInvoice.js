@@ -32,6 +32,10 @@ export default function Dashboard() {
     const [grandtotal, setgrandtotal] = useState(0);
     const [prices, setPrices]=useState([32,40,50,48,75,60,16.5]);
     const getFormattedPrice = (price) => `${price.toFixed(2)} €`;
+    const [year, setyear] = useState("");
+    const [longMonth, setlongMonth] = useState("");
+    // let year = "";
+    // let longMonth = "";
 
     const [noRecord, setNoRecord] = useState();
     const [records, setRecords] = useState();
@@ -49,6 +53,14 @@ let newToken = token.split(':"')[1];
 newToken = newToken.split('"')[0];
     const handleSearchSubmit = async e => {
         e.preventDefault();
+    
+      if(searchTextFrom!==""){
+      setyear(searchTextFrom.split("-")[0]);
+      let month = (searchTextFrom.split("-")[1]).split("-")[0];
+      let dayy = "01";
+      //console.log("the date is  "+ year + Number(month-1) + dayy);
+      let datee = new Date(year, Number(month-1), dayy); // 2020-06-21
+      setlongMonth(datee.toLocaleString('en-us', { month: 'long' })); }
         
         const getCustomer = await fetch("https://rattle-innate-roar.glitch.me/customer/filter/" + searchTextFrom + "/" + searchTextTo + "/" + searchTextCompany, {
                 method: 'GET',
@@ -161,63 +173,87 @@ newToken = newToken.split('"')[0];
             {
               sno: 2,
                   desc: "Wäsche bis 3,5 t",
-                  remarks: upto3point5tons + " * " + getFormattedPrice(prices[0]).replace(".",",") +" = " + getFormattedPrice(Number(upto3point5tons * prices[0])).replace(".",","),
+                  qty: upto3point5tons,
+                  rate: getFormattedPrice(prices[0]).replace(".",","),
+                  remarks: getFormattedPrice(Number(upto3point5tons * prices[0])).replace(".",","),
           },
           
               {
                   sno: 3,
+                  qty: upto7point5tons,
                   desc: "Wäsche 3,5 t bis 7,5 t",
-                  remarks: upto7point5tons + " * " + getFormattedPrice(prices[1]).replace(".",",") +" = " + getFormattedPrice(Number(upto7point5tons * prices[1])).replace(".",","),
+                  rate: getFormattedPrice(prices[1]).replace(".",","),
+                  remarks: getFormattedPrice(Number(upto7point5tons * prices[1])).replace(".",","),
               },
               {
                   sno: 4,
                   desc: "Wäsche ab 7,5 t",
-                  remarks: from7point5tons + " * " + getFormattedPrice(prices[2]).replace(".",",") +" = " + getFormattedPrice(Number(from7point5tons * prices[2])).replace(".",","),
+                  qty: from7point5tons,
+                  rate: getFormattedPrice(prices[2]).replace(".",","),
+                  remarks: getFormattedPrice(Number(from7point5tons * prices[2])).replace(".",","),
               },
               {
                   sno: 5,
                   desc: "Wäsche SZM solo",
-                  remarks: trucksolo + " * " + getFormattedPrice(prices[3]).replace(".",",") +" = " + getFormattedPrice(Number(trucksolo * prices[3])).replace(".",","),
+                  qty: trucksolo,
+                  rate: getFormattedPrice(prices[3]).replace(".",","),
+                  remarks: getFormattedPrice(Number(trucksolo * prices[3])).replace(".",","),
               },
               {
                   sno: 6,
                   desc: "Wäsche SZM+Hänger-zug",
-                  remarks: trailertrain + " * " + getFormattedPrice(prices[4]).replace(".",",") +" = " + getFormattedPrice(Number(trailertrain * prices[4])).replace(".",","),
+                  qty: trailertrain,
+                  rate: getFormattedPrice(prices[4]).replace(".",","),
+                  remarks: getFormattedPrice(Number(trailertrain * prices[4])).replace(".",","),
               },
               {
                   sno: 7,
                   desc: "Wäsche SZM+Auflieger",
-                  remarks: trailer + " * " + getFormattedPrice(prices[5]).replace(".",",") +" = " + getFormattedPrice(Number(trailer * prices[5])).replace(".",","),
+                  qty: trailer,
+                  rate: getFormattedPrice(prices[5]).replace(".",","),
+                  remarks: getFormattedPrice(Number(trailer * prices[5])).replace(".",","),
               },
               {
                   sno: 8,
                   desc: "Wäsche Innen-reini-gung",
-                  remarks: interiorcleaning + " * " + getFormattedPrice(interiorcleaningTotal).replace(".",",") +" = " + getFormattedPrice(Number(interiorcleaning * interiorcleaningTotal)).replace(".",","),
+                  qty: interiorcleaning,
+                  rate: getFormattedPrice(interiorcleaningTotal).replace(".",","),
+                  remarks: getFormattedPrice(Number(interiorcleaning * interiorcleaningTotal)).replace(".",","),
               },
               {
                   sno: 9,
                   desc: "Wäsche Hebe-bühne",
-                  remarks: liftingplatform + " * " + getFormattedPrice(prices[6]).replace(".",",") +" = " + getFormattedPrice(Number(liftingplatform * prices[6])).replace(".",","),
+                  qty: liftingplatform,
+                  rate: getFormattedPrice(prices[6]).replace(".",","),
+                  remarks: getFormattedPrice(Number(liftingplatform * prices[6])).replace(".",","),
               },
               {
                   sno: 10,
                   desc: "Wäsche Spezial-reini-gung mit Säure",
-                  remarks: cleanignwithacid + " * " + getFormattedPrice(cleanignwithacidTotal).replace(".",",") +" = " + getFormattedPrice(Number(cleanignwithacid * cleanignwithacidTotal)).replace(".",","),
+                  qty: cleanignwithacid,
+                  rate: getFormattedPrice(cleanignwithacidTotal).replace(".",","),
+                  remarks: getFormattedPrice(Number(cleanignwithacid * cleanignwithacidTotal)).replace(".",","),
               },
               {
                   sno: 11,
                   desc: "Wäsche Tank spezial",
-                  remarks: tankspecial + " * " + getFormattedPrice(11).replace(".",",") +" = " + getFormattedPrice(Number(tankspecial * 11)).replace(".",","),
+                  qty: tankspecial,
+                  rate: getFormattedPrice(11).replace(".",","),
+                  remarks: getFormattedPrice(Number(tankspecial * 11)).replace(".",","),
               },
               {
                   sno: 12,
                   desc: "Wäsche Felge spezial",
-                  remarks: rimspecial + " * " + getFormattedPrice(4).replace(".",",") +" = " + getFormattedPrice(Number(rimspecial * 4)).replace(".",","),
+                  rate: getFormattedPrice(4).replace(".",","),
+                  qty: rimspecial,
+                  remarks: getFormattedPrice(Number(rimspecial * 4)).replace(".",","),
               },
               {
                   sno: 15,
-                  desc: "Summe Netto",
-                  remarks: (getFormattedPrice((upto3point5tons * prices[0])
+                  desc: " ",
+                  qty:" ",
+                  rate: " ",
+                  remarks: "Summe Netto                           " + (getFormattedPrice((upto3point5tons * prices[0])
                   + (upto7point5tons * prices[1]) 
                   + (from7point5tons * prices[2])
                   + (trucksolo * prices[3]) 
@@ -231,8 +267,10 @@ newToken = newToken.split('"')[0];
               },
               {
                 sno: 16,
-                desc: "MwSt. 19 %",
-                remarks: (getFormattedPrice((((upto3point5tons * prices[0])
+                desc: " ",
+                qty:" ",
+                rate: " ",
+                remarks: "MwSt. 19 %                              " + (getFormattedPrice((((upto3point5tons * prices[0])
                 + (upto7point5tons * prices[1]) 
                 + (from7point5tons * prices[2])
                 + (trucksolo * prices[3]) 
@@ -246,8 +284,10 @@ newToken = newToken.split('"')[0];
             },
             {
               sno: 17,
-              desc: "Gesamtbetrag",
-              remarks: (getFormattedPrice(((((upto3point5tons * prices[0])
+              desc: " ",
+              qty:" ",
+              rate: " ",
+              remarks: "Gesamtbetrag                          " + (getFormattedPrice(((((upto3point5tons * prices[0])
               + (upto7point5tons * prices[1]) 
               + (from7point5tons * prices[2])
               + (trucksolo * prices[3]) 
@@ -273,15 +313,17 @@ newToken = newToken.split('"')[0];
 
         const newItems = {
             item:[{
-                sno: "",
-                desc : "",
-                remarks: ""
+                sno: " ",
+                desc : " ",
+                qty: " ",
+                rate: " ",
+                remarks: " "
         }
     ]
         }
         let k = 0;
         for(let i = 0; i<items.length-3; i++) {
-            if(!items[i].remarks.includes("= 0,00 €")){
+            if(items[i].qty != "0"){
                 // InvoiceData.items[i].remarks = "it is nill";
                 // InvoiceData.items[i].remarks = InvoiceData.items[i+1].remarks;
                 // console.log("index is = " + i);
@@ -312,17 +354,35 @@ newToken = newToken.split('"')[0];
         newItems.item[newItems.item.length] = items[items.length-1];
     
 
+        var date = (((moment()
+        .utcOffset('+05:30')
+        .format('YYYY-MM-DD hh:mm:ss')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
+
+      console.log(date);
+    //   let year = "";
+    //   let longMonth = "";
+    //   if(searchTextFrom!==""){
+    //   year = searchTextFrom.split("-")[0];
+    //   let month = (searchTextFrom.split("-")[1]).split("-")[0];
+    //   let day = ((searchTextFrom.split("-")[1]).split("-")[1]);
+    //   let datee = new Date(year, month, day); // 2020-06-21
+    //   longMonth = datee.toLocaleString('en-us', { month: 'long' }); }
+
          const InvoiceData = {
             fullname: searchTextCompany,
-            phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße",
+            phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße " + longMonth + ", " + year,
             email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
+            
+            invoice_no: date,
             address: address,
             trans_date: moment().format("DD-MM-YYYY"),
             items: [
                 {
                     sno: "12",
                     desc:"2",
-                    remarks:"3"
+                    remarks:"3",
+                    qty: "2",
+                    rate: "2"
                 },
             ]
         }

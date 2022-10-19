@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         borderBottomColor: '#3778C2',
         borderBottomWidth: 1,
         alignItems: 'center',
-        height: 24,
+        height: 20,
         fontStyle: 'bold',
     },
     description: {
@@ -18,20 +18,20 @@ const styles = StyleSheet.create({
         borderRightWidth: 1,
         paddingLeft: 8,
     },
-    // qty: {
-    //     width: '10%',
-    //     borderRightColor: borderColor,
-    //     borderRightWidth: 1,
-    //     textAlign: 'right',
-    //     paddingRight: 8,
-    // },
-    // rate: {
-    //     width: '15%',
-    //     borderRightColor: borderColor,
-    //     borderRightWidth: 1,
-    //     textAlign: 'right',
-    //     paddingRight: 8,
-    // },
+    qty: {
+        width: '10%',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
+        textAlign: 'center',
+        paddingRight: 8,
+    },
+    rate: {
+        width: '15%',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
+        textAlign: 'right',
+        paddingRight: 8,
+    },
     remarks: {
         width: '50%',
         textAlign: 'right',
@@ -43,6 +43,8 @@ const InvoiceTableRow = ({ items }) => {
     const rows = items.map(item =>
         <View style={styles.row} key={item.sno.toString()}>
             <Text style={styles.description}>{item.desc}</Text>
+            <Text style={styles.qty}>{item.qty}</Text>
+            <Text style={styles.rate}>{item.rate}</Text>
             <Text style={styles.remarks}>{item.remarks}</Text>
         </View>
     );

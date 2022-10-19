@@ -11,12 +11,15 @@ const styles = StyleSheet.create({
         fontSize: 15,
         textAlign: 'center',
         textTransform: 'uppercase',
+    },
+    lighterText: {
+        fontSize: 7
     }
 });
 
 const InvoiceTitle = ({ title }) => (
     <View style={styles.titleContainer}>
-        <Text style={styles.reportTitle}>{title}</Text>
+         <Text style={styles.reportTitle}>{title}</Text>
     </View>
 );
 

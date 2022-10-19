@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         fontStyle: 'bold',
     },
     label: {
-        width: 150
+        width: 100
     },
     lighterText: {
         fontSize: 8
@@ -30,12 +30,24 @@ const InvoiceNo = ({ invoice }) => (
             <Text >Datum:fdfsdfkjbdsfbjdskf</Text>
         </View > */}
     <View style={styles.invoiceNoContainer}>
-    <Text style={styles.label}>Rechnungs-Nr: {invoice.invoice_no}</Text>
+        
+       <Text style={styles.lighterText}>Aqua Ariva GmbH. Marie Curie Str.24 68219 Mannheim                                                                                         </Text>
+    <Text style={styles.label}>AQUA ARIVA GmbH<br/></Text>
+    {/* <Text style={styles.label}>68219, Mannheim</Text>
+    <Text style={styles.label}>Tel:-0621-80 61 99 20</Text> */}
         {/* <Text >{invoice.trans_date}</Text> */}
     </View >
         <View style={styles.invoiceDateContainer}>
-            <Text style={styles.label}>Datum: {invoice.trans_date}</Text>
-            {/* <Text >{invoice.trans_date}</Text> */}
+            
+    <Text style={styles.label}>Marie Curie Str. 24</Text>
+        </View >
+        <View style={styles.invoiceDateContainer}>
+            
+        <Text style={styles.label}>68219, Mannheim</Text>
+        </View >
+        <View style={styles.invoiceDateContainer}>
+            
+       < Text style={styles.label}>Tel:-0621-80 61 99 20</Text>
         </View >
     </Fragment>
 );

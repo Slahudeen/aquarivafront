@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
     headerContainer: {
-        marginTop: 36,
+        marginTop: 5,
         justifyContent: 'flex-start',
         width: '70%'
     },
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 const BillTo = ({ invoice }) => (
     <View style={styles.headerContainer}>
-        <Text style={styles.billTo}>Quittung zu:</Text>
+        <Text style={styles.billTo}></Text>
         <Text>{invoice.fullname}</Text>
         <Text>{invoice.address}</Text>
         <Text style={styles.fontChange}>{invoice.phone}</Text>

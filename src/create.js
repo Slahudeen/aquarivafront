@@ -183,9 +183,12 @@ export default function Dashboard() {
       if(tankspecial!==""){
         newtank = tankspecial + " * 11,00"
       }
+      var date = (((moment()
+      .utcOffset('+05:30')
+      .format('YYYY-MM-DD hh:mm:ss')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
     const InvoiceData = {
         // id: "5df3180a09ea16dc4b95f910",
-        // invoice_no: "201906-28",
+         invoice_no: date,
         // balance: "$2,283.74",
         fullname: customer,
         // email: "susanafuentes@mantrix.com",
@@ -198,93 +201,129 @@ export default function Dashboard() {
         items: [
           {
             sno: 1,
+            qty:" ",
+            rate: " ",
             desc: "Kennzeichen",
             remarks: licenseplate,
         },
               {
                 sno: 1,
+                qty:" ",
+                rate: " ",
                 desc: "Kennzeichen Anhänger/Auflieger",
                 remarks: trailorNumber,
             },
             {
                 sno: 2,
+                qty:" ",
+                rate: " ",
                 desc: "bis 3,5 t",
                 remarks: var1,
             },
             {
                 sno: 3,
+                qty:" ",
+                rate: " ",
                 desc: "3,5 t bis 7,5 t",
                 remarks: var2,
             },
             {
                 sno: 4,
+                qty:" ",
+                rate: " ",
                 desc: "ab 7,5 t",
                 remarks: var3,
             },
             {
                 sno: 5,
+                qty:" ",
+                rate: " ",
                 desc: "SZM solo",
                 remarks: var4,
             },
             {
                 sno: 6,
+                qty:" ",
+                rate: " ",
                 desc: "SZM+Hänger-zug",
                 remarks: var5,
             },
             {
                 sno: 7,
+                qty:" ",
+                rate: " ",
                 desc: "SZM+Auflieger",
                 remarks: var6,
             },
             {
                 sno: 8,
+                qty:" ",
+                rate: " ",
                 desc: "Innen-reini-gung",
                 remarks: interiorcleaning.replace(".",","),
             },
             {
                 sno: 9,
+                qty:" ",
+                rate: " ",
                 desc: "Hebe-bühne",
                 remarks: var7,
             },
             {
                 sno: 10,
+                qty:" ",
+                rate: " ",
                 desc: "Spezial-reini-gung mit Säure",
                 remarks: cleanignwithacid.replace(".",","),
             },
             {
                 sno: 11,
+                qty:" ",
+                rate: " ",
                 desc: "Tank spezial",
                 remarks: newtank,
             },
             {
                 sno: 12,
+                qty:" ",
+                rate: " ",
                 desc: "Felge spezial",
                 remarks: newrim,
             },
             {
                 sno: 13,
+                qty:" ",
+                rate: " ",
                 desc: "Fahrer Name",
                 remarks: drivername,
             },
             {
                 sno: 14,
+                rate: " ",
+                qty:" ",
                 desc: "Unterschrift",
                 remarks: signature,
             },
             {
                 sno: 15,
-                desc: "Summe Netto",
-                remarks: pri.replace(".",",")
+                qty:" ",
+                rate: " ",
+                desc: " ",
+                remarks: "Summe Netto                                  " + pri.replace(".",",")
             },
             {
               sno: 16,
-              desc: "MwSt. 19 %",
-              remarks: tax.replace(".",",")
+              qty:" ",
+              desc: " ",
+              rate: " ",
+              remarks: "MwSt. 19 %                                   " + tax.replace(".",",")
           },
           {
             sno: 17,
-            desc: "Gesamtbetrag",
-            remarks: finalTotal.replace(".",",")
+            qty:" ",
+            desc: " ",
+            rate: " ",
+            remarks: "Gesamtbetrag                               " + finalTotal.replace(".",",")
         }
         ]
     }
