@@ -75,10 +75,12 @@ newToken = newToken.split('"')[0];
                     console.log(data + "," +JSON.stringify(data) )
                     if(JSON.stringify(data) === "[]"){
                         setNoRecord("No record found 😢");
+                        setTimeout(function(){ setNoRecord(" "); },2000);
                     }
                     if(JSON.stringify(data) !== "[]"){
                         setRecords(data);
                         setNoRecord("Record has been found 😊");
+                        setTimeout(function(){ setNoRecord(" "); },2000);
                         // console.log(data.length);
                         setaddress(data[0].address);
                         let counter = [0,0,0,0,0,0,0,0,0,0,0];

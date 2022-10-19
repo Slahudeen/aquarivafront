@@ -47,7 +47,7 @@ const InvoiceNo = ({ invoice }) => (
         </View >
         <View style={styles.invoiceDateContainer}>
             
-       < Text style={styles.label}>Tel:-0621-80 61 99 20</Text>
+    <Text style={styles.label}>Tel:-0621-80 61 99 20</Text>
         </View >
     </Fragment>
 );

@@ -6,9 +6,20 @@ const styles = StyleSheet.create({
         marginTop: 12
     },
     titleContainer2: {
-        marginTop: 3,
         fontSize:6,
         flexDirection: 'row',
+        position:'absolute',
+        bottom:30,
+        paddingLeft:35,
+        marginRight:-50
+    },
+    titleContainer3: {
+        fontSize:6,
+        flexDirection: 'row',
+        position:'absolute',
+        bottom:50,
+        paddingLeft:35,
+        marginRight:-50
     },
     reportTitle: {
         fontSize: 12,
@@ -36,10 +47,10 @@ const InvoiceThankYouMsg = () => (
         <Text style={styles.reportTitle}>*** Vielen Dank ***</Text>
         
         </View>
-        <View style={styles.titleContainer2}>
+        <View fixed style={styles.titleContainer3}>
         <Text style={styles.footer}>AQUA ARIVA GmbH                             Tel:-   0621-80619920         aquaariva@t-online.de   Steuer-Nr. 123456789100   Amtsgericht Mannheim   Geschäftsführer</Text>
         </View>
-        <View style={styles.titleContainer2}>
+        <View fixed style={styles.titleContainer2}>
         <Text style={styles.footer}>Marie Curie str.24, 68219 Mannheim    Handy:- 0176-15828582     www.aqua-ariva.de        Ust.IdNr. DE123456789       HRB745091                    Faiq Rasheed</Text>
         {/* <Text style={styles.footer}>Tel:- 0621-80619920</Text>
         <Text style={styles.footer}>Handy:- 0176-15828582</Text>

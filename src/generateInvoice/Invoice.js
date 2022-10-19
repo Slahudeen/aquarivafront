@@ -4,9 +4,10 @@ import logo from "../assets/logo.png";
 import InvoiceTitle from "./InvoiceTitle";
 import InvoiceNo from "./InvoiceNo";
 import Invoiceheader1 from "./Invoiceheader1";
-import BillTo from "./BillTo";
+import InvoiceMonthDetails from "./invoiceMonthDetails";
 import InvoiceThankYouMsg from "./InvoiceThankyouMsg";
 import InvoiceItemsTable from "./InvoiceItemsTable";
+import BillTo from "./BillTo";
 
 const styles = StyleSheet.create({
     page: {
@@ -33,9 +34,10 @@ const PdfDocument = ({ invoicedata }) => {
             <Page size="A4" style={styles.page} >
                 <Image style={styles.logo} src ={logo}/>
                 <Invoiceheader1 invoice={invoicedata} />
+                <BillTo invoice={invoicedata} />
                 <InvoiceTitle title={'Rechnung'} />
                 <InvoiceNo invoice={invoicedata} />
-                <BillTo invoice={invoicedata} />
+                <InvoiceMonthDetails invoice={invoicedata} />
                 <InvoiceItemsTable invoice={invoicedata} />
                 <InvoiceThankYouMsg />
             </Page>

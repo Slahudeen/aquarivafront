@@ -368,12 +368,14 @@ export default function Dashboard() {
         }, newToken);
 
         if(statuss == 200){
+          InvoiceData.fullname = customer;
             setErrorMessage("Record added successfully ✔️");
-            InvoiceData.fullname = customer;
+            setTimeout(function(){ setErrorMessage(" "); },2000);
         }
 
         if(statuss == 403){
             setErrorMessage("Unauthorized. Kindly login again ❌");
+            setTimeout(function(){ setErrorMessage(" "); },2000);
         }
         
         // setToken(token);

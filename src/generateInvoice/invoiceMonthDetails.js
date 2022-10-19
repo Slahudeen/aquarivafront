@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
 
 const BillTo = ({ invoice }) => (
     <View style={styles.headerContainer}>
-        <Text>{invoice.fullname}</Text>
-        <Text>{invoice.address}</Text>
+        <Text style={styles.fontChange}>{invoice.phone}</Text>
+        <Text style={styles.fontChange}>{invoice.email}</Text>
     </View>
 );
 
