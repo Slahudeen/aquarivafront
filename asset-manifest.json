@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/aquarivafront/static/css/main.f12bb4b4.css",
-    "main.js": "/aquarivafront/static/js/main.fdb40310.js",
+    "main.js": "/aquarivafront/static/js/main.f8ebc964.js",
     "static/js/498.4d5bf2d5.chunk.js": "/aquarivafront/static/js/498.4d5bf2d5.chunk.js",
     "static/js/703.ec64aa5c.chunk.js": "/aquarivafront/static/js/703.ec64aa5c.chunk.js",
     "static/js/513.3d88e5f6.chunk.js": "/aquarivafront/static/js/513.3d88e5f6.chunk.js",
     "static/js/787.eb45a680.chunk.js": "/aquarivafront/static/js/787.eb45a680.chunk.js",
-    "static/media/logo.png": "/aquarivafront/static/media/logo.e52907479e8fc6c830a2.png",
+    "static/media/logo.png": "/aquarivafront/static/media/logo.66032a749942b1ec30da.png",
     "index.html": "/aquarivafront/index.html",
     "main.f12bb4b4.css.map": "/aquarivafront/static/css/main.f12bb4b4.css.map",
-    "main.fdb40310.js.map": "/aquarivafront/static/js/main.fdb40310.js.map",
+    "main.f8ebc964.js.map": "/aquarivafront/static/js/main.f8ebc964.js.map",
     "498.4d5bf2d5.chunk.js.map": "/aquarivafront/static/js/498.4d5bf2d5.chunk.js.map",
     "703.ec64aa5c.chunk.js.map": "/aquarivafront/static/js/703.ec64aa5c.chunk.js.map",
     "513.3d88e5f6.chunk.js.map": "/aquarivafront/static/js/513.3d88e5f6.chunk.js.map",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.f12bb4b4.css",
-    "static/js/main.fdb40310.js"
+    "static/js/main.f8ebc964.js"
   ]
 }
