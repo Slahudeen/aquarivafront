@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     headerContainer: {
         marginTop: 5,
         justifyContent: 'flex-start',
-        width: '70%'
+        width: '70%',
+        fontSize: 12,
     },
     billTo: {
         marginTop: 20,
@@ -24,6 +25,7 @@ const BillTo = ({ invoice }) => (
     <View style={styles.headerContainer}>
         <Text>{invoice.fullname}</Text>
         <Text>{invoice.address}</Text>
+        <Text >{invoice.address2}</Text>
     </View>
 );
 

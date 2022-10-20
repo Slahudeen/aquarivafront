@@ -42,7 +42,7 @@ export default function Dashboard() {
     const [searchTextCompany, setSearchTextCompany] = useState("");
     const [searchTextFrom, setSearchTextFrom] = useState("");
     const [searchTextTo, setSearchTextTo] = useState("");
-    const [address, setaddress] = useState("");
+    const [address, setaddress] = useState(" ");
     const fileName = searchTextCompany;
     const [token, setToken] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("token"));
@@ -326,26 +326,7 @@ newToken = newToken.split('"')[0];
         let k = 0;
         for(let i = 0; i<items.length-3; i++) {
             if(items[i].qty != "0"){
-                // InvoiceData.items[i].remarks = "it is nill";
-                // InvoiceData.items[i].remarks = InvoiceData.items[i+1].remarks;
-                // console.log("index is = " + i);
-                //console.log()
-
-                // newItems.item[k].sno = items[i].sno;
-                // newItems.item[k].desc = items[i].desc;
-                // newItems.item[k].remarks = items[i].remarks;
-                // newItems.item[k] = {
-                //     items[i];
-                // }
                 newItems.item[k] = items[i];
-
-                // newItems.item[k] = [...items];
-                //InvoiceData.items = [...newItems.item];
-                // items[i].map((x) => {
-                //     newItems.item[k].sno = x.sno;
-                //     newItems.item[k].desc = x.desc;
-                //     newItems.item[k].remarks = x.remarks;
-                // })
                 k++;
 
             }
@@ -369,14 +350,16 @@ newToken = newToken.split('"')[0];
     //   let day = ((searchTextFrom.split("-")[1]).split("-")[1]);
     //   let datee = new Date(year, month, day); // 2020-06-21
     //   longMonth = datee.toLocaleString('en-us', { month: 'long' }); }
-
+        // let address1 = address.split("$$$$")[0];
+        // let address2 = address.split("$$$$")[1];
          const InvoiceData = {
             fullname: searchTextCompany,
             phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße " + longMonth + ", " + year,
             email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
             
             invoice_no: date,
-            address: address,
+            address: address.split("$$$$")[0],
+            address2: address.split("$$$$")[1],
             trans_date: moment().format("DD-MM-YYYY"),
             items: [
                 {

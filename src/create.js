@@ -50,7 +50,9 @@ export default function Dashboard() {
     const [drivername, setdrivername] = useState("");
     const [signature, setsignature] = useState("");
     const [customer, setcustomer] = useState("");
-    const [address, setaddress] = useState("");
+    // const [address, setaddress] = useState("");
+    const [address1, setaddress1] = useState("");
+    const [address2, setaddress2] = useState("");
     const [company, setCompany] = useState("");
     const [trailorNumber, setTrailorNumber] = useState("");
     const [error,setErrorMessage]=useState("");
@@ -115,58 +117,58 @@ export default function Dashboard() {
       
 
       if(checkedState[0] === true){
-        var1=prices[0]+",00";
+        var1=prices[0]+",00 €";
       }
       if(checkedState[0] === false){
         var1="-";
       }
 
       if(checkedState[1] === true){
-        var2=prices[1]+",00";
+        var2=prices[1]+",00 €";
       }
       if(checkedState[1] === false){
         var2="-";
       }
 
       if(checkedState[2] === true){
-        var3=prices[2]+",00";
+        var3=prices[2]+",00 €";
       }
       if(checkedState[2] === false){
         var3="-";
       }
 
       if(checkedState[3] === true){
-        var4=prices[3]+",00";
+        var4=prices[3]+",00 €";
       }
       if(checkedState[3] === false){
         var4="-";
       }
 
       if(checkedState[4] === true){
-        var5=prices[4]+",00";
+        var5=prices[4]+",00 €";
       }
       if(checkedState[4] === false){
         var5="-";
       }
 
       if(checkedState[5] === true){
-        var6=prices[5]+",00";
+        var6=prices[5]+",00 €";
       }
       if(checkedState[5] === false){
         var6="-";
       }
 
       if(checkedState[6] === true){
-        var7="16,50";
+        var7="16,50 €";
       }
       if(checkedState[6] === false){
         var7="-";
       }
       let pri =  (total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1));
       let tax = (((total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1))/100)*19);
-      let finalTotal = (pri + tax) + " €";
-      pri =  (total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1)) + " €";
-      tax = (((total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1))/100)*19) + " €";
+      let finalTotal = (pri + tax);
+      pri =  (total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1));
+      tax = (((total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1))/100)*19);
       
 
       let newrim = "";
@@ -174,45 +176,35 @@ export default function Dashboard() {
         newrim ="-";
       }
       if(rimspecial!==""){
-        newrim = rimspecial + " * 4,00"
+        // newrim = rimspecial + " * 4,00",
+        newrim = Number(rimspecial * 4) + ",00  €"
       }
       let newtank = "";
       if(tankspecial === ""){
         newtank ="-";
       }
       if(tankspecial!==""){
-        newtank = tankspecial + " * 11,00"
+        // newtank = tankspecial + " * 11,00"
+        newtank = Number(tankspecial * 11) + ",00  €"
       }
       var date = (((moment()
       .utcOffset('+05:30')
       .format('YYYY-MM-DD hh:mm:ss')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
-    const InvoiceData = {
-        // id: "5df3180a09ea16dc4b95f910",
-         invoice_no: date,
-        // balance: "$2,283.74",
-        fullname: customer,
-        // email: "susanafuentes@mantrix.com",
-        // phone: "+1 (872) 588-3809",
-        address: address,
-        trans_date: moment().format("DD-MM-YYYY"),
-        // due_date: "26-11-2021",
-        // companyID: "10001",
-        // companyName: "xyz company",
-        items: [
-          {
-            sno: 1,
-            qty:" ",
-            rate: " ",
-            desc: "Kennzeichen",
-            remarks: licenseplate,
-        },
-              {
-                sno: 1,
-                qty:" ",
-                rate: " ",
-                desc: "Kennzeichen Anhänger/Auflieger",
-                remarks: trailorNumber,
-            },
+      const items = [
+        //   {
+        //     sno: 1,
+        //     qty:" ",
+        //     rate: " ",
+        //     desc: "Kennzeichen",
+        //     remarks: licenseplate,
+        // },
+        //       {
+        //         sno: 1,
+        //         qty:" ",
+        //         rate: " ",
+        //         desc: "Kennzeichen Anhänger/Auflieger",
+        //         remarks: trailorNumber,
+        //     },
             {
                 sno: 2,
                 qty:" ",
@@ -260,7 +252,7 @@ export default function Dashboard() {
                 qty:" ",
                 rate: " ",
                 desc: "Innen-reini-gung",
-                remarks: interiorcleaning.replace(".",","),
+                remarks: (getFormattedPrice(Number(interiorcleaning))).replace(".",","),
             },
             {
                 sno: 9,
@@ -274,59 +266,91 @@ export default function Dashboard() {
                 qty:" ",
                 rate: " ",
                 desc: "Spezial-reini-gung mit Säure",
-                remarks: cleanignwithacid.replace(".",","),
+                remarks: (getFormattedPrice(Number(cleanignwithacid))).replace(".",","),
             },
             {
                 sno: 11,
-                qty:" ",
+                qty: tankspecial,
                 rate: " ",
                 desc: "Tank spezial",
                 remarks: newtank,
             },
             {
                 sno: 12,
-                qty:" ",
+                qty: rimspecial,
                 rate: " ",
                 desc: "Felge spezial",
                 remarks: newrim,
             },
-            {
-                sno: 13,
-                qty:" ",
-                rate: " ",
-                desc: "Fahrer Name",
-                remarks: drivername,
-            },
-            {
-                sno: 14,
-                rate: " ",
-                qty:" ",
-                desc: "Unterschrift",
-                remarks: signature,
-            },
-            {
-                sno: 15,
-                qty:" ",
-                rate: " ",
-                desc: " ",
-                remarks: "Summe Netto                                  " + pri.replace(".",",")
-            },
-            {
-              sno: 16,
+               {
+              sno: 15,
               qty:" ",
-              desc: " ",
               rate: " ",
-              remarks: "MwSt. 19 %                                   " + tax.replace(".",",")
+              desc: " ",
+              remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
           },
           {
-            sno: 17,
+            sno: 16,
             qty:" ",
             desc: " ",
             rate: " ",
-            remarks: "Gesamtbetrag                               " + finalTotal.replace(".",",")
-        }
+            remarks: "MwSt. 19 %                                 " + getFormattedPrice(tax).replace(".",",")
+        },
+        {
+          sno: 17,
+          qty:" ",
+          desc: " ",
+          rate: " ",
+          remarks: "Gesamtbetrag                              " + getFormattedPrice(finalTotal).replace(".",",")
+      }
         ]
+        const newItems = [{
+              sno: " ",
+              desc : " ",
+              qty: " ",
+              rate: " ",
+              remarks: " "
+      }
+  ]
+      
+      let k = 0;
+      for(let i = 0; i<items.length-3; i++) {
+          if(!items[i].remarks.includes("-") && items[i].remarks !== "0,00 €"){
+              newItems[k] = items[i];
+              k++;
+
+          }
+      }
+      console.log(newItems);
+      newItems[newItems.length] = items[items.length-3];
+      newItems[newItems.length] = items[items.length-2];
+      newItems[newItems.length] = items[items.length-1];
+    const InvoiceData = {
+        // id: "5df3180a09ea16dc4b95f910",
+         invoice_no: date,
+        // balance: "$2,283.74",
+        fullname: customer,
+        // email: "susanafuentes@mantrix.com",
+        // phone: "+1 (872) 588-3809",
+        // address: "Bellenstr-55",
+        // address2: "68163, Mannheim",
+        address: address1,
+        address2: address2,
+        trans_date: moment().format("DD-MM-YYYY"),
+        // due_date: "26-11-2021",
+        // companyID: "10001",
+        // companyName: "xyz company",
+        items: [
+          {
+              sno: "12",
+              desc:"2",
+              remarks:"3",
+              qty: "2",
+              rate: "2"
+          },
+      ]
     }
+    InvoiceData.items = [...newItems];
     const handleSubmit = async e => {
         e.preventDefault();
       let totalPrice = total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1);
@@ -345,6 +369,10 @@ export default function Dashboard() {
       let trailertrain=checkedState[4];
       let trailer=checkedState[5];
       let liftingplatform=checkedState[6];
+      // let newAddress = address+"$$$$"+address2;
+      //setaddress(address1+"$$$$"+address2);
+      let address = address1+"$$$$"+address2;
+      // console.log("the address is = " + newAddress);
         let statuss = await createItem({
             licenseplate,
             upto3point5tons,
@@ -510,8 +538,13 @@ export default function Dashboard() {
                     <td>-</td>
                 </tr>
                 <tr>
-                    <td>Anschrift</td>
-                    <td><input type="text" onChange={e => setaddress(e.target.value)} required/></td>
+                    <td>Straße, Nr</td>
+                    <td><input type="text" onChange={e => setaddress1(e.target.value)} required/></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>PLZ, Ort</td>
+                    <td><input type="text" onChange={e => setaddress2(e.target.value)} required/></td>
                     <td>-</td>
                 </tr>
                 <tr>

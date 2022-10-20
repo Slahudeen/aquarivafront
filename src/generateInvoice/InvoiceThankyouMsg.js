@@ -22,13 +22,13 @@ const styles = StyleSheet.create({
         marginRight:-50
     },
     reportTitle: {
-        fontSize: 12,
+        fontSize: 10,
         textAlign: 'center',
         textTransform: 'uppercase',
         marginTop: 12
     },
     reportText: {
-        fontSize: 8,
+        fontSize: 9,
         textAlign: 'left',
         textTransform: 'uppercase',
     },
@@ -44,7 +44,7 @@ const InvoiceThankYouMsg = () => (
         <Text style={styles.reportText}>Bankverbindung: SPARKASSE RHEIN NECKAR NORD </Text>
         <Text style={styles.reportText}>IBAN: DE06 6705 0505 0040 2145 42 </Text>
         <Text style={styles.reportText}>BIC: MANSDE66XXX</Text>
-        <Text style={styles.reportTitle}>*** Vielen Dank ***</Text>
+        {/* <Text style={styles.reportTitle}>*** Vielen Dank ***</Text> */}
         
         </View>
         <View fixed style={styles.titleContainer3}>
