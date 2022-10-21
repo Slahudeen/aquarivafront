@@ -107,6 +107,18 @@ useEffect(() => {
       </form>
       <div className="container1">
       {records.map((data, key) => {
+        let streetNo = " ";
+        let postNo = " ";
+        if(data.address === undefined){
+
+
+        }
+        else {
+            streetNo = data.address;
+            streetNo = streetNo.split("$$$$")[0];
+            postNo = data.address;
+            postNo = postNo.split("$$$$")[1];
+        }
           return (
         // Kennzeichen
     // bis 3,5 t
@@ -217,8 +229,13 @@ useEffect(() => {
                     <td>-</td>
                 </tr>
                 <tr>
-                    <td>Anschrift</td>
-                    <td>{data.address}</td>
+                    <td>Straße, Nr</td>
+                    <td>{streetNo}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>PLZ, Ort</td>
+                    <td>{postNo}</td>
                     <td>-</td>
                 </tr>
                 <tr>
