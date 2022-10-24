@@ -50,7 +50,7 @@ export default function Login({ setToken , requestStatus}){
           <img className="logo" src ={logo}/>
         <label>
           <p>Username</p>
-          <input type="text" onChange={e => setUserName(e.target.value)} required/>
+          <input className ='logininput' onChange={e => setUserName(e.target.value)} required/>
         </label>
         <label>
           <p>Password</p>
