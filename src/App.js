@@ -6,6 +6,7 @@ import Login from './login';
 import useToken from './useToken';
 import Create from './create';
 import Search from './search';
+import Invoice from './invoice';
 import CompanyInvoice from './companyInvoice';
 
 
@@ -46,6 +47,11 @@ function App () {
      navigate('/aquarivafront/companyInvoice');
     // setIsLoggedin(false);
   };
+  const invoice = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/generate-invoice');
+    // setIsLoggedin(false);
+  };
  
   return(
     <div >
@@ -53,6 +59,7 @@ function App () {
       <button onClick={newRecord}>Create</button>
       <button onClick={search}>Search</button>
       <button onClick={companyInvoice}>Company Invoice</button>
+      <button onClick={invoice}>Generate Company Invoice</button>
       <button onClick={logout}>Log out</button>
 
       <Routes>
@@ -66,6 +73,8 @@ function App () {
         <Route exact path="/aquarivafront/search" element={<Search/>}>
         </Route>
         <Route exact path="/aquarivafront/companyInvoice" element={<CompanyInvoice/>}>
+        </Route>
+        <Route exact path="/aquarivafront/generate-invoice" element={<Invoice/>}>
         </Route>
       </Routes>
   </div>

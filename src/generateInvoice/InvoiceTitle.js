@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
     titleContainer: {
-        marginTop: 15,
+        marginTop: 5,
     },
     reportTitle: {
         color: '#3778C2',

@@ -50,7 +50,7 @@ padding-bottom: 30px;
 } 
   
 input[type=text] {
-  width: 50%;
+  width: 75%;
   padding: 10px 10px;
   display: inline-block;
   border: 1px solid #ccc;
