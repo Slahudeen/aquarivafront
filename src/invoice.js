@@ -378,28 +378,28 @@ export default function Dashboard() {
                     <td>{getFormattedPrice(attr12_2 * attr12_3).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>Summe Netto </td>
+                    <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
                     <td></td>
-                    <td></td>
+                    <td>Summe Netto </td>
                     <td>{ getFormattedPrice((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
                     + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
                     + (attr11_2 * attr11_3) + (attr12_2 * attr12_3)).replace(".",",") }</td>
                 </tr>
                 <tr>
-                    <td>MwSt. 19 %</td>
+                    <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
                     <td></td>
-                    <td></td>
+                    <td>MwSt. 19 %</td>
                     <td>{ getFormattedPrice((((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
                     + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
                     + (attr11_2 * attr11_3) + (attr12_2 * attr12_3))/100)*19).replace(".",",") }</td>
                 </tr>
                 <tr>
-                    <td>Gesamtbetrag</td>
+                    <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
                     <td></td>
-                    <td></td>
+                    <td>Gesamtbetrag</td>
                     <td>{getFormattedPrice(((((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
                     + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
                     + (attr11_2 * attr11_3) + (attr12_2 * attr12_3))/100)*19)+(total + (rimspecial * 4) + (tankspecial * 11) + (cleanignwithacid*1) + (interiorcleaning*1))).replace(".",",") }</td>
