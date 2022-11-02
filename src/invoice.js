@@ -248,7 +248,7 @@ export default function Dashboard() {
                 remarks: getFormattedPrice(attr12_2 * attr12_3).replace(".",","),
             },
             {
-           sno: 15,
+           sno: 19,
            qty:" ",
            rate: " ",
            desc: " ",
@@ -287,10 +287,10 @@ export default function Dashboard() {
       
       let k = 0;
       for(let i = 0; i<items.length-3; i++) {
-          if(items[i].remarks !== "0,00 €" ){
+          if(items[i].remarks !== "0,00 €"){
               newItems[k] = items[i];
               k++;
-
+            
           }
       }
       console.log(newItems);
