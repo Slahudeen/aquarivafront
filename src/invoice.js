@@ -252,7 +252,7 @@ export default function Dashboard() {
            qty:" ",
            rate: " ",
            desc: " ",
-           remarks: "abzüglich  Kunden-Rabatt             " + getFormattedPrice(disc).replace(".",",")
+           remarks: "abzüglich Kunden-Rabatt("+discount+"%)     " + getFormattedPrice(disc).replace(".",",")
              },
             {
             sno: 15,
@@ -534,7 +534,7 @@ export default function Dashboard() {
                 <tr>
                     <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
-                    <td>abzüglich  Kunden-Rabatt</td>
+                    <td>abzüglich Kunden-Rabatt</td>
                     <td><input type="text" onChange={e => setdiscount(e.target.value)} /></td>
                     <td>{ getFormattedPrice(disc).replace(".",",") }</td>
                 </tr>
