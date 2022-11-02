@@ -64,12 +64,12 @@ export default function Dashboard() {
       let pri =  (attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
       + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
       + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
-      + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 90);
+      + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85);
 
       let tax = (((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
       + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
       + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
-      + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 90))/100)*19;
+      + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85))/100)*19;
 
       let finalTotal = pri + tax;
    
@@ -165,9 +165,9 @@ export default function Dashboard() {
             {
                 sno: 5,
                 qty: attr18,
-                rate: "90,00 €",
+                rate: "85,00 €",
                 desc: "Kipper 5 Achser",
-                remarks: getFormattedPrice(attr18 * 90).replace(".",","),
+                remarks: getFormattedPrice(attr18 * 85).replace(".",","),
             },
             {
                 sno: 6,
@@ -194,14 +194,14 @@ export default function Dashboard() {
                 sno: 8,
                 qty: attr7,
                 rate: getFormattedPrice(Number(interiorcleaning)).replace(".", ","),
-                desc: "Innen-reini-gung",
+                desc: "Innen Reinigung",
                 remarks: getFormattedPrice(attr7 * interiorcleaning).replace(".",","),
             },
             {
                 sno: 10,
                 qty: attr9,
                 rate: getFormattedPrice(Number(cleanignwithacid)).replace(".", ","),
-                desc: "Spezial-reini-gung mit Säure",
+                desc: "Spezial Reinigung mit Säure",
                 remarks: getFormattedPrice(attr9 * cleanignwithacid).replace(".",","),
             },
             {
@@ -450,8 +450,8 @@ export default function Dashboard() {
                     <td>Kipper 5 Achser</td>
                 <td><input type="text" onChange={e => setattr18(e.target.value)} required/></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
-                    <td>90,00 €</td>
-                    <td>{getFormattedPrice(attr18 * 90).replace(".",",")}</td>
+                    <td>85,00 €</td>
+                    <td>{getFormattedPrice(attr18 * 85).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>SZM Hänger-zug</td>
@@ -475,13 +475,13 @@ export default function Dashboard() {
                     <td>{getFormattedPrice(attr8 * 16.50).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>Innen-reini-gung</td>
+                    <td>Innen Reinigung</td>
                 <td><input type="text" onChange={e => setattr7(e.target.value)} required/></td>
                     <td><input type="text" onChange={e => setinteriorcleaning(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr7 * interiorcleaning).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>Spezial-reini-gung mit Säure</td>
+                    <td>Spezial Reinigung mit Säure</td>
                 <td><input type="text" onChange={e => setattr9(e.target.value)} required/></td>
                     <td><input type="text" onChange={e => setcleanignwithacid(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr9 * cleanignwithacid).replace(".",",")}</td>
@@ -524,7 +524,7 @@ export default function Dashboard() {
                     <td>{ getFormattedPrice((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
                     + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
                     + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
-                    + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 90) ).replace(".",",") }</td>
+                    + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85) ).replace(".",",") }</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -534,7 +534,7 @@ export default function Dashboard() {
                     <td>{ getFormattedPrice((((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
                     + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
                     + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
-                    + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 90) )/100)*19).replace(".",",") }</td>
+                    + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85) )/100)*19).replace(".",",") }</td>
                 </tr>
                 <tr>
                     <td></td>
