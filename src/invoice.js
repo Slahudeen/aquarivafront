@@ -58,7 +58,7 @@ export default function Dashboard() {
     );
   
     const [total, setTotal] = useState(0);
-    const fileName = customer;
+    const fileName = customer + ".pdf";
    
   
       let pri =  (attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)

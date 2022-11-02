@@ -43,7 +43,7 @@ export default function Dashboard() {
     const [searchTextFrom, setSearchTextFrom] = useState("");
     const [searchTextTo, setSearchTextTo] = useState("");
     const [address, setaddress] = useState(" ");
-    const fileName = searchTextCompany;
+    const fileName = searchTextCompany + ".pdf";
     const [token, setToken] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("token"));
     const initialValue = JSON.stringify(saved);
