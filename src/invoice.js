@@ -41,6 +41,7 @@ export default function Dashboard() {
     const [attr12_1, setattr12_1] = useState("");
     const [attr12_2, setattr12_2] = useState(0);
     const [attr12_3, setattr12_3] = useState(0);
+    const [discount, setdiscount] = useState(0);
     const [interiorcleaning, setinteriorcleaning] = useState(0);
     const [year, setyear] = useState("");
     const [longMonth, setlongMonth] = useState("");
@@ -66,10 +67,17 @@ export default function Dashboard() {
       + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
       + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85);
 
-      let tax = (((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
-      + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
-      + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
-      + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85))/100)*19;
+      let disc = (pri/100) * discount;
+
+      pri = pri - disc;
+
+      let tax = (pri/100) * 19;
+
+    //   let tax = (((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
+    //   + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
+    //   + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
+    //   + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85))/100)*19;
+
 
       let finalTotal = pri + tax;
    
@@ -239,13 +247,20 @@ export default function Dashboard() {
                 desc: attr12_1,
                 remarks: getFormattedPrice(attr12_2 * attr12_3).replace(".",","),
             },
-               {
-              sno: 15,
-              qty:" ",
-              rate: " ",
-              desc: " ",
-              remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
-          },
+            {
+           sno: 15,
+           qty:" ",
+           rate: " ",
+           desc: " ",
+           remarks: "abzüglich  Kunden-Rabatt             " + getFormattedPrice(disc).replace(".",",")
+             },
+            {
+            sno: 15,
+            qty:" ",
+            rate: " ",
+            desc: " ",
+            remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
+            },
           {
             sno: 16,
             qty:" ",
@@ -519,22 +534,23 @@ export default function Dashboard() {
                 <tr>
                     <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
+                    <td>abzüglich  Kunden-Rabatt</td>
+                    <td><input type="text" onChange={e => setdiscount(e.target.value)} /></td>
+                    <td>{ getFormattedPrice(disc).replace(".",",") }</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
                     <td></td>
                     <td>Summe Netto </td>
-                    <td>{ getFormattedPrice((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
-                    + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
-                    + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
-                    + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85) ).replace(".",",") }</td>
+                    <td>{ getFormattedPrice(pri).replace(".",",") }</td>
                 </tr>
                 <tr>
                     <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
                     <td></td>
                     <td>MwSt. 19 %</td>
-                    <td>{ getFormattedPrice((((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
-                    + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
-                    + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
-                    + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85) )/100)*19).replace(".",",") }</td>
+                    <td>{ getFormattedPrice(tax).replace(".",",") }</td>
                 </tr>
                 <tr>
                     <td></td>
