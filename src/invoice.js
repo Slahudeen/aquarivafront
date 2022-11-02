@@ -254,7 +254,7 @@ export default function Dashboard() {
            desc: " ",
            remarks: "abzüglich Kunden-Rabatt("+discount+"%)     " + getFormattedPrice(disc).replace(".",",")
              },
-            {
+            { 
             sno: 15,
             qty:" ",
             rate: " ",
