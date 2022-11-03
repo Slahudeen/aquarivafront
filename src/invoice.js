@@ -86,28 +86,28 @@ export default function Dashboard() {
       .format('YYYY-MM-DD hh:mm:ss')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
       const items = [
             {
-                sno: 2,
+                sno: 1,
                 qty: attr1,
                 rate: "32,00 €",
                 desc: "bis 3,5 t",
                 remarks: " " + getFormattedPrice(attr1 * 32).replace(".",","),
             },
             {
-                sno: 3,
+                sno: 2,
                 qty: attr2,
                 rate: "40,00 €",
                 desc: "3,5 t bis 7,5 t",
                 remarks: " " + getFormattedPrice(attr2 * 40).replace(".",","),
             },
             {
-                sno: 4,
+                sno: 3,
                 qty: attr3,
                 rate: "50,00 €",
                 desc: "ab 7,5 t",
                 remarks: " " + getFormattedPrice(attr3 * 50).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 4,
                 qty: attr4,
                 rate: "48,00 €",
                 desc: "SZM solo",
@@ -122,161 +122,161 @@ export default function Dashboard() {
                 remarks: " " + getFormattedPrice(attr10 * 48).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 6,
                 qty: attr11,
                 rate: "42,00 €",
                 desc: "Auflieger Solo",
                 remarks: " " + getFormattedPrice(attr11 * 42).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 7,
                 qty: attr12,
                 rate: "35,00 €",
                 desc: "Plane Spezial bis 8 m",
                 remarks: " " + getFormattedPrice(attr12 * 35).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 8,
                 qty: attr13,
                 rate: "49,00 €",
                 desc: "Plane Spezial ab 8 m",
                 remarks: " " + getFormattedPrice(attr13 * 49).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 9,
                 qty: attr14,
                 rate: "95,00 €",
                 desc: "Tankfahrzeug 5 Achser",
                 remarks: " " + getFormattedPrice(attr14 * 95).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 10,
                 qty: attr15,
                 rate: "95,00 €",
                 desc: "W.B & Container Chassis 5 Achser",
                 remarks: " " + getFormattedPrice(attr15 * 95).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 11,
                 qty: attr16,
                 rate: "95,00 €",
                 desc: "Abroller & Absetzer 5 Achser",
                 remarks: " " + getFormattedPrice(attr16 * 95).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 12,
                 qty: attr17,
                 rate: "60,00 €",
                 desc: "Abroller & Absetzer 3 Achser",
                 remarks: " " + getFormattedPrice(attr17 * 60).replace(".",","),
             },
             {
-                sno: 5,
+                sno: 13,
                 qty: attr18,
                 rate: "85,00 €",
                 desc: "Kipper 5 Achser",
                 remarks: " " + getFormattedPrice(attr18 * 85).replace(".",","),
             },
             {
-                sno: 6,
+                sno: 14,
                 qty: attr5,
                 rate: "75,00 €",
                 desc: "SZM+Hänger-zug",
                 remarks: " " + getFormattedPrice(attr5 * 75).replace(".",","),
             },
             {
-                sno: 7,
+                sno: 15,
                 qty: attr6,
                 rate: "60,00 €",
                 desc: "SZM+Auflieger",
                 remarks: " " + getFormattedPrice(attr6 * 60).replace(".",","),
             },
             {
-                sno: 9,
+                sno: 16,
                 qty: attr8,
                 rate: "16,50 €",
                 desc: "Hebe-bühne",
                 remarks: " " + getFormattedPrice(attr8 * 16.50).replace(".",","),
             },
             {
-                sno: 8,
+                sno: 17,
                 qty: attr7,
                 rate: getFormattedPrice(Number(interiorcleaning)).replace(".", ","),
                 desc: "Innen Reinigung",
                 remarks: " " + getFormattedPrice(attr7 * interiorcleaning).replace(".",","),
             },
             {
-                sno: 10,
+                sno: 18,
                 qty: attr9,
                 rate: getFormattedPrice(Number(cleanignwithacid)).replace(".", ","),
                 desc: "Spezial Reinigung mit Säure",
                 remarks: " " + getFormattedPrice(attr9 * cleanignwithacid).replace(".",","),
             },
             {
-                sno: 11,
+                sno: 19,
                 qty: tankspecial,
                 rate: "11,00 €",
                 desc: "Tank spezial",
                 remarks: " " + getFormattedPrice(tankspecial * 11).replace(".",","),
             },
             {
-                sno: 12,
+                sno: 20,
                 qty: rimspecial,
                 rate: "4,00 €",
                 desc: "Felge spezial",
                 remarks: " " + getFormattedPrice(rimspecial * 4).replace(".",","),
             },
             {
-                sno: 13,
+                sno: 21,
                 qty: attr10_2,
                 rate: getFormattedPrice(Number(attr10_3)).replace(".", ","),
                 desc: attr10_1,
                 remarks: " " + getFormattedPrice(attr10_2 * attr10_3).replace(".",","),
             },
             {
-                sno: 14,
+                sno: 22,
                 qty: attr11_2,
                 rate: getFormattedPrice(Number(attr11_3)).replace(".", ","),
                 desc: attr11_1,
                 remarks: " " + getFormattedPrice(attr11_2 * attr11_3).replace(".",","),
             },
             {
-                sno: 15,
+                sno: 23,
                 qty: attr12_2,
                 rate: getFormattedPrice(Number(attr12_3)).replace(".", ","),
                 desc: attr12_1,
                 remarks: " " + getFormattedPrice(attr12_2 * attr12_3).replace(".",","),
             },
             { 
-            sno: 19,
+            sno: 24,
             qty:" ",
             rate: " ",
             desc: " ",
             remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
             },
             {
-           sno: 20,
+           sno: 25,
            qty:" ",
            rate: " ",
            desc: " ",
-           remarks: "abzüglich Kunden-Rabatt("+discount+"%)       " + getFormattedPrice(disc).replace(".",",")
+           remarks: "Rabatt ("+discount+"%)                                  " + getFormattedPrice(disc).replace(".",",")
              },
-            { 
-            sno: 15,
-            qty:" ",
-            rate: " ",
-            desc: " ",
-            remarks: "Summe Netto                              " + getFormattedPrice(newPri).replace(".",",")
-            },
+             { 
+             sno: 26,
+             qty:" ",
+             rate: " ",
+             desc: " ",
+             remarks: "Summe Netto                              " + getFormattedPrice(newPri).replace(".",",")
+             },
           {
-            sno: 16,
+            sno: 27,
             qty:" ",
             desc: " ",
             rate: " ",
             remarks: "MwSt. 19 %                                 " + getFormattedPrice(tax).replace(".",",")
         },
         {
-          sno: 17,
+          sno: 28,
           qty:" ",
           desc: " ",
           rate: " ",
@@ -291,7 +291,7 @@ export default function Dashboard() {
               remarks: " "
       }
   ]
-      
+      let check = 1;
       let k = 0;
       for(let i = 0; i<items.length-3; i++) {
           if(!items[i].remarks.includes(" 0,00 €")){
@@ -300,17 +300,69 @@ export default function Dashboard() {
             
           }
       }
+      const newItems2 = [{
+        sno: " ",
+        desc : " ",
+        qty: " ",
+        rate: " ",
+        remarks: " "
+}]
       console.log(newItems);
       newItems[newItems.length] = items[items.length-3];
       newItems[newItems.length] = items[items.length-2];
       newItems[newItems.length] = items[items.length-1];
+    //   newItems2 = newItems;
       if(newItems[newItems.length-3].remarks == newItems[newItems.length-4].remarks){
         newItems[newItems.length-4].sno = " ";
         newItems[newItems.length-4].desc = " ";
         newItems[newItems.length-4].qty = " ";
         newItems[newItems.length-4].rate = " ";
         newItems[newItems.length-4].remarks = " ";
+        check = 1;
       }
+      else{
+       
+    const newItems3 = {
+        sno: " ",
+        desc : " ",
+        qty: " ",
+        rate: " ",
+        remarks: " "
+    };
+    for(let i = 0; i<newItems.length-5; i++) {
+        // if(newItems[i].sno == "20"){
+        //     newItems2[i] = 
+        //   }
+        
+        newItems2[i] = newItems[i];
+    }
+    console.log("length is = " + newItems2.length);
+    console.log(newItems2);
+    newItems2[newItems2.length] = newItems3;
+    console.log("length2 is = " + newItems.length);
+    if(newItems.length == 4){}
+    else if (newItems.length > 4){newItems2[newItems2.length] = newItems[newItems.length-5];}
+    newItems2[newItems2.length] = newItems[newItems.length-4];
+    newItems2[newItems2.length] = newItems3;
+    newItems2[newItems2.length] = newItems[newItems.length-3];
+    newItems2[newItems2.length] = newItems[newItems.length-2];
+    newItems2[newItems2.length] = newItems[newItems.length-1];
+    if(newItems2[0].sno == " "){
+        // console.log("IT is emptyyy")
+        check = 1;
+    }
+    else{
+        check = 2;
+    }
+    
+    //newItems = newItems2;
+      }
+      
+// newItems2[newItems2.length].desc = " ";
+// newItems2[newItems2.length].qty = " ";
+// newItems2[newItems2.length].rate = " ";
+// newItems2[newItems2.length].remarks = " ";
+      
       //setyear("2022");
       //let month = "10";
     //   let dayy = "01";
@@ -335,7 +387,17 @@ export default function Dashboard() {
           },
       ]
     }
-    InvoiceData.items = [...newItems];
+    // if(check == 1){
+        
+        console.log("check is = " + check);
+    if(check == 2){
+        InvoiceData.items = [...newItems2];
+    }
+    else{
+        InvoiceData.items = [...newItems];
+    }
+    
+    console.log(newItems2);
 
     
   return(
@@ -555,7 +617,7 @@ export default function Dashboard() {
                 <tr>
                     <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
-                    <td>abzüglich Kunden-Rabatt</td>
+                    <td>Rabatt</td>
                     <td><input type="text" onChange={e => setdiscount(e.target.value)} /></td>
                     <td>{ getFormattedPrice(disc).replace(".",",") }</td>
                 </tr>

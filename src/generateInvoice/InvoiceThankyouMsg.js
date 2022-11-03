@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         fontSize:6,
         flexDirection: 'row',
         position:'absolute',
-        bottom:30,
+        bottom:37,
         paddingLeft:35,
         marginRight:-50
     },
@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
         bottom:50,
         paddingLeft:35,
         marginRight:-50
+    },
+    titleContainer4: {
+        flexDirection: 'row',
     },
     reportTitle: {
         fontSize: 10,
@@ -35,15 +38,28 @@ const styles = StyleSheet.create({
     footer: {
         fontSize: 7,
         textAlign: 'left',
-    }
+    },
+    bankDetails: {
+        color: '#3778C2',
+        fontSize: 9,
+        textAlign: 'left',
+        textTransform: 'uppercase',
+    },
 });
 
 const InvoiceThankYouMsg = () => (
-    <Fragment>
-    <View style={styles.titleContainer}>
-        <Text style={styles.reportText}>Bankverbindung: SPARKASSE RHEIN NECKAR NORD </Text>
-        <Text style={styles.reportText}>IBAN: DE06 6705 0505 0040 2145 42 </Text>
-        <Text style={styles.reportText}>BIC: MANSDE66XXX</Text>
+    <Fragment style={styles.titleContainer}>
+    <View style={styles.titleContainer4}>
+        <Text style={styles.reportText}>Bankverbindung:</Text>
+        <Text style={styles.bankDetails}> SPARKASSE RHEIN NECKAR NORD </Text>
+        </View>
+        <View style={styles.titleContainer4}>
+        <Text style={styles.reportText}>IBAN:</Text>
+        <Text style={styles.bankDetails}> DE06 6705 0505 0040 2145 42 </Text>
+        </View>
+        <View style={styles.titleContainer4}>
+        <Text style={styles.reportText}>BIC:</Text>
+        <Text style={styles.bankDetails}> MANSDE66XXX</Text>
         {/* <Text style={styles.reportTitle}>*** Vielen Dank ***</Text> */}
         
         </View>

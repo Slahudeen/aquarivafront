@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginTop: 2,
+        marginBottom: 5,
         borderWidth: 1,
         borderColor: '#3778C2',
     },

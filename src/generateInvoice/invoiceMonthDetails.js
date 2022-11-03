@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
     },
     fontChange: {
         marginTop: 5,
+        fontFamily: 'Helvetica-Oblique',
+        fontSize:10
+    },
+    fontChange2: {
         paddingBottom: 3,
         fontFamily: 'Helvetica-Oblique',
         fontSize:10
@@ -23,7 +27,7 @@ const styles = StyleSheet.create({
 const BillTo = ({ invoice }) => (
     <View style={styles.headerContainer}>
         <Text style={styles.fontChange}>{invoice.phone}</Text>
-        <Text style={styles.fontChange}>{invoice.email}</Text>
+        <Text style={styles.fontChange2}>{invoice.email}</Text>
     </View>
 );
 
