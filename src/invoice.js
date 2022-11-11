@@ -53,7 +53,7 @@ export default function Dashboard() {
     // const [address, setaddress] = useState("");
     const [address1, setaddress1] = useState("");
     const [address2, setaddress2] = useState("");
-    const [prices, setPrices]=useState([32,40,50,48,75,60,16.5]);
+    const [prices, setPrices]=useState([32,40,50,38,75,60,16.5]);
     const [checkedState, setCheckedState] = useState(
       new Array(prices.length).fill(false)
     );
@@ -62,7 +62,7 @@ export default function Dashboard() {
     const fileName = customer + ".pdf";
    
   
-      let pri =  (attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
+      let pri =  (attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 38) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
       + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
       + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 42) + (attr12 * 35) 
       + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85);
@@ -71,7 +71,7 @@ export default function Dashboard() {
 
       let newPri = pri - disc;
 
-      let tax = (pri/100) * 19;
+      let tax = (newPri/100) * 19;
 
     //   let tax = (((attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 48) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
     //   + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
@@ -477,8 +477,8 @@ export default function Dashboard() {
                     <td>SZM solo</td>
                 <td><input type="text" onChange={e => setattr4(e.target.value)} required/></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
-                    <td>48,00 €</td>
-                    <td>{getFormattedPrice(attr4 * 48).replace(".",",")}</td>
+                    <td>38,00 €</td>
+                    <td>{getFormattedPrice(attr4 * 38).replace(".",",")}</td>
                 </tr>
 
                 <tr>
