@@ -79,7 +79,7 @@ export default function Dashboard() {
     //   + (attr13 * 49) + (attr14 * 95) + (attr15 * 95) + (attr16 * 95) + (attr17 * 60) + (attr18 * 85))/100)*19;
 
 
-      let finalTotal = pri + tax;
+      let finalTotal = newPri + tax;
    
       var date = (((moment()
       .utcOffset('+05:30')
