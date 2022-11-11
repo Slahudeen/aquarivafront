@@ -111,7 +111,7 @@ export default function Dashboard() {
                 qty: attr4,
                 rate: "38,00 €",
                 desc: "SZM solo",
-                remarks: " " + getFormattedPrice(attr4 * 48).replace(".",","),
+                remarks: " " + getFormattedPrice(attr4 * 38).replace(".",","),
             },
 
             {
