@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         textTransform: 'uppercase',
     },
+    reportText2: {
+        fontSize: 7,
+        textAlign: 'left',
+        marginTop: 3
+    },
     footer: {
         fontSize: 7,
         textAlign: 'left',
@@ -43,25 +48,44 @@ const styles = StyleSheet.create({
         color: '#3778C2',
         fontSize: 9,
         textAlign: 'left',
+        textTransform: 'uppercase'
+    },
+    bankDetails2: {
+        color: '#3778C2',
+        fontSize: 9,
+        textAlign: 'left',
         textTransform: 'uppercase',
+        left: 72
+    },
+    bankDetails3: {
+        color: '#3778C2',
+        fontSize: 9,
+        textAlign: 'left',
+        textTransform: 'uppercase',
+        left: 66
     },
 });
 
 const InvoiceThankYouMsg = () => (
     <Fragment style={styles.titleContainer}>
-    <View style={styles.titleContainer4}>
+        <View style={styles.titleContainer4}>
         <Text style={styles.reportText}>Bankverbindung:</Text>
         <Text style={styles.bankDetails}> SPARKASSE RHEIN NECKAR NORD </Text>
         </View>
         <View style={styles.titleContainer4}>
         <Text style={styles.reportText}>IBAN:</Text>
-        <Text style={styles.bankDetails}> DE06 6705 0505 0040 2145 42 </Text>
+        <Text style={styles.bankDetails3}>DE06 6705 0505 0040 2145 42</Text>
         </View>
         <View style={styles.titleContainer4}>
         <Text style={styles.reportText}>BIC:</Text>
-        <Text style={styles.bankDetails}> MANSDE66XXX</Text>
+        <Text style={styles.bankDetails2}>MANSDE66XXX</Text>
         {/* <Text style={styles.reportTitle}>*** Vielen Dank ***</Text> */}
         
+        </View>
+        
+        <View style={styles.titleContainer4}>
+        <Text style={styles.reportText2}>***Zahlungszeil: </Text>
+        <Text style={styles.reportText2}> 8 Tage ab Rechnungsdatum </Text>
         </View>
         <View fixed style={styles.titleContainer3}>
         <Text style={styles.footer}>AQUA ARIVA GmbH                                Tel:    0621-80619920          aquaariva@t-online.de     Steuer-Nr.                Amtsgericht Mannheim      Geschäftsführer</Text>
