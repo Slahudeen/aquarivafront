@@ -31,7 +31,7 @@ const InvoiceNo = ({ invoice }) => (
         </View > */}
     <View style={styles.invoiceNoContainer}>
         
-       <Text style={styles.lighterText}>Aqua Ariva GmbH. Marie-Curie-Str.24 D-68219 Mannheim                                                                                         </Text>
+       <Text style={styles.lighterText}>Aqua Ariva GmbH. Marie-Curie-Straße 24 D-68219 Mannheim                                                                               </Text>
     <Text style={styles.label}>AQUA ARIVA GmbH<br/></Text>
     {/* <Text style={styles.label}>68219, Mannheim</Text>
     <Text style={styles.label}>Tel:-0621-80 61 99 20</Text> */}
@@ -39,7 +39,7 @@ const InvoiceNo = ({ invoice }) => (
     </View >
         <View style={styles.invoiceDateContainer}>
             
-    <Text style={styles.label}>Marie-Curie-Str. 24</Text>
+    <Text style={styles.label}>Marie-Curie-Straße 24</Text>
         </View >
         <View style={styles.invoiceDateContainer}>
             
