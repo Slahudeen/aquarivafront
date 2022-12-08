@@ -6,6 +6,7 @@ import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import './App.css';
 import PdfDocument from './generateInvoice/Invoice';
 import moment from "moment";
+import { InvoiceNumber } from 'invoice-number'
 
 // date_create: moment().format("DD-MM-YYYY hh:mm:ss")
 // import InvoiceData from './generateInvoice/jsonData/InvoiceData';
@@ -14,6 +15,7 @@ import moment from "moment";
 const getFormattedPrice = (price) => `${price.toFixed(2)} €`;
 
 export default function Dashboard() {
+    const [invoiceno, setinvoiceno] = useState("");
     const [attr1, setattr1] = useState(0);
     const [attr2, setattr2] = useState(0);
     const [attr3, setattr3] = useState(0);
@@ -68,7 +70,10 @@ export default function Dashboard() {
     );
   
     const [total, setTotal] = useState(0);
-    const fileName = customer + ".pdf";
+    let date = (((moment()
+      .utcOffset('+05:30')
+      .format('YYYY-MM-DD')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
+    const fileName = customer + "(" + (date+invoiceno) + ")" +  ".pdf";
    
   
       let pri =  (attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 38) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
@@ -104,9 +109,7 @@ export default function Dashboard() {
 
      
    
-      var date = (((moment()
-      .utcOffset('+05:30')
-      .format('YYYY-MM-DD hh:mm:ss')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
+      
       const items = [
             {
                 sno: 1,
@@ -456,7 +459,7 @@ export default function Dashboard() {
     //   let datee = new Date(year, Number(longMonth-1), dayy); // 2020-06-21
     //   setlongMonth(datee.toLocaleString('en-us', { month: 'long' }));
     const InvoiceData = {
-         invoice_no: date,
+         invoice_no: date+invoiceno,
         fullname: customer,
         address: address1,
         address2: address2, 
@@ -494,12 +497,12 @@ export default function Dashboard() {
     <form id="my-node">
         
         <table id="customers">
-                
+        
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>Rechnungs-Nr:</th>
+                    <th>{date}</th>
+                    <th>-</th>
+                    <th><input type="text" onChange={e => setinvoiceno(e.target.value)}/></th>
                 </tr>
                 <tr>
                     <td>Kunde</td>
@@ -791,6 +794,7 @@ export default function Dashboard() {
                     <td>Gesamtbetrag</td>
                     <td>{getFormattedPrice(finalTotal).replace(".",",") }</td>
                 </tr>
+                
                 </table>
          
     <div className='container4' align="center">
