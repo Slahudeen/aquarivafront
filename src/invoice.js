@@ -73,7 +73,8 @@ export default function Dashboard() {
     let date = (((moment()
       .utcOffset('+05:30')
       .format('YYYY-MM-DD')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
-    const fileName = customer + "(" + (date+invoiceno) + ")" +  ".pdf";
+    // const fileName = customer + "(" + (date+invoiceno) + ")" +  ".pdf";
+    const fileName = customer + (invoiceno) + ".pdf";
    
   
       let pri =  (attr1 * 32) + (attr2 * 40) + (attr3 * 50) + (attr4 * 38) + (attr5 * 75) + (attr6 * 60) + (attr7 * interiorcleaning)
@@ -459,7 +460,8 @@ export default function Dashboard() {
     //   let datee = new Date(year, Number(longMonth-1), dayy); // 2020-06-21
     //   setlongMonth(datee.toLocaleString('en-us', { month: 'long' }));
     const InvoiceData = {
-         invoice_no: date+invoiceno,
+        // invoice_no: date+invoiceno,
+        invoice_no: invoiceno,
         fullname: customer,
         address: address1,
         address2: address2, 
@@ -500,7 +502,8 @@ export default function Dashboard() {
         
                 <tr>
                     <th>Rechnungs-Nr:</th>
-                    <th>{date}</th>
+                    {/* <th>{date}</th> */}
+                    <th>-</th>
                     <th>-</th>
                     <th><input type="text" onChange={e => setinvoiceno(e.target.value)}/></th>
                 </tr>
