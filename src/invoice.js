@@ -509,19 +509,19 @@ export default function Dashboard() {
                 </tr>
                 <tr>
                     <td>Kunde</td>
-                    <td><input type="text" onChange={e => setcustomer(e.target.value)} required/></td>
+                    <td><input autocomplete="user-name" id='user-name' type="text" onChange={e => setcustomer(e.target.value)} required/></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Straße, Nr</td>
-                    <td><input type="text" onChange={e => setaddress1(e.target.value)} required/></td>
+                    <td><input autocomplete="customer-street" id='customer-street' type="text" onChange={e => setaddress1(e.target.value)} required/></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>PLZ, Ort</td>
-                    <td><input type="text" onChange={e => setaddress2(e.target.value)} required/></td>
+                    <td><input autocomplete="customer-postalcode" id='customer-postalcode' type="text" onChange={e => setaddress2(e.target.value)} required/></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -533,7 +533,7 @@ export default function Dashboard() {
                 </tr>
                 <tr>
                     <td>Monat</td>
-                    <td><input type="text" onChange={e => setlongMonth(e.target.value)} required/></td>
+                    <td><input  type="text" onChange={e => setlongMonth(e.target.value)} required/></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -546,28 +546,28 @@ export default function Dashboard() {
                 </tr>
                 <tr>
                 <td>bis 3,5 t</td>
-                <td><input type="text" onChange={e => setattr1(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr1(e.target.value)}/></td>
                     {/* <td><input type="checkbox" onChange={e => setupto3point5tons(e.target.value)} required/></td> */}
                     <td>32,00 €</td>
                     <td>{getFormattedPrice(attr1 * 32).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>3,5 t bis 7,5 t</td>
-                <td><input type="text" onChange={e => setattr2(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr2(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => setupto7point5tons(e.target.value)} required/></td> */}
                     <td>40,00 €</td>
                     <td>{getFormattedPrice(attr2 * 40).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>ab 7,5 t</td>
-                <td><input type="text" onChange={e => setattr3(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr3(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => setfrom7point5tons(e.target.value)} required/></td> */}
                     <td>50,00 €</td>
                     <td>{getFormattedPrice(attr3 * 50).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>SZM solo</td>
-                <td><input type="text" onChange={e => setattr4(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr4(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>38,00 €</td>
                     <td>{getFormattedPrice(attr4 * 38).replace(".",",")}</td>
@@ -575,140 +575,140 @@ export default function Dashboard() {
 
                 <tr>
                     <td>SZM solo mit chassis</td>
-                <td><input type="text" onChange={e => setattr10(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr10(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>48,00 €</td>
                     <td>{getFormattedPrice(attr10 * 48).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Auflieger Solo</td>
-                <td><input type="text" onChange={e => setattr11(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr11(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>42,00 €</td>
                     <td>{getFormattedPrice(attr11 * 42).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>SZM Hänger-zug</td>
-                <td><input type="text" onChange={e => setattr5(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr5(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrailertrain(e.target.value)} required/></td> */}
                     <td>75,00 €</td>
                     <td>{getFormattedPrice(attr5 * 75).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>SZM+Auflieger</td>
-                <td><input type="text" onChange={e => setattr6(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr6(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrailer(e.target.value)} required/></td> */}
                     <td>60,00 €</td>
                     <td>{getFormattedPrice(attr6 * 60).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Plane Spezial bis 8 m</td>
-                <td><input type="text" onChange={e => setattr12(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr12(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>35,00 €</td>
                     <td>{getFormattedPrice(attr12 * 35).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Plane Spezial ab 8 m</td>
-                <td><input type="text" onChange={e => setattr13(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr13(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>49,00 €</td>
                     <td>{getFormattedPrice(attr13 * 49).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>W.B & Container Chassis 3 Achser</td>
-                <td><input type="text" onChange={e => setattr19(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr19(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>60,00 €</td>
                     <td>{getFormattedPrice(attr19 * 60).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>W.B & Container Chassis 5 Achser</td>
-                <td><input type="text" onChange={e => setattr15(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr15(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>95,00 €</td>
                     <td>{getFormattedPrice(attr15 * 95).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Tankfahrzeug bis 3 Achser</td>
-                <td><input type="text" onChange={e => setattr20(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr20(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>60,00 €</td>
                     <td>{getFormattedPrice(attr20 * 60).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Tankfahrzeug 5 Achser</td>
-                <td><input type="text" onChange={e => setattr14(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr14(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>95,00 €</td>
                     <td>{getFormattedPrice(attr14 * 95).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Kipper bis 3 Achser</td>
-                <td><input type="text" onChange={e => setattr21(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr21(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>70,00 €</td>
                     <td>{getFormattedPrice(attr21 * 70).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Kipper 5 Achser</td>
-                <td><input type="text" onChange={e => setattr18(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr18(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>85,00 €</td>
                     <td>{getFormattedPrice(attr18 * 85).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer 3 Achser</td>
-                <td><input type="text" onChange={e => setattr17(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr17(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>60,00 €</td>
                     <td>{getFormattedPrice(attr17 * 60).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer bis 3 Achser mit Säure</td>
-                <td><input type="text" onChange={e => setattr22(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr22(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>35,00 €</td>
                     <td>{getFormattedPrice(attr22 * 35).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer 5 Achser</td>
-                <td><input type="text" onChange={e => setattr16(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr16(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>95,00 €</td>
                     <td>{getFormattedPrice(attr16 * 95).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer 5 Achser mit Säure</td>
-                <td><input type="text" onChange={e => setattr23(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr23(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>50,00 €</td>
                     <td>{getFormattedPrice(attr23 * 50).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Müllfahrzeuge bis 3 Achser</td>
-                <td><input type="text" onChange={e => setattr24(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr24(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>108,00 €</td>
                     <td>{getFormattedPrice(attr24 * 108).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Strake zVerschmutzung bis 3 Achser</td>
-                <td><input type="text" onChange={e => setattr25(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr25(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>25,00 €</td>
                     <td>{getFormattedPrice(attr25 * 25).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Starke Verschmutzung 5 Achser</td>
-                <td><input type="text" onChange={e => setattr26(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr26(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>50,00 €</td>
                     <td>{getFormattedPrice(attr26 * 50).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Innen-Reinigung Auflieger-Ladefläche mit Seitenwänden(ohne Dach)</td>
-                <td><input type="text" onChange={e => setattr27(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr27(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>80,00 €</td>
                     <td>{getFormattedPrice(attr27 * 80).replace(".",",")}</td>
@@ -727,20 +727,20 @@ export default function Dashboard() {
                 </tr>
                 <tr>
                     <td>Hebe-bühne</td>
-                <td><input type="text" onChange={e => setattr8(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr8(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => setliftingplatform(e.target.value)} required/></td> */}
                     <td>16,50 €</td>
                     <td>{getFormattedPrice(attr8 * 16.50).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Innen Reinigung</td>
-                <td><input type="text" onChange={e => setattr7(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr7(e.target.value)} /></td>
                     <td><input type="text" onChange={e => setinteriorcleaning(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr7 * interiorcleaning).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Spezial Reinigung mit Säure</td>
-                <td><input type="text" onChange={e => setattr9(e.target.value)} required/></td>
+                <td><input type="text" onChange={e => setattr9(e.target.value)} /></td>
                     <td><input type="text" onChange={e => setcleanignwithacid(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr9 * cleanignwithacid).replace(".",",")}</td>
                 </tr>
@@ -801,7 +801,7 @@ export default function Dashboard() {
                 </table>
          
     <div className='container4' align="center">
-    
+    <button>Save</button>
       </div>
      
     {/* <button onClick={onButtonClick}>Download PDF</button> */}
