@@ -87,10 +87,10 @@ const InvoiceThankYouMsg = () => (
         <Text style={styles.reportText2}> 8 Tage ab Rechnungsdatum </Text>
         </View>
         <View fixed style={styles.titleContainer3}>
-        <Text style={styles.footer}>AQUA ARIVA GmbH                                       Tel:    0621-80619920          aquaariva@t-online.de     Steuer-Nr.                Amtsgericht Mannheim      Geschäftsführer</Text>
+        <Text style={styles.footer}>AQUA ARIVA GmbH                                          Tel:    0621-80619920          aquaariva@t-online.de     Steuer-Nr. 3818026965   Amtsgericht Mannheim      Geschäftsführer</Text>
         </View>
         <View fixed style={styles.titleContainer2}>
-        <Text style={styles.footer}>Marie-Curie-Straße 24,D-68219 Mannheim    Handy:  0176-15828582      www.aqua-ariva.de          Ust.IdNr.                   HRB745091                       Faiq Rasheed</Text>
+        <Text style={styles.footer}>Marie-Curie-Straße 24,D-68219 Mannheim  Handy:  0176-15828582     www.aqua-ariva.de          Ust.IdNr.                          HRB745091                       Faiq Rasheed</Text>
         {/* <Text style={styles.footer}>Tel:- 0621-80619920</Text>
         <Text style={styles.footer}>Handy:- 0176-15828582</Text>
         <Text style={styles.footer}>aquaariva@t-online.de</Text>
