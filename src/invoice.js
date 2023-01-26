@@ -571,6 +571,12 @@ export default function Dashboard() {
                     <th>Gesamt...</th>
                 </tr>
                 <tr>
+                    <td>Zusätzliches Feld<input type="text" onChange={e => setattr13_1(e.target.value)} /></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
                 <td>Transporter bis 3,5 t</td>
                 <td><input type="text" onChange={e => setattr1(e.target.value)}/></td>
                     {/* <td><input type="checkbox" onChange={e => setupto3point5tons(e.target.value)} required/></td> */}
@@ -789,12 +795,6 @@ export default function Dashboard() {
                     <td>{getFormattedPrice(attr12_2 * attr12_3).replace(".",",")}</td>
                 </tr>
                 
-                <tr>
-                    <td>Zusätzliches Feld<input type="text" onChange={e => setattr13_1(e.target.value)} /></td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
                 <tr>
                     <td></td>
                     {/* <td>{getFormattedPrice(total).split(".")[0] + "," + getFormattedPrice(total).split(".")[1] }</td> */}
