@@ -52,6 +52,7 @@ export default function Dashboard() {
     const [attr12_1, setattr12_1] = useState("");
     const [attr12_2, setattr12_2] = useState(0);
     const [attr12_3, setattr12_3] = useState(0);
+    const [attr13_1, setattr13_1] = useState(0);
     const [discount, setdiscount] = useState(0);
     const [interiorcleaning, setinteriorcleaning] = useState(0);
     const [year, setyear] = useState("");
@@ -112,25 +113,33 @@ export default function Dashboard() {
    
       
       const items = [
+        
+        {
+            sno: 0,
+            qty:" ",
+            desc: attr13_1,
+            rate: " ",
+            remarks: " "
+        },
             {
                 sno: 1,
                 qty: attr1,
                 rate: "32,00 €",
-                desc: "bis 3,5 t",
+                desc: "Transporter bis 3,5 t",
                 remarks: " " + getFormattedPrice(attr1 * 32).replace(".",","),
             },
             {
                 sno: 2,
                 qty: attr2,
                 rate: "40,00 €",
-                desc: "3,5 t bis 7,5 t",
+                desc: "LKW bis 7,5 t",
                 remarks: " " + getFormattedPrice(attr2 * 40).replace(".",","),
             },
             {
                 sno: 3,
                 qty: attr3,
                 rate: "50,00 €",
-                desc: "ab 7,5 t",
+                desc: "LKW ab 7,5 t",
                 remarks: " " + getFormattedPrice(attr3 * 50).replace(".",","),
             },
             {
@@ -382,14 +391,31 @@ export default function Dashboard() {
       }
   ]
       let check = 1;
-      let k = 0;
-      for(let i = 0; i<items.length-3; i++) {
-          if(!items[i].remarks.includes(" 0,00 €")){
-              newItems[k] = items[i];
+      let k;
+      let kk;
+      if(items[0].desc==0){
+        console.log("It is empty....");
+        k = 0;
+        kk = 1;
+      }
+      else{
+        
+        console.log("It is not empty....");
+        newItems[0] = items[0];
+        k = 1;
+        kk = 1;
+      }
+      
+      for(kk; kk<items.length-3; kk++) {
+       
+            
+          if(!items[kk].remarks.includes(" 0,00 €")){
+              newItems[k] = items[kk];
               k++;
             
           }
       }
+      
       const newItems2 = [{
         sno: " ",
         desc : " ",
@@ -545,21 +571,21 @@ export default function Dashboard() {
                     <th>Gesamt...</th>
                 </tr>
                 <tr>
-                <td>bis 3,5 t</td>
+                <td>Transporter bis 3,5 t</td>
                 <td><input type="text" onChange={e => setattr1(e.target.value)}/></td>
                     {/* <td><input type="checkbox" onChange={e => setupto3point5tons(e.target.value)} required/></td> */}
                     <td>32,00 €</td>
                     <td>{getFormattedPrice(attr1 * 32).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>3,5 t bis 7,5 t</td>
+                    <td>LKW bis 7,5 t</td>
                 <td><input type="text" onChange={e => setattr2(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => setupto7point5tons(e.target.value)} required/></td> */}
                     <td>40,00 €</td>
                     <td>{getFormattedPrice(attr2 * 40).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>ab 7,5 t</td>
+                    <td>LKW ab 7,5 t</td>
                 <td><input type="text" onChange={e => setattr3(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => setfrom7point5tons(e.target.value)} required/></td> */}
                     <td>50,00 €</td>
@@ -761,6 +787,13 @@ export default function Dashboard() {
                     <td><input type="text" onChange={e => setattr12_2(e.target.value)} /></td>
                     <td><input type="text" onChange={e => setattr12_3(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr12_2 * attr12_3).replace(".",",")}</td>
+                </tr>
+                
+                <tr>
+                    <td>Zusätzliches Feld<input type="text" onChange={e => setattr13_1(e.target.value)} /></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
                 </tr>
                 <tr>
                     <td></td>
