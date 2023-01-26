@@ -572,9 +572,9 @@ export default function Dashboard() {
                 </tr>
                 <tr>
                     <td>Zusätzliches Feld<input type="text" onChange={e => setattr13_1(e.target.value)} /></td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
                 </tr>
                 <tr>
                 <td>Transporter bis 3,5 t</td>
