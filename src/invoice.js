@@ -52,7 +52,7 @@ export default function Dashboard() {
     const [attr12_1, setattr12_1] = useState("");
     const [attr12_2, setattr12_2] = useState(0);
     const [attr12_3, setattr12_3] = useState(0);
-    const [attr13_1, setattr13_1] = useState(0);
+    const [attr13_1, setattr13_1] = useState(" ");
     const [discount, setdiscount] = useState(0);
     const [interiorcleaning, setinteriorcleaning] = useState(0);
     const [year, setyear] = useState("");
@@ -391,22 +391,22 @@ export default function Dashboard() {
       }
   ]
       let check = 1;
-      let k;
-      let kk;
-      if(items[0].desc==0){
-        console.log("It is empty....");
-        k = 0;
-        kk = 1;
-      }
-      else{
+      let k = 0;
+      //let kk;
+    //   if(items[0].desc==0){
+    //     console.log("It is empty....");
+    //     k = 0;
+    //     kk = 1;
+    //   }
+    //   else{
         
-        console.log("It is not empty....");
-        newItems[0] = items[0];
-        k = 1;
-        kk = 1;
-      }
+    //     console.log("It is not empty....");
+    //     newItems[0] = items[0];
+    //     k = 1;
+    //     kk = 1;
+    //   }
       
-      for(kk; kk<items.length-3; kk++) {
+      for(let kk = 0; kk<items.length-3; kk++) {
        
             
           if(!items[kk].remarks.includes(" 0,00 €")){
