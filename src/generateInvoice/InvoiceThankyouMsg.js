@@ -41,23 +41,21 @@ const styles = StyleSheet.create({
         marginTop: 3
     },
     footer: {
+        color: '#3778C2',
         fontSize: 7,
         textAlign: 'left',
     },
     bankDetails: {
-        color: '#3778C2',
         fontSize: 9,
         textAlign: 'left'
     },
     bankDetails2: {
-        color: '#3778C2',
         fontSize: 9,
         textAlign: 'left',
         textTransform: 'uppercase',
         left: 72
     },
     bankDetails3: {
-        color: '#3778C2',
         fontSize: 9,
         textAlign: 'left',
         textTransform: 'uppercase',

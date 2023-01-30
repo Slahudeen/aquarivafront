@@ -3,11 +3,13 @@ import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
     invoiceNoContainer: {
+        color: '#3778C2',
         flexDirection: 'row',
         marginTop: 20,
         justifyContent: 'flex-end'
     },
     invoiceDateContainer: {
+        color: '#3778C2',
         flexDirection: 'row',
         justifyContent: 'flex-end'
     },
