@@ -65,6 +65,8 @@ export default function Dashboard() {
     // const [address, setaddress] = useState("");
     const [address1, setaddress1] = useState("");
     const [address2, setaddress2] = useState("");
+    const [categoryaddress1, setcategoryaddress1] = useState("");
+    const [categoryaddress2, setcategoryaddress2] = useState("");
     const [prices, setPrices]=useState([32,40,50,38,75,60,16.5]);
     const [checkedState, setCheckedState] = useState(
       new Array(prices.length).fill(false)
@@ -114,13 +116,13 @@ export default function Dashboard() {
       
       const items = [
         
-        {
-            sno: 0,
-            qty:" ",
-            desc: attr13_1,
-            rate: " ",
-            remarks: " "
-        },
+        // {
+        //     sno: 0,
+        //     qty:" ",
+        //     desc: attr13_1,
+        //     rate: " ",
+        //     remarks: " "
+        // },
             {
                 sno: 1,
                 qty: attr1,
@@ -485,6 +487,13 @@ export default function Dashboard() {
     //   //console.log("the date is  "+ year + Number(month-1) + dayy);
     //   let datee = new Date(year, Number(longMonth-1), dayy); // 2020-06-21
     //   setlongMonth(datee.toLocaleString('en-us', { month: 'long' }));
+    let newAddress = categoryaddress1;
+    if(newAddress == ""){
+        newAddress = newAddress;
+    }
+    else{
+        newAddress = "Leistungsempfänger:\n" + newAddress;
+    }
     const InvoiceData = {
         // invoice_no: date+invoiceno,
         invoice_no: invoiceno,
@@ -493,6 +502,8 @@ export default function Dashboard() {
         address2: address2, 
         phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße " + longMonth + ", " + year,
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
+        categoryaddress1: newAddress,
+        categoryaddress2: categoryaddress2,
         trans_date: moment().format("DD-MM-YYYY"),
         items: [
           {
@@ -563,6 +574,12 @@ export default function Dashboard() {
                     <td></td>
                     <td></td>
                 </tr>
+                <tr>
+                    <td>Zusätzliches Feld</td>
+                    <td><input type="text" onChange={e => setcategoryaddress1(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setcategoryaddress2(e.target.value)} /></td>
+                    <td>--</td>
+                </tr>
                 
                 <tr>
                     <th>Beschreibung</th>
@@ -570,12 +587,7 @@ export default function Dashboard() {
                     <th>Einzelpreis</th>
                     <th>Gesamt...</th>
                 </tr>
-                <tr>
-                    <td>Zusätzliches Feld<input type="text" onChange={e => setattr13_1(e.target.value)} /></td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
-                </tr>
+                
                 <tr>
                 <td>Transporter bis 3,5 t</td>
                 <td><input type="text" onChange={e => setattr1(e.target.value)}/></td>

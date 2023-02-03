@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         fontSize:6,
         flexDirection: 'row',
         position:'absolute',
-        bottom:37,
+        bottom:20,
         paddingLeft:35,
         marginRight:-50
     },
@@ -17,7 +17,15 @@ const styles = StyleSheet.create({
         fontSize:6,
         flexDirection: 'row',
         position:'absolute',
-        bottom:50,
+        bottom:30,
+        paddingLeft:35,
+        marginRight:-50
+    },
+    titleContainer5: {
+        fontSize:6,
+        flexDirection: 'row',
+        position:'absolute',
+        bottom:10,
         paddingLeft:35,
         marginRight:-50
     },
@@ -42,7 +50,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         color: '#3778C2',
-        fontSize: 7,
+        fontSize: 8,
         textAlign: 'left',
     },
     bankDetails: {
@@ -85,10 +93,10 @@ const InvoiceThankYouMsg = () => (
         <Text style={styles.reportText2}> 8 Tage ab Rechnungsdatum </Text>
         </View>
         <View fixed style={styles.titleContainer3}>
-        <Text style={styles.footer}>AQUA ARIVA GmbH                                          Tel:    0621-80619920          aquaariva@t-online.de     Steuer-Nr. 3818026965   Amtsgericht Mannheim      Geschäftsführer</Text>
+        <Text style={styles.footer}>AQUA ARIVA GmbH          Tel:0621-80619920          aquaariva@t-online.de    Steuer-Nr.3818026965    Amtsgericht Mannheim     Geschäftsführer</Text>
         </View>
         <View fixed style={styles.titleContainer2}>
-        <Text style={styles.footer}>Marie-Curie-Straße 24,D-68219 Mannheim  Handy:  0176-15828582     www.aqua-ariva.de          Ust.IdNr.                          HRB745091                       Faiq Rasheed</Text>
+        <Text style={styles.footer}>Marie-Curie-Straße           Handy:0176-15828582    www.aqua-ariva.de         Ust.IdNr.DE358031303   HRB745091                       Faiq Rasheed</Text>
         {/* <Text style={styles.footer}>Tel:- 0621-80619920</Text>
         <Text style={styles.footer}>Handy:- 0176-15828582</Text>
         <Text style={styles.footer}>aquaariva@t-online.de</Text>
@@ -100,6 +108,9 @@ const InvoiceThankYouMsg = () => (
         <Text style={styles.footer}>Geschäftsführer</Text>
         <Text style={styles.footer}>Faiq Rasheed</Text> */}
     </View>
+    <View fixed style={styles.titleContainer5}>
+        <Text style={styles.footer}>24,D-68219 Mannheim</Text>
+        </View>
     </Fragment>
 );
 
