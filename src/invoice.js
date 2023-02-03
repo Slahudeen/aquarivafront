@@ -55,8 +55,8 @@ export default function Dashboard() {
     const [attr13_1, setattr13_1] = useState(" ");
     const [discount, setdiscount] = useState(0);
     const [interiorcleaning, setinteriorcleaning] = useState(0);
-    const [year, setyear] = useState("");
-    const [longMonth, setlongMonth] = useState("");
+    const [year, setyear] = useState(moment().format("YYYY"));
+    const [longMonth, setlongMonth] = useState(moment().format("MMMM"));
     // const [liftingplatform, setliftingplatform] = useState("");
     const [cleanignwithacid, setcleanignwithacid] = useState(0);
     const [tankspecial, settankspecial] = useState(0);
@@ -564,13 +564,13 @@ export default function Dashboard() {
                 </tr>
                 <tr>
                     <td>Jahr</td>
-                    <td><input type="text" onChange={e => setyear(e.target.value)} required/></td>
+                    <td><input type="text" onChange={e => setyear(e.target.value)} placeholder={moment().format("YYYY")} /></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Monat</td>
-                    <td><input  type="text" onChange={e => setlongMonth(e.target.value)} required/></td>
+                    <td><input  type="text" onChange={e => setlongMonth(e.target.value)} placeholder={moment().format("MMMM")}/></td>
                     <td></td>
                     <td></td>
                 </tr>
