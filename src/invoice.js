@@ -71,6 +71,7 @@ export default function Dashboard() {
     const [checkedState, setCheckedState] = useState(
       new Array(prices.length).fill(false)
     );
+    //test
   
     const [total, setTotal] = useState(0);
     let date = (((moment()
