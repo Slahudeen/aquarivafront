@@ -18,7 +18,11 @@ const styles = StyleSheet.create({
         fontStyle: 'bold',
     },
     label: {
-        width: 100
+        width: 100,
+    },
+    label2: {
+        width: 100,
+        marginBottom:45,
     },
     lighterText: {
         fontSize: 8
@@ -49,7 +53,7 @@ const InvoiceNo = ({ invoice }) => (
         </View >
         <View style={styles.invoiceDateContainer}>
             
-    <Text style={styles.label}>Tel: 0621 80 61 99 20</Text>
+    <Text style={styles.label2}>Tel: 0621 80 61 99 20</Text>
         </View >
     </Fragment>
 );
