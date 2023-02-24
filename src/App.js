@@ -7,6 +7,8 @@ import useToken from './useToken';
 import Create from './create';
 import Search from './search';
 import Invoice from './invoice';
+import InvoiceReminder from './invoiceReminder';
+import LetterHead from './letterHead';
 import CompanyInvoice from './companyInvoice';
 
 
@@ -52,6 +54,16 @@ function App () {
      navigate('/aquarivafront/generate-invoice');
     // setIsLoggedin(false);
   };
+  const invoiceReminder = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/invoice-reminder');
+    // setIsLoggedin(false);
+  };
+  const letterHead = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/letter-head');
+    // setIsLoggedin(false);
+  };
  
   return(
     <div >
@@ -60,6 +72,8 @@ function App () {
       <button onClick={search}>Search</button>
       <button onClick={companyInvoice}>Company Invoice</button>
       <button onClick={invoice}>Generate Company Invoice</button>
+      <button onClick={invoiceReminder}>Invoice Reminder</button>
+      <button onClick={letterHead}>Company Letter Head</button>
       <button onClick={logout}>Log out</button>
 
       <Routes>
@@ -75,6 +89,10 @@ function App () {
         <Route exact path="/aquarivafront/companyInvoice" element={<CompanyInvoice/>}>
         </Route>
         <Route exact path="/aquarivafront/generate-invoice" element={<Invoice/>}>
+        </Route>
+        <Route exact path="/aquarivafront/invoice-reminder" element={<InvoiceReminder/>}>
+        </Route>
+        <Route exact path="/aquarivafront/letter-head" element={<LetterHead/>}>
         </Route>
       </Routes>
   </div>
