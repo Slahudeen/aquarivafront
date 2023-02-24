@@ -56,7 +56,7 @@ export default function Dashboard() {
   return(
     
     <div className="container1">
-    <h1> Rechnungserinnerung </h1>
+    <h1> Briefkopf </h1>
     <div className='container3'>
     <form id="my-node">
         
