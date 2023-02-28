@@ -18,9 +18,9 @@ export default function Dashboard() {
     const [invoiceno, setinvoiceno] = useState("");
     const [year, setyear] = useState(moment().format("YYYY"));
     const [longMonth, setlongMonth] = useState(moment().format("MMMM"));
-    const [customer, setcustomer] = useState("");
-    const [address1, setaddress1] = useState("");
-    const [address2, setaddress2] = useState("");
+    const [customer, setcustomer] = useState(" ");
+    const [address1, setaddress1] = useState(" ");
+    const [address2, setaddress2] = useState(" ");
     const [categoryaddress1, setcategoryaddress1] = useState("");
     const [categoryaddress2, setcategoryaddress2] = useState("");
     const [title, setTitle] = useState(" ");

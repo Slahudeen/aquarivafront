@@ -17,11 +17,11 @@ const getFormattedPrice = (price) => `${price.toFixed(2)} €`;
 export default function Dashboard() {
     const [invoiceno, setinvoiceno] = useState("");
     const [Date, setDate] = useState(moment().format("DD-MM-YYYY"));
-    const [customer, setcustomer] = useState("");
+    const [customer, setcustomer] = useState(" ");
     const [amount, setAmount] = useState("");
     // const [address, setaddress] = useState("");
-    const [address1, setaddress1] = useState("");
-    const [address2, setaddress2] = useState("");
+    const [address1, setaddress1] = useState(" ");
+    const [address2, setaddress2] = useState(" ");
     const [categoryaddress1, setcategoryaddress1] = useState("");
     const [categoryaddress2, setcategoryaddress2] = useState("");
     let date = (((moment()
