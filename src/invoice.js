@@ -496,7 +496,6 @@ export default function Dashboard() {
         newAddress = "Leistungsempfänger:\n" + newAddress;
     }
     const InvoiceData = {
-        // invoice_no: date+invoiceno,
         invoice_no: invoiceno,
         fullname: customer,
         address: address1,
