@@ -9,6 +9,7 @@ import Search from './search';
 import Invoice from './invoice';
 import InvoiceReminder from './invoiceReminder';
 import LetterHead from './letterHead';
+import TemproryMail from './temproryMail';
 import CompanyInvoice from './companyInvoice';
 
 
@@ -64,6 +65,11 @@ function App () {
      navigate('/aquarivafront/letter-head');
     // setIsLoggedin(false);
   };
+  const temproryMail = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/Notification-of-the-price-increase');
+    // setIsLoggedin(false);
+  };
  
   return(
     <div >
@@ -74,6 +80,7 @@ function App () {
       <button onClick={invoice}>Generate Company Invoice</button>
       <button onClick={invoiceReminder}>Invoice Reminder</button>
       <button onClick={letterHead}>Company Letter Head</button>
+      <button onClick={temproryMail}>Notification of the price increase</button>
       <button onClick={logout}>Log out</button>
 
       <Routes>
@@ -93,6 +100,8 @@ function App () {
         <Route exact path="/aquarivafront/invoice-reminder" element={<InvoiceReminder/>}>
         </Route>
         <Route exact path="/aquarivafront/letter-head" element={<LetterHead/>}>
+        </Route>
+        <Route exact path="/aquarivafront/Notification-of-the-price-increase" element={<TemproryMail/>}>
         </Route>
       </Routes>
   </div>
