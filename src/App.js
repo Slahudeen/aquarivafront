@@ -91,8 +91,8 @@ function App () {
         </Route> */}
         <Route exact path="/aquarivafront/create" element={<Create/>}>
         </Route>
-        <Route exact path="/aquarivafront/search" element={<Search/>}>
-        </Route>
+        {/* <Route exact path="/aquarivafront/search" element={<Search/>}>
+        </Route> */}
         <Route exact path="/aquarivafront/companyInvoice" element={<CompanyInvoice/>}>
         </Route>
         <Route exact path="/aquarivafront/generate-invoice" element={<Invoice/>}>
