@@ -55,8 +55,14 @@ export default function Dashboard() {
     const [attr13_1, setattr13_1] = useState(" ");
     const [discount, setdiscount] = useState(0);
     const [interiorcleaning, setinteriorcleaning] = useState(0);
+    const current = new Date();
     const [year, setyear] = useState(moment().format("YYYY"));
-    const [longMonth, setlongMonth] = useState(moment().format("MMMM"));
+    let mo = moment().month();
+    mo = moment().month(mo-1).format("MMMM");
+    const [longMonth, setlongMonth] = useState(mo);
+    const [yearReceipt, setyearReceipt] = useState(moment().format("YYYY"));
+    const [longMonthReceipt, setlongMonthReceipt] = useState(moment().format("MM"));
+    const [dateReceipt, setDateReceipt] = useState(moment().format("DD"));
     // const [liftingplatform, setliftingplatform] = useState("");
     const [cleanignwithacid, setcleanignwithacid] = useState(0);
     const [tankspecial, settankspecial] = useState(0);
@@ -495,17 +501,18 @@ export default function Dashboard() {
     else{
         newAddress = "Leistungsempfänger:\n" + newAddress;
     }
+    let finaldate = moment().date(dateReceipt).month(longMonthReceipt-1).year(yearReceipt).format("DD-MM-YYYY");
     const InvoiceData = {
         invoice_no: invoiceno,
         fullname: customer,
         address: address1,
         address2: address2, 
-        //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße " + longMonth + ", " + year,
-        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße February" + ", " + year,
+        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße " + longMonth + ", " + year,
+        //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße February" + ", " + year,
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
-        trans_date: moment().format("DD-MM-YYYY"),
+        trans_date: finaldate,
         items: [
           {
               sno: "12",
@@ -571,7 +578,25 @@ export default function Dashboard() {
                 </tr>
                 <tr>
                     <td>Monat</td>
-                    <td><input  type="text" onChange={e => setlongMonth(e.target.value)} placeholder={moment().format("MMMM")}/></td>
+                    <td><input  type="text" onChange={e => setlongMonth(e.target.value)} placeholder={longMonth}/></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Jahr erhalten</td>
+                    <td><input type="text" onChange={e => setyearReceipt(e.target.value)} placeholder={moment().format("YYYY")} /></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Monat erhalten</td>
+                    <td><input  type="text" onChange={e => setlongMonthReceipt(e.target.value)} placeholder={moment().format("MM")}/></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Eingangstag</td>
+                    <td><input  type="text" onChange={e => setDateReceipt(e.target.value)} placeholder={moment().format("DD")}/></td>
                     <td></td>
                     <td></td>
                 </tr>
