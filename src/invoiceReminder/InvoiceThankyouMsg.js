@@ -112,10 +112,10 @@ const InvoiceThankYouMsg = ({ invoice }) => (
         <Text>Sollte sich Ihre Zahlung mit diesem Schreiben überschnitten haben, so sehen Sie dieses Schreiben bitte als gegenstandslos an.</Text>
         <Text> </Text>
         <Text>Mit freundlichen Grüßen</Text>
-        <Text>AQUA ARIVA</Text>
-        <Text>Marie-Curie-Straße 24</Text>
+        <Text>AQUA ARIVA GmbH</Text>
+        {/* <Text>Marie-Curie-Straße 24</Text>
         <Text>68219 Mannheim</Text>
-        <Text>0621-80 61 99 20</Text>
+        <Text>0621-80 61 99 20</Text> */}
         </View>
         <View fixed style={styles.titleContainer3}>
         <Text style={styles.footer}>AQUA ARIVA GmbH          Tel:0621-80619920          aquaariva@t-online.de    Steuer-Nr.3818026965    Amtsgericht Mannheim     Geschäftsführer</Text>
