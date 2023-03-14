@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-
+@import url("https://cdn.syncfusion.com/ej2/bootstrap5.css");
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +11,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.signButton {
+  margin-top: 100px;
 }
 
 .App-header {
@@ -26,6 +29,12 @@
 
 .App-link {
   color: #61dafb;
+}
+.signature{
+  /* margin-top: 100px; */
+  border: 1px solid rgb(128,128,128);
+  /* width: 500px;
+  height:227 */
 }
 
 @keyframes App-logo-spin {

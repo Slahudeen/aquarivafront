@@ -53,7 +53,7 @@ export default function Dashboard() {
     // const [address, setaddress] = useState("");
     const [address1, setaddress1] = useState("");
     const [address2, setaddress2] = useState("");
-    const [company, setCompany] = useState("");
+    const [company, setCompany] = useState("no");
     const [trailorNumber, setTrailorNumber] = useState("");
     const [error,setErrorMessage]=useState("");
     const [totalPrice, setTotalPrice] = useState();
@@ -438,11 +438,11 @@ export default function Dashboard() {
                     <th>Bemerkungen</th>
                     <th>Preis</th>
                 </tr>
-                <tr>
+                {/* <tr>
                     <td>Gesellschaft</td>
                     <td><input type="text" onChange={e => setCompany(e.target.value)} required/></td>
                     <td>-</td>
-                </tr>
+                </tr> */}
                 <tr>
                     <td>Kennzeichen</td>
                     <td><input type="text" onChange={e => setlicenseplate(e.target.value)} required/></td>

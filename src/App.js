@@ -5,12 +5,15 @@ import Dashboard from './dashboard';
 import Login from './login';
 import useToken from './useToken';
 import Create from './create';
-// import Search from './search';
+import Search from './search';
 import Invoice from './invoice';
 import InvoiceReminder from './invoiceReminder';
 import LetterHead from './letterHead';
 import TemproryMail from './temproryMail';
 import CompanyInvoice from './companyInvoice';
+import Signature from './signature';
+import CompanyVehicle from './companyVehicle';
+import Prices from './prices';
 
 
 
@@ -70,17 +73,35 @@ function App () {
      navigate('/aquarivafront/Notification-of-the-price-increase');
     // setIsLoggedin(false);
   };
+  const signature = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/signature');
+    // setIsLoggedin(false);
+  };
+  const companyVehicle = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/createCompanyVehicleInvoice');
+    // setIsLoggedin(false);
+  };
+  const prices = () => {
+    //localStorage.removeItem('token');
+     navigate('/aquarivafront/prices');
+    // setIsLoggedin(false);
+  };
  
   return(
     <div >
       <button onClick={dashboard}>Dashboard</button>
       <button onClick={newRecord}>Create</button>
+      <button onClick={companyVehicle}>Create Company Vehicle</button>
       <button onClick={search}>Search</button>
       <button onClick={companyInvoice}>Company Invoice</button>
       <button onClick={invoice}>Generate Company Invoice</button>
       <button onClick={invoiceReminder}>Invoice Reminder</button>
       <button onClick={letterHead}>Company Letter Head</button>
       <button onClick={temproryMail}>Notification of the price increase</button>
+      <button onClick={signature}>Signature</button>
+      <button onClick={prices}>Prices</button>
       <button onClick={logout}>Log out</button>
 
       <Routes>
@@ -91,8 +112,10 @@ function App () {
         </Route> */}
         <Route exact path="/aquarivafront/create" element={<Create/>}>
         </Route>
-        {/* <Route exact path="/aquarivafront/search" element={<Search/>}>
-        </Route> */}
+        <Route exact path="/aquarivafront/createCompanyVehicleInvoice" element={<CompanyVehicle/>}>
+        </Route>
+        <Route exact path="/aquarivafront/search" element={<Search/>}>
+        </Route>
         <Route exact path="/aquarivafront/companyInvoice" element={<CompanyInvoice/>}>
         </Route>
         <Route exact path="/aquarivafront/generate-invoice" element={<Invoice/>}>
@@ -103,7 +126,12 @@ function App () {
         </Route>
         <Route exact path="/aquarivafront/Notification-of-the-price-increase" element={<TemproryMail/>}>
         </Route>
+        <Route exact path="/aquarivafront/signature" element={<Signature/>}>
+        </Route>
+        <Route exact path="/aquarivafront/prices" element={<Prices/>}>
+        </Route>
       </Routes>
+      
   </div>
   )
 };
