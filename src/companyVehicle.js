@@ -101,7 +101,8 @@ newToken = newToken.split('"')[0];
         setStraßeNr("")
         setPLZOrt("")
         setKunde("")
-        setCheckedState(false)
+        window.location.reload(true)
+        // setCheckedState(false)
     }
 
     if(result.status == 403){

@@ -12,11 +12,14 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         borderWidth: 1,
         borderColor: '#3778C2',
+        position:'relative',
+        // top: 100,
+        // bottom: 200
     },
 });
 
 const InvoiceItemsTable = ({ invoice }) => (
-    <View style={styles.tableContainer}>
+    <View style={styles.tableContainer} >
         <InvoiceTableHeader />
         <InvoiceTableRow items={invoice.items} />
         <InvoiceTableFooter items={invoice.items} />

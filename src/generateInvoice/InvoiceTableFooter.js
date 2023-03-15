@@ -32,7 +32,7 @@ const InvoiceTableFooter = ({ items }) => {
     return (
         <View >
              {/* <Text style={styles.description}>Gesamtbetrag</Text>
-            <Text style={styles.total}>{Number.parseFloat(total).toFixed(2)}</Text> */} 
+            <Text style={styles.total}>1515</Text>  */}
         </View>
     )
 };

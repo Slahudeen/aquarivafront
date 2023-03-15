@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         position:'absolute',
         bottom:30,
         paddingLeft:35,
-        marginRight:-50
+        marginRight:-50,
     },
     titleContainer5: {
         fontSize:6,
@@ -93,7 +93,7 @@ const InvoiceThankYouMsg = () => (
         <Text style={styles.reportText2}> 8 Tage ab Rechnungsdatum </Text>
         </View>
         <View fixed style={styles.titleContainer3}>
-        <Text style={styles.footer}>AQUA ARIVA GmbH          Tel:0621-80619920          aquaariva@t-online.de    Steuer-Nr.3818026965    Amtsgericht Mannheim     Geschäftsführer</Text>
+        <Text style={styles.footer} >AQUA ARIVA GmbH          Tel:0621-80619920          aquaariva@t-online.de    Steuer-Nr.3818026965    Amtsgericht Mannheim     Geschäftsführer</Text>
         </View>
         <View fixed style={styles.titleContainer2}>
         <Text style={styles.footer}>Marie-Curie-Straße           Handy:0176-15828582    www.aqua-ariva.de         Ust.IdNr.DE358031303   HRB745091                       Faiq Rasheed</Text>

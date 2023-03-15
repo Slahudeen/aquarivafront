@@ -120,21 +120,6 @@ useEffect(() => {
             postNo = postNo.split("$$$$")[1];
         }
           return (
-        // Kennzeichen
-    // bis 3,5 t
-    // 3,5 t bis 7,5 t
-    // ab 7,5 t
-    // SZM solo
-    // SZM Hänger-zug
-    // SZM+ Auflieger
-    // Innen- reini- gung
-    // Hebe- bühne
-    // Spezial-reini-gung mit Säure
-    // Tank spezial
-    // Felge spezial
-    // Kennzeichen Anhänger/Auflieger
-    // Fahrer Name 
-    // Unterschrift
             <div className="container2 fontweight" key={key}>
                 
                 <table id="customers">

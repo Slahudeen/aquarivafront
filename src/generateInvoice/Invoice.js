@@ -42,7 +42,22 @@ const PdfDocument = ({ invoicedata }) => {
                 <InvoiceThankYouMsg />
             </Page>
         </Document>
-    );
-}
+    );}
+    // else{
+    // return (
+    //     <Document>
+    //         <Page size="A4" style={styles.page} >
+    //             <Image style={styles.logo} src ={logo}/>
+    //             <Invoiceheader1 invoice={invoicedata} />
+    //             <BillTo invoice={invoicedata} />
+    //             <InvoiceTitle title={'Rechnung'} />
+    //             <InvoiceNo invoice={invoicedata} />
+    //             <InvoiceMonthDetails invoice={invoicedata} />
+    //             <InvoiceItemsTable invoice={invoicedata} />
+    //             <InvoiceThankYouMsg />
+    //         </Page>
+    //     </Document>
+    // );
+
 
 export default PdfDocument;
