@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import './App.css';
 import PdfDocument from './generateInvoice/Invoice';
+import PdfDocument2 from './generateInvoiceWithDrivers/Invoice';
 import moment from "moment";
 import logo from "./assets/logo.png";
 import { useNavigate } from 'react-router-dom'
@@ -376,7 +377,8 @@ const getExistingPrices = async () => {
             }
             return sum;
          }
-         var items = [
+         var items =
+          [
             {
                 sno: "",
                 desc:"",
@@ -431,6 +433,7 @@ const getExistingPrices = async () => {
             }
             else{
                 //console.log("initial prices are " + prices[i])
+                
             var newEntry = 
             {
                 "sno" : " ",
@@ -529,6 +532,42 @@ const getExistingPrices = async () => {
         }
         InvoiceData.items = [...items];
 
+    //     var items2= [
+    //         {
+    //             name: "Slahudeen",
+    //             Platenumber:"AFX691",
+    //             data:[{
+    //                 service:"serviice"
+    //             }],
+    //             image: "jshvbjuhgbvdf",
+    //         },
+    //   ]
+
+        // drivers invoice
+        const InvoiceData2 = {
+            invoice_no: rnumber,
+           fullname: customer,
+           address: street,
+           address2: postcode,
+           trans_date: finaldate,
+           
+           items: [
+            {
+                name: "Slahudeen Rasheed",
+                date: "2023-03-01",
+                platenumber:"AFX691",
+                services: "Transporterbis3_5t\nInnen_ReinigungAuflieger_LadeflächemitSeitenwänden",
+                image: "jshvbjuhgbvdf",
+            },
+            {
+                name: "Slahudeen",
+                date: "2023-03-01",
+                platenumber:"AFX691",
+                services: "Transporterbis3_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\n",
+                image: "jshvbjuhgbvdf",
+            },
+      ]
+       }
 
   return(
     
@@ -591,6 +630,23 @@ const getExistingPrices = async () => {
             loading ? "Loading..." : "Download Invoice"
           }
         </PDFDownloadLink>
+        
+         </div>
+
+         <PDFViewer width={800} height={1000} showToolbar={false}>
+        <PdfDocument2 invoicedata={InvoiceData2} />
+      </PDFViewer>
+
+      <div className='download-link'>
+        <PDFDownloadLink
+          document={<PdfDocument2 invoicedata={InvoiceData2} />}
+          fileName={fileName}
+        >
+          {({ blob, url, loading, error }) =>
+            loading ? "Loading..." : "Download Invoice"
+          }
+        </PDFDownloadLink>
+        
          </div>
         
       </form>
