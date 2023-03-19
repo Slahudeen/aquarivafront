@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#3778C2',
         position:'relative',
+        fontSize:8
         // top: 100,
         // bottom: 200
     },

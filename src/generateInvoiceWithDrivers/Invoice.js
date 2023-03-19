@@ -34,7 +34,7 @@ const PdfDocument = ({ invoicedata }) => {
                 <Image style={styles.logo} src ={logo}/>
                 <Invoiceheader1 invoice={invoicedata} />
                 <BillTo invoice={invoicedata} />
-                <InvoiceTitle title={'Rechnung'} />
+                <InvoiceTitle title={'Lieferschein'} />
                 <InvoiceNo invoice={invoicedata} />
                 <InvoiceMonthDetails invoice={invoicedata} />
                 <InvoiceItemsTable invoice={invoicedata} />

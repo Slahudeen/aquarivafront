@@ -10,7 +10,18 @@ import moment from "moment";
 import logo from "./assets/logo.png";
 import { useNavigate } from 'react-router-dom'
 
+export async function getsigns(variable, newToken) {
+    const getSigns = await fetch("https://rattle-innate-roar.glitch.me/file/" + variable, {
+    method: 'GET',
+    headers: new Headers({
+        'Accept': 'application/json',
+         'Content-Type': 'application/json',
+         "Authorization": "Bearer " + newToken
+    })
 
+})
+return await getSigns.json().img.data;
+}
 
 export default function Dashboard() {
    
@@ -20,7 +31,10 @@ export default function Dashboard() {
     const [noRecord, setNoRecord] = useState();
     // const [records, setRecords] = useState();
     const [searchTextCompany, setSearchTextCompany] = useState("");
-    const [records, setRecords] = useState([]);
+    const [records, setRecords] = useState([{
+        "date":" ",
+    },
+    ]);
     const [counter, setCounter] = useState([0]);
     const [searchTextFrom, setSearchTextFrom] = useState("");
     const [customer, setCustomer] = useState("");
@@ -31,11 +45,24 @@ export default function Dashboard() {
     const [priceData, setPriceData] = useState([0]);
     const [postcode, setPostcode] = useState(" ");
     const [rnumber, setrnumber] = useState(" ");
+    //const [images, setImages] = useState("")
     
     const [year, setyear] = useState(moment().format("YYYY"));
     const [longMonth, setlongMonth] = useState(moment().format("MMMM"));
     const navigate = useNavigate();
     var prices = new Array(29).fill("0");
+    const driverdata = [];
+    const [respo,setrespo]=useState("");
+    const [services,setservices]=useState([]);
+    const [images,setimages]=useState([[
+        {
+            'img': {
+                'data': ''
+            },
+            'name': ''
+
+        }
+    ]]);
     const [loginError, setLoginError] = useState("")
     const [discount, setdiscount] = useState(0)
     const getFormattedPrice = (price) => `${price.toFixed(2)} €`;
@@ -75,6 +102,7 @@ export default function Dashboard() {
 
     const [searchTextTo, setSearchTextTo] = useState("");
     const fileName = searchTextCompany + ".pdf";
+    const fileName2 = searchTextCompany + "_DriversData.pdf";
     const [token, setToken] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("token"));
     const initialValue = JSON.stringify(saved);
@@ -83,7 +111,7 @@ export default function Dashboard() {
 let newToken = token.split(':"')[1];
 newToken = newToken.split('"')[0];
 const getExistingPrices = async () => {
-    fetch("http://localhost:3000/prices", {
+    fetch("https://rattle-innate-roar.glitch.me/prices", {
         method: 'GET',
         headers: new Headers({
             'Accept': 'application/json',
@@ -104,16 +132,18 @@ const getExistingPrices = async () => {
         });
         
  }
+ 
 
  console.log(priceData)
     const handleSearchSubmit = async e => {
         e.preventDefault();
+        // getimages();
         // getExistingPrices();
         // console.log(prices.PlaneSpezialab8m);
     
      
         
-        const getCustomer = await fetch("http://localhost:3000/companyvehicle/" + searchTextFrom + "/" + searchTextTo + "/" + searchTextCompany, {
+        const getCustomer = await fetch("https://rattle-innate-roar.glitch.me/companyvehicle/" + searchTextFrom + "/" + searchTextTo + "/" + searchTextCompany, {
                 method: 'GET',
                 headers: new Headers({
                     'Accept': 'application/json',
@@ -123,13 +153,16 @@ const getExistingPrices = async () => {
             }).then(async response => await response.json())
                 .then(data => {
                     
+                    
                     console.log(JSON.stringify(data) )
                     if(JSON.stringify(data) === "[]"){
                         setNoRecord("No record found 😢");
                         setTimeout(function(){ setNoRecord(" "); },2000);
                     }
                     if(JSON.stringify(data) !== "[]"){
+                        
                         setRecords(data);
+                        setrespo(data)
                         setCustomer(data[0].Kunde)
                         setStreat(data[0].StraßeNr)
                         setPostcode(data[0].PLZOrt)
@@ -340,12 +373,294 @@ const getExistingPrices = async () => {
                                 trueCounter(Hebe_bühne),trueCounter(InnenReinigung),
                                 trueCounter(SpezialReinigungmitSäure)])
 
+// drivers data for invoice
+
+// let servicesused = new Array(data.length).fill("");
+//                                 for(let i =0;i<data.length;i++){
+//                                     if(Transporterbis3_5t[i]){
+//                                         servicesused[i] = servicesused[i] + "Transporter bis 3,5 t,"
+//                                     }
+//                                     if(LKWbis7_5t[i]){
+//                                         servicesused[i] = servicesused[i] + "LKW bis 7,5 t,"
+//                                     }
+//                                     if(LKWab7_5t[i]){
+//                                         servicesused[i] = servicesused[i] + "LKW ab 7,5 t,"
+//                                     }
+//                                     if(SZMsolo[i]){
+//                                         servicesused[i] = servicesused[i] + "SZM solo,"
+//                                     }
+//                                     if(SZMsolomitchassis[i]){
+//                                         servicesused[i] = servicesused[i] + "SZM solo mit chassis,"
+//                                     }
+//                                     if(AufliegerSolo[i]){
+//                                         servicesused[i] = servicesused[i] + "Auflieger Solo,"
+//                                     }
+//                                     if(SZMHänger_zug[i]){
+//                                         servicesused[i] = servicesused[i] + "SZM Hänger-zug,"
+//                                     }
+//                                     if(SZM_Auflieger[i]){
+//                                         servicesused[i] = servicesused[i] + "SZM+Auflieger,"
+//                                     }
+//                                     if(PlaneSpezialbis8m[i]){
+//                                         servicesused[i] = servicesused[i] + "Plane Spezial bis 8 m,"
+//                                     }
+//                                     if(PlaneSpezialab8m[i]){
+//                                         servicesused[i] = servicesused[i] + "Plane Spezial ab 8 m,"
+//                                     }
+//                                     if(WBContainerChassis3Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "W.B & Container Chassis 3 Achser,"
+//                                     }
+//                                     if(WBContainerChassis5Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "W.B & Container Chassis 5 Achser,"
+//                                     }
+//                                     if(Tankfahrzeugbis3Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Tankfahrzeug bis 3 Achser,"
+//                                     }
+//                                     if(Tankfahrzeug5Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Tankfahrzeug 5 Achser,"
+//                                     }
+//                                     if(Kipperbis3Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Kipper bis 3 Achser,"
+//                                     }
+//                                     if(Kipper5Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Kipper 5 Achser,"
+//                                     }
+//                                     if(AbrollerAbsetzer3Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Abroller & Absetzer 3 Achser,"
+//                                     }
+//                                     if(AbrollerAbsetzerbis3AchsermitSäure[i]){
+//                                         servicesused[i] = servicesused[i] + "Abroller & Absetzer bis 3 Achser mit Säure,"
+//                                     }
+//                                     if(AbrollerAbsetzer5Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Abroller & Absetzer 5 Achser,"
+//                                     }
+//                                     if(AbrollerAbsetzer5AchsermitSäure[i]){
+//                                         servicesused[i] = servicesused[i] + "Abroller & Absetzer 5 Achser mit Säure,"
+//                                     }
+//                                     if(Müllfahrzeugebis3Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Müllfahrzeuge bis 3 Achser,"
+//                                     }
+//                                     if(StrakezVerschmutzungbis3Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Strake zVerschmutzung bis 3 Achser,"
+//                                     }
+//                                     if(StarkeVerschmutzung5Achser[i]){
+//                                         servicesused[i] = servicesused[i] + "Starke Verschmutzung 5 Achser,"
+//                                     }
+//                                     if(Innen_ReinigungAuflieger_LadeflächemitSeitenwänden[i]){
+//                                         servicesused[i] = servicesused[i] + "Innen-Reinigung Auflieger-Ladefläche mit Seitenwänden(ohne Dach),"
+//                                     }
+//                                     if(Tankspezial[i]!='0'){
+//                                         servicesused[i] = servicesused[i] + "Tank spezial*" + Tankspezial[i] + ","
+//                                     }
+//                                     if(Felgespezial[i]!='0'){
+//                                         servicesused[i] = servicesused[i] + "Felge spezial*" + Felgespezial[i] + ","
+//                                     }
+//                                     if(Hebe_bühne[i]){
+//                                         servicesused[i] = servicesused[i] + "Hebe-bühne,"
+//                                     }
+//                                     if(InnenReinigung[i]){
+//                                         servicesused[i] = servicesused[i] + "Innen Reinigung,"
+//                                     }
+//                                     if(SpezialReinigungmitSäure[i]){
+//                                         servicesused[i] = servicesused[i] + "Spezial Reinigung mit Säure,"
+//                                     }
+                                    
+//                                     //driverdata.push
+//                                 }
+//                                 console.log("services used are " + servicesused[0])
+//                                 for(let i = 0; i<data.length;i++){
+//                                     console.log("yolo")
+//                                     // var de = []
+//                                     // de.push(data[i].FahrerName)
+//                                     // de.push(data[i].date)
+//                                     // de.push(data[i].FahrerName)
+//                                     // de.push(data[i].FahrerName)
+//                                     // de.push(data[i].FahrerName)
+//                                     driverdata.push([data[i].FahrerName, data[i].date, data[i].Kennzeichen, data[i].KennzeichenAnhängerAuflieger, servicesused[i]])
+
+//                                 }
+                                // console.log("driver data is " + driverdata[0])
+
+                                let servicesused = new Array(data.length).fill("");
+                                for(let i =0;i<data.length;i++){
+                                    if(Transporterbis3_5t[i]){
+                                        servicesused[i] = servicesused[i] + "Transporter bis 3,5 t,"
+                                    }
+                                    if(LKWbis7_5t[i]){
+                                        servicesused[i] = servicesused[i] + "LKW bis 7,5 t,"
+                                    }
+                                    if(LKWab7_5t[i]){
+                                        servicesused[i] = servicesused[i] + "LKW ab 7,5 t,"
+                                    }
+                                    if(SZMsolo[i]){
+                                        servicesused[i] = servicesused[i] + "SZM solo,"
+                                    }
+                                    if(SZMsolomitchassis[i]){
+                                        servicesused[i] = servicesused[i] + "SZM solo mit chassis,"
+                                    }
+                                    if(AufliegerSolo[i]){
+                                        servicesused[i] = servicesused[i] + "Auflieger Solo,"
+                                    }
+                                    if(SZMHänger_zug[i]){
+                                        servicesused[i] = servicesused[i] + "SZM Hänger-zug,"
+                                    }
+                                    if(SZM_Auflieger[i]){
+                                        servicesused[i] = servicesused[i] + "SZM+Auflieger,"
+                                    }
+                                    if(PlaneSpezialbis8m[i]){
+                                        servicesused[i] = servicesused[i] + "Plane Spezial bis 8 m,"
+                                    }
+                                    if(PlaneSpezialab8m[i]){
+                                        servicesused[i] = servicesused[i] + "Plane Spezial ab 8 m,"
+                                    }
+                                    if(WBContainerChassis3Achser[i]){
+                                        servicesused[i] = servicesused[i] + "W.B & Container Chassis 3 Achser,"
+                                    }
+                                    if(WBContainerChassis5Achser[i]){
+                                        servicesused[i] = servicesused[i] + "W.B & Container Chassis 5 Achser,"
+                                    }
+                                    if(Tankfahrzeugbis3Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Tankfahrzeug bis 3 Achser,"
+                                    }
+                                    if(Tankfahrzeug5Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Tankfahrzeug 5 Achser,"
+                                    }
+                                    if(Kipperbis3Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Kipper bis 3 Achser,"
+                                    }
+                                    if(Kipper5Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Kipper 5 Achser,"
+                                    }
+                                    if(AbrollerAbsetzer3Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Abroller & Absetzer 3 Achser,"
+                                    }
+                                    if(AbrollerAbsetzerbis3AchsermitSäure[i]){
+                                        servicesused[i] = servicesused[i] + "Abroller & Absetzer bis 3 Achser mit Säure,"
+                                    }
+                                    if(AbrollerAbsetzer5Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Abroller & Absetzer 5 Achser,"
+                                    }
+                                    if(AbrollerAbsetzer5AchsermitSäure[i]){
+                                        servicesused[i] = servicesused[i] + "Abroller & Absetzer 5 Achser mit Säure,"
+                                    }
+                                    if(Müllfahrzeugebis3Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Müllfahrzeuge bis 3 Achser,"
+                                    }
+                                    if(StrakezVerschmutzungbis3Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Strake zVerschmutzung bis 3 Achser,"
+                                    }
+                                    if(StarkeVerschmutzung5Achser[i]){
+                                        servicesused[i] = servicesused[i] + "Starke Verschmutzung 5 Achser,"
+                                    }
+                                    if(Innen_ReinigungAuflieger_LadeflächemitSeitenwänden[i]){
+                                        servicesused[i] = servicesused[i] + "Innen-Reinigung Auflieger-Ladefläche mit Seitenwänden(ohne Dach),"
+                                    }
+                                    if(Tankspezial[i]!='0'){
+                                        servicesused[i] = servicesused[i] + "Tank spezial*" + Tankspezial[i] + ","
+                                    }
+                                    if(Felgespezial[i]!='0'){
+                                        servicesused[i] = servicesused[i] + "Felge spezial*" + Felgespezial[i] + ","
+                                    }
+                                    if(Hebe_bühne[i]){
+                                        servicesused[i] = servicesused[i] + "Hebe-bühne,"
+                                    }
+                                    if(InnenReinigung[i]){
+                                        servicesused[i] = servicesused[i] + "Innen Reinigung,"
+                                    }
+                                    if(SpezialReinigungmitSäure[i]){
+                                        servicesused[i] = servicesused[i] + "Spezial Reinigung mit Säure,"
+                                    }
+                                    
+                                    //driverdata.push
+                                }
+                                console.log("services used are " + servicesused[0])
+                                setservices(servicesused)
+                                    
                         
                     }
                   
                 })
+                // var runtimeIamges = []
+                // for(let i =0;i<records.length;i++){
+                                        
+                //     // console.log(setimages( getsigns((data[i].Kennzeichen)+"2023031709", newToken)))
+                //     //console.log("dsfghbd " +getsigns((records[i].Kennzeichen)+"2023031709", newToken))
+                //     const getSigns = await fetch("https://rattle-innate-roar.glitch.me/file/" + (records[i].Kennzeichen)+"2023031709", {
+                //         method: 'GET',
+                //         headers: new Headers({
+                //             'Accept': 'application/json',
+                //              'Content-Type': 'application/json',
+                //              "Authorization": "Bearer " + newToken
+                //         })
+                    
+                //     }).then(async response => await response.json())
+                //     .then(data=>{
+                //         //setimages(data)
+                //         runtimeIamges[i] = data;
+                //     })
+                
+                               
+                //             }
+                            
+                            // console.log("The first image is =" + runtimeIamges)
+                            // setimages(runtimeIamges)
+
+                            // console.log("The records are =" + records[0].FahrerName)
+                            // console.log("The first image is =" + images[0][0].img.data)
+                            // console.log("The first image is =" + images[1][0].img.data)
+                            // console.log("The second image is =" + images[1].img.data)
             
+                            getimages();
          }
+         const getimages = async e => {
+            //e.preventDefault();
+         var runtimeIamges = [[
+            {
+                'img': {
+                    'data': ''
+                },
+                'name': ''
+    
+            }
+        ]]
+         console.log("ggggggg="+records.length)
+         for(let i =0;i<records.length;i++){
+                                 
+             // console.log(setimages( getsigns((data[i].Kennzeichen)+"2023031709", newToken)))
+             //console.log("dsfghbd " +getsigns((records[i].Kennzeichen)+"2023031709", newToken))c
+             console.log("ggggggg="+records[i].date + " ++++++ " + i)
+             if(records[i].date!=" "){
+             var tes=(records[i].date.toString().split("T")[0])
+                                    tes= tes.replace("-","")
+                                    tes= tes.replace("-","")
+                                    
+                console.log(tes)
+             const getSigns = await fetch("https://rattle-innate-roar.glitch.me/file/" + (records[i].Kennzeichen)+ tes, {
+                 method: 'GET',
+                 headers: new Headers({
+                     'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      "Authorization": "Bearer " + newToken
+                 })
+             
+             }).then(async response => await response.json())
+             .then(data=>{
+                 //setimages(data)
+                 runtimeIamges[i] = data;
+             })
+         
+            }  
+                     }
+                     console.log("runt " + runtimeIamges)
+                     setimages(runtimeIamges)
+                    }
+                    // useEffect(() => {
+                    // getimages();
+                    // },[])
+                    // console.log(images)
+                    // console.log("The records are =" + records[0].FahrerName)
+                            console.log("The first image is =" + images[0][0].img.data)
+                            // console.log("The first image is =" + images[1][0].img.data)
 
          const servicesNames = ["Transporter bis 3,5 t", "LKW bis 7,5 t", "LKW ab 7,5 t", "SZM solo",
          "SZM solo mit chassis", "Auflieger Solo", "SZM Hänger-zug", "SZM+Auflieger",
@@ -532,20 +847,74 @@ const getExistingPrices = async () => {
         }
         InvoiceData.items = [...items];
 
-    //     var items2= [
-    //         {
-    //             name: "Slahudeen",
-    //             Platenumber:"AFX691",
-    //             data:[{
-    //                 service:"serviice"
-    //             }],
-    //             image: "jshvbjuhgbvdf",
-    //         },
-    //   ]
-
         // drivers invoice
+       console.log("services are " + services[1])
+                                for(let i = 0; i<respo.length;i++){
+                                    console.log("yolo")
+                                    // var de = []
+                                    // de.push(data[i].FahrerName)
+                                    // de.push(data[i].date)
+                                    // de.push(data[i].FahrerName)
+                                    // de.push(data[i].FahrerName)
+                                    // de.push(data[i].FahrerName)
+                                    driverdata.push([respo[i].FahrerName, respo[i].date, respo[i].Kennzeichen, respo[i].KennzeichenAnhängerAuflieger, services[i]])
+
+                                }
+                                console.log("driver data is " + driverdata[0])
+                                var items2 =  [
+                                    {
+                                        name: "",
+                                        date: "",
+                                        platenumber:"",
+                                        trailorplatenumber:"",
+                                        services: "",
+                                        image: "  ",
+                                    }
+                                ]
+                                //driverdata[i][1].split(",")[1].split("T")[1].split(":")[0]
+                
+//                                 useEffect(() => {
+// for(let i =0;i<respo.length;i++){
+    
+//     console.log(setimages( getsigns(driverdata[i][1], newToken)))
+     
+
+//                }
+//             }, [])
+console.log(images.length)
+if(images.length>1){
+                                for(let i =0;i<respo.length;i++){
+                                    var newEntry = 
+                                    {
+                                        "name" : driverdata[i][0],
+                                        "date" : (driverdata[i].toString().split(",")[1].split("T")[0]), 
+                                        "platenumber" :driverdata[i][2],
+                                        "trailorplatenumber" : driverdata[i][3],
+                                        "services" : driverdata[i][4],
+                                        "image" : images[i][0].img.data
+                                    };
+                        
+                        
+                                    items2.push(newEntry);
+                                }
+                            }
+                            else if(images.length == 1 && driverdata[0]!=undefined){
+                                var newEntry = 
+                                    {
+                                        "name" : driverdata[0][0],
+                                        "date" : driverdata[0][1], 
+                                        "platenumber" :driverdata[0][2],
+                                        "trailorplatenumber" : driverdata[0][3],
+                                        "services" : driverdata[0][4],
+                                        "image" : images[0][0].img.data
+                                    };
+                        
+                        
+                                    items2.push(newEntry);
+                            }
+                                
+
         const InvoiceData2 = {
-            invoice_no: rnumber,
            fullname: customer,
            address: street,
            address2: postcode,
@@ -553,21 +922,30 @@ const getExistingPrices = async () => {
            
            items: [
             {
-                name: "Slahudeen Rasheed",
-                date: "2023-03-01",
-                platenumber:"AFX691",
-                services: "Transporterbis3_5t\nInnen_ReinigungAuflieger_LadeflächemitSeitenwänden",
-                image: "jshvbjuhgbvdf",
-            },
-            {
-                name: "Slahudeen",
-                date: "2023-03-01",
-                platenumber:"AFX691",
-                services: "Transporterbis3_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\nLKWab7_5t\n",
-                image: "jshvbjuhgbvdf",
-            },
+            }
       ]
        }
+       var newitems = [{
+        name: " ",
+        date: " ",
+        platenumber:" ",
+        trailorplatenumber:" ",
+        services: " ",
+        image: "  ",
+    }]
+
+       for(let i =1;i<items2.length;i++){
+
+        // newitems[i-1].name = items2[i].name
+        // newitems[i-1].date = items2[i].date
+        // newitems[i-1].platenumber = items2[i].platenumber
+        // newitems[i-1].trailorplatenumber = items2[i].trailorplatenumber
+        // newitems[i-1].services = items2[i].services
+        // newitems[i-1].image = items2[i].image
+        newitems[i-1] = items2[i]
+       }
+       InvoiceData2.items = [...newitems];
+       console.log("items are = " + newitems)
 
   return(
     
@@ -577,9 +955,9 @@ const getExistingPrices = async () => {
           <div className='container2'>
           <img className="logo" src ={logo}/>
           <div style={{"margin-top":"60px"}}>
-          <input type="text" placeholder='Geben Sie den Firmennamen ein' onChange={e => setSearchTextCompany(e.target.value)}/><br/>
-          <input type="text" placeholder='Aus YYYY-MM-DD' onChange={e => setSearchTextFrom(e.target.value)}/><br/>
-          <input type="text" placeholder='Zu YYYY-MM-DD' onChange={e => setSearchTextTo(e.target.value)}/><br/>
+          <input type="text" placeholder='Geben Sie den Firmennamen ein' onChange={e => setSearchTextCompany(e.target.value)} required/><br/>
+          <input type="text" placeholder='Aus YYYY-MM-DD' onChange={e => setSearchTextFrom(e.target.value)} required/><br/>
+          <input type="text" placeholder='Zu YYYY-MM-DD' onChange={e => setSearchTextTo(e.target.value)} required/><br/>
           <input type="text" placeholder='Rabatt' onChange={e => setdiscount(e.target.value)} /><br/>
           <input type="text" placeholder='Jahr' onChange={e => setyear(e.target.value)}/><br/>
           <input type="text" placeholder='Monat' onChange={e => setlongMonth(e.target.value)}/><br/>
@@ -588,6 +966,7 @@ const getExistingPrices = async () => {
           <input type="text" placeholder='Eingangstag' onChange={e => setrdate(e.target.value)} /><br/>
           <input type="text" placeholder='Rechnungs-Nr' onChange={e => setrnumber(e.target.value)} /><br/>
           <button className='buttonmargin search' type="submit">Suche</button>
+          <button  type="submit" >Zeichensuche</button>
       <p style={{"color":"#9B0000"}}>{noRecord}</p>
       <div >
       <table id="customers" >
@@ -640,7 +1019,7 @@ const getExistingPrices = async () => {
       <div className='download-link'>
         <PDFDownloadLink
           document={<PdfDocument2 invoicedata={InvoiceData2} />}
-          fileName={fileName}
+          fileName={fileName2}
         >
           {({ blob, url, loading, error }) =>
             loading ? "Loading..." : "Download Invoice"

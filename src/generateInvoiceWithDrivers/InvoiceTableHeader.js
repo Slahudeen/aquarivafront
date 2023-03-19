@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         color: '#fff',
         borderBottomWidth: 1,
         alignItems: 'center',
-        height: 24,
+        height: 30,
         textAlign: 'center',
         fontStyle: 'bold',
         flexGrow: 1,
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         borderRightWidth: 1,
     },
     description: {
-        width: '30%',
+        width: '25%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },
@@ -36,16 +36,19 @@ const styles = StyleSheet.create({
         borderRightWidth: 1,
     },
     remarks: {
-        width: '40%'
+        width: '30%',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
     },
 });
 
 const InvoiceTableHeader = () => (
     <View style={styles.container}>
     <Text style={styles.date}>Datum</Text>
-        <Text style={styles.description}>Fahrer Name</Text>
         <Text style={styles.qty}>Kennzeichen</Text>
         <Text style={styles.rate}>Dienstleistungen</Text>
+        <Text style={styles.qty}>Kennzeichen Anhänger/Auflieger</Text>
+        <Text style={styles.description}>Fahrer Name</Text>
         <Text style={styles.remarks}>Unterschrift</Text>
     </View>
 );

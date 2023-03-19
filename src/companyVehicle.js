@@ -82,7 +82,7 @@ newToken = newToken.split('"')[0];
       
  async function addRecord(item, token){
     
-    let result = await fetch("http://localhost:3000/companyvehicle", {
+    let result = await fetch("https://rattle-innate-roar.glitch.me/companyvehicle", {
       method: 'POST',
       headers: {
         "content-Type": "application/json",

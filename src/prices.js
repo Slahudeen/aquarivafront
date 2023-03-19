@@ -67,7 +67,7 @@ useEffect(() => {
     getExistingPrices();
  }, []);
   const getExistingPrices = async () => {
-    fetch("http://localhost:3000/prices", {
+    fetch("https://rattle-innate-roar.glitch.me/prices", {
         method: 'GET',
         headers: new Headers({
             'Accept': 'application/json',
@@ -115,7 +115,7 @@ useEffect(() => {
 
  async function updatePrices(item, token){
     
-    let result = await fetch("http://localhost:3000/prices", {
+    let result = await fetch("https://rattle-innate-roar.glitch.me/prices", {
       method: 'POST',
       headers: {
         "content-Type": "application/json",

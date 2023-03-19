@@ -67,7 +67,7 @@ export default function Dashboard () {
   // let newToken = token.split(':"')[1];
   // newToken = newToken.split('"')[0];
   //   const uploadImageAPI = async () => {
-  //     fetch("http://localhost:3000/upload", {
+  //     fetch("https://rattle-innate-roar.glitch.me/upload", {
   //         method: 'Post',
   //         headers: new Headers({
   //             'Accept': 'application/json',

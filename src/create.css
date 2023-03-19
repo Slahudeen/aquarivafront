@@ -121,6 +121,7 @@ input[type=password] {
     padding: 14px 20px;
     /* margin: 62px 0; */
     margin-top: 62px;
+    margin-left: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;

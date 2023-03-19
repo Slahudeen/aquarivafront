@@ -44,7 +44,7 @@ export default function Signature() {
   newToken = newToken.split('"')[0];
 
     const uploadImageAPI = async () => {
-      fetch("http://localhost:3000/upload", {
+      fetch("https://rattle-innate-roar.glitch.me/upload", {
           method: 'Post',
           headers: new Headers({
               'Accept': 'application/json',
@@ -52,7 +52,7 @@ export default function Signature() {
                "Authorization": "Bearer " + newToken
           }),
           body: JSON.stringify({
-            name : unique + moment().format("DDMMYYYYhh"),
+            name : unique + moment().format("YYYYMMDD"),
             desc : 'test',
             img : data
           })
