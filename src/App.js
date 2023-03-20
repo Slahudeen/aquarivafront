@@ -5,7 +5,6 @@ import Dashboard from './dashboard';
 import Login from './login';
 import useToken from './useToken';
 import Create from './create';
-import Search from './search';
 import Invoice from './invoice';
 import InvoiceReminder from './invoiceReminder';
 import LetterHead from './letterHead';
