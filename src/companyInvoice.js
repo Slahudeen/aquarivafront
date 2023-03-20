@@ -68,7 +68,7 @@ export default function Dashboard() {
     const getFormattedPrice = (price) => `${price.toFixed(2)} €`;
     // prices[9] = "";
     const [responseLength, setResponseLength] = useState(0);
-    console.log("the lkength is " + responseLength);
+    // console.log("the lkength is " + responseLength);
     
         var Transporterbis3_5t  = new Array(responseLength).fill(false);
         var LKWbis7_5t  = new Array(responseLength).fill(false);
@@ -134,7 +134,7 @@ const getExistingPrices = async () => {
  }
  
 
- console.log(priceData)
+//  console.log(priceData)
     const handleSearchSubmit = async e => {
         e.preventDefault();
         // getimages();
@@ -154,7 +154,7 @@ const getExistingPrices = async () => {
                 .then(data => {
                     
                     
-                    console.log(JSON.stringify(data) )
+                    // console.log(JSON.stringify(data) )
                     if(JSON.stringify(data) === "[]"){
                         setNoRecord("No record found 😢");
                         setTimeout(function(){ setNoRecord(" "); },2000);
@@ -346,15 +346,15 @@ const getExistingPrices = async () => {
                             }
 
                         }
-                        console.log(Transporterbis3_5t, LKWbis7_5t, LKWab7_5t, SZMsolo,
-                            SZMsolomitchassis, AufliegerSolo, SZMHänger_zug, SZM_Auflieger,
-                            PlaneSpezialbis8m, PlaneSpezialab8m, WBContainerChassis3Achser,
-                            WBContainerChassis5Achser, Tankfahrzeugbis3Achser, Tankfahrzeug5Achser,
-                            Kipperbis3Achser,Kipper5Achser, AbrollerAbsetzer3Achser, AbrollerAbsetzerbis3AchsermitSäure,
-                            AbrollerAbsetzer5Achser, AbrollerAbsetzer5AchsermitSäure, Müllfahrzeugebis3Achser,
-                            StrakezVerschmutzungbis3Achser, StarkeVerschmutzung5Achser,
-                            Innen_ReinigungAuflieger_LadeflächemitSeitenwänden, Tankspezial,Felgespezial,
-                            Hebe_bühne,InnenReinigung, SpezialReinigungmitSäure);
+                        // console.log(Transporterbis3_5t, LKWbis7_5t, LKWab7_5t, SZMsolo,
+                        //     SZMsolomitchassis, AufliegerSolo, SZMHänger_zug, SZM_Auflieger,
+                        //     PlaneSpezialbis8m, PlaneSpezialab8m, WBContainerChassis3Achser,
+                        //     WBContainerChassis5Achser, Tankfahrzeugbis3Achser, Tankfahrzeug5Achser,
+                        //     Kipperbis3Achser,Kipper5Achser, AbrollerAbsetzer3Achser, AbrollerAbsetzerbis3AchsermitSäure,
+                        //     AbrollerAbsetzer5Achser, AbrollerAbsetzer5AchsermitSäure, Müllfahrzeugebis3Achser,
+                        //     StrakezVerschmutzungbis3Achser, StarkeVerschmutzung5Achser,
+                        //     Innen_ReinigungAuflieger_LadeflächemitSeitenwänden, Tankspezial,Felgespezial,
+                        //     Hebe_bühne,InnenReinigung, SpezialReinigungmitSäure);
                             // console.log(trueCounter(Transporterbis3_5t));
                             // console.log(trueCounter(LKWbis7_5t));
                             setCounter([trueCounter(Transporterbis3_5t),trueCounter(LKWbis7_5t),
@@ -369,9 +369,11 @@ const getExistingPrices = async () => {
                                 trueCounter(AbrollerAbsetzer5Achser),trueCounter(AbrollerAbsetzer5AchsermitSäure),
                                 trueCounter(Müllfahrzeugebis3Achser),trueCounter(StrakezVerschmutzungbis3Achser),
                                 trueCounter(StarkeVerschmutzung5Achser),trueCounter(Innen_ReinigungAuflieger_LadeflächemitSeitenwänden),
-                                trueCounter(Tankspezial),trueCounter(Felgespezial),
+                                countCounter(Tankspezial),countCounter(Felgespezial),
                                 trueCounter(Hebe_bühne),trueCounter(InnenReinigung),
                                 trueCounter(SpezialReinigungmitSäure)])
+
+                                //console.log("The counter isss " + countCounter(Tankspezial) + "hjbhj" + countCounter(Felgespezial))
 
 // drivers data for invoice
 
@@ -573,7 +575,7 @@ const getExistingPrices = async () => {
                                     
                                     //driverdata.push
                                 }
-                                console.log("services used are " + servicesused[0])
+                                // console.log("services used are " + servicesused[0])
                                 setservices(servicesused)
                                     
                         
@@ -623,18 +625,18 @@ const getExistingPrices = async () => {
     
             }
         ]]
-         console.log("ggggggg="+records.length)
+        //  console.log("ggggggg="+records.length)
          for(let i =0;i<records.length;i++){
                                  
              // console.log(setimages( getsigns((data[i].Kennzeichen)+"2023031709", newToken)))
              //console.log("dsfghbd " +getsigns((records[i].Kennzeichen)+"2023031709", newToken))c
-             console.log("ggggggg="+records[i].date + " ++++++ " + i)
+            //  console.log("ggggggg="+records[i].date + " ++++++ " + i)
              if(records[i].date!=" "){
              var tes=(records[i].date.toString().split("T")[0])
                                     tes= tes.replace("-","")
                                     tes= tes.replace("-","")
                                     
-                console.log(tes)
+                // console.log(tes)
              const getSigns = await fetch("https://rattle-innate-roar.glitch.me/file/" + (records[i].Kennzeichen)+ tes, {
                  method: 'GET',
                  headers: new Headers({
@@ -651,7 +653,7 @@ const getExistingPrices = async () => {
          
             }  
                      }
-                     console.log("runt " + runtimeIamges)
+                    //  console.log("runt " + runtimeIamges)
                      setimages(runtimeIamges)
                     }
                     // useEffect(() => {
@@ -659,7 +661,7 @@ const getExistingPrices = async () => {
                     // },[])
                     // console.log(images)
                     // console.log("The records are =" + records[0].FahrerName)
-                            console.log("The first image is =" + images[0][0].img.data)
+                            // console.log("The first image is =" + images[0][0].img.data)
                             // console.log("The first image is =" + images[1][0].img.data)
 
          const servicesNames = ["Transporter bis 3,5 t", "LKW bis 7,5 t", "LKW ab 7,5 t", "SZM solo",
@@ -682,16 +684,34 @@ const getExistingPrices = async () => {
             "Innen_ReinigungAuflieger_LadeflächemitSeitenwänden", "Tankspezial","Felgespezial",
             "Hebe_bühne","InnenReinigung", "SpezialReinigungmitSäure"]
 
-         function trueCounter(variable){
-            let sum = 0;
-            for(let i = 0;i<variable.length;i++){
-                
-                if(variable[i] == true || variable[i] != "0"){
-                    sum = sum + 1;
+            function trueCounter(variable){
+                let sum = 0;
+                for(let i = 0;i<variable.length;i++){
+                    
+                    if(i == 25 || i == 26){
+                        if(variable[i] != "0"){
+                            sum = sum + variable[i];
+                        }
+                    }
+                    else if(variable[i] == true){
+                        sum = sum + 1;
+                    }
+                    
                 }
-            }
-            return sum;
-         }
+                return sum;
+             }
+             function countCounter(variable){
+                let sum = 0;
+                for(let i = 0;i<variable.length;i++){
+                    
+                        if(variable[i] != "0"){
+                            sum = sum + parseInt(variable[i]);
+                        }
+                    
+                    
+                }
+                return sum;
+             }
          var items =
           [
             {
@@ -736,10 +756,10 @@ const getExistingPrices = async () => {
            prices[26]=(priceData.Hebe_bühne);
            prices[27]=(priceData.InnenReinigung);
            prices[28]=(priceData.SpezialReinigungmitSäure);
-        console.log("Prices are = " + prices);
+        // console.log("Prices are = " + prices);
          }
 
-         console.log("Prices are = " + prices);
+        //  console.log("Prices are = " + prices);
          let total = 0;
          for(let i=0;i< 29; i++){
             if(prices[i] == undefined || prices[i] == 0){}
@@ -763,7 +783,7 @@ const getExistingPrices = async () => {
             items.push(newEntry);
         }}
         }
-        console.log("total is = " + total);
+        // console.log("total is = " + total);
         // setTotalPricee(total);
         var newEntry = 
         {
@@ -848,9 +868,9 @@ const getExistingPrices = async () => {
         InvoiceData.items = [...items];
 
         // drivers invoice
-       console.log("services are " + services[1])
+    //    console.log("services are " + services[1])
                                 for(let i = 0; i<respo.length;i++){
-                                    console.log("yolo")
+                                    // console.log("yolo")
                                     // var de = []
                                     // de.push(data[i].FahrerName)
                                     // de.push(data[i].date)
@@ -860,7 +880,7 @@ const getExistingPrices = async () => {
                                     driverdata.push([respo[i].FahrerName, respo[i].date, respo[i].Kennzeichen, respo[i].KennzeichenAnhängerAuflieger, services[i]])
 
                                 }
-                                console.log("driver data is " + driverdata[0])
+                                // console.log("driver data is " + driverdata[0])
                                 var items2 =  [
                                     {
                                         name: "",
@@ -881,7 +901,7 @@ const getExistingPrices = async () => {
 
 //                }
 //             }, [])
-console.log(images.length)
+// console.log(images.length)
 if(images.length>1){
                                 for(let i =0;i<respo.length;i++){
                                     var newEntry = 
@@ -945,7 +965,7 @@ if(images.length>1){
         newitems[i-1] = items2[i]
        }
        InvoiceData2.items = [...newitems];
-       console.log("items are = " + newitems)
+    //    console.log("items are = " + newitems)
 
   return(
     
