@@ -42,11 +42,11 @@ function App () {
      navigate('/aquarivafront/create');
     // setIsLoggedin(false);
   };
-  const search = () => {
-    //localStorage.removeItem('token');
-     navigate('/aquarivafront/search');
-    // setIsLoggedin(false);
-  };
+  // const search = () => {
+  //   //localStorage.removeItem('token');
+  //    navigate('/aquarivafront/search');
+  //   // setIsLoggedin(false);
+  // };
   const companyInvoice = () => {
     //localStorage.removeItem('token');
      navigate('/aquarivafront/companyInvoice');
@@ -93,7 +93,7 @@ function App () {
       <button onClick={dashboard}>Dashboard</button>
       <button onClick={newRecord}>Create</button>
       <button onClick={companyVehicle}>Create Company Vehicle</button>
-      <button onClick={search}>Search</button>
+      {/* <button onClick={search}>Search</button> */}
       <button onClick={companyInvoice}>Company Invoice</button>
       <button onClick={invoice}>Generate Company Invoice</button>
       <button onClick={invoiceReminder}>Invoice Reminder</button>
@@ -113,8 +113,8 @@ function App () {
         </Route>
         <Route exact path="/aquarivafront/createCompanyVehicleInvoice" element={<CompanyVehicle/>}>
         </Route>
-        <Route exact path="/aquarivafront/search" element={<Search/>}>
-        </Route>
+        {/* <Route exact path="/aquarivafront/search" element={<Search/>}>
+        </Route> */}
         <Route exact path="/aquarivafront/companyInvoice" element={<CompanyInvoice/>}>
         </Route>
         <Route exact path="/aquarivafront/generate-invoice" element={<Invoice/>}>
