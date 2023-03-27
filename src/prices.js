@@ -195,120 +195,120 @@ useEffect(() => {
                 
                 <tr>
                 <td>Transporter bis 3,5 t</td>
-                <td><input type="text" placeholder={attr1} onChange={e => setattr1(e.target.value)} required/></td>
+                <td><input type="text" value={attr1} onChange={e => setattr1(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>LKW bis 7,5 t</td>
-                <td><input type="text" placeholder={attr2} onChange={e => setattr2(e.target.value)} required/></td>
+                <td><input type="text" value={attr2} onChange={e => setattr2(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>LKW ab 7,5 t</td>
-                <td><input type="text" placeholder={attr3} onChange={e => setattr3(e.target.value)} required/></td>
+                <td><input type="text" value={attr3} onChange={e => setattr3(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>SZM solo</td>
-                <td><input type="text" placeholder={attr4} onChange={e => setattr4(e.target.value)} required/></td>
+                <td><input type="text" value={attr4} onChange={e => setattr4(e.target.value)} required/></td>
                 </tr>
 
                 <tr>
                     <td>SZM solo mit chassis</td>
-                <td><input type="text" placeholder={attr5} onChange={e => setattr5(e.target.value)} required/></td>
+                <td><input type="text" value={attr5} onChange={e => setattr5(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Auflieger Solo</td>
-                <td><input type="text" placeholder={attr6} onChange={e => setattr6(e.target.value)} required/></td>
+                <td><input type="text" value={attr6} onChange={e => setattr6(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>SZM Hänger-zug</td>
-                <td><input type="text" placeholder={attr7} onChange={e => setattr7(e.target.value)} required/></td>
+                <td><input type="text" value={attr7} onChange={e => setattr7(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>SZM+Auflieger</td>
-                <td><input type="text" placeholder={attr8} onChange={e => setattr8(e.target.value)} required/></td>
+                <td><input type="text" value={attr8} onChange={e => setattr8(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Plane Spezial bis 8 m</td>
-                <td><input type="text" placeholder={attr9} onChange={e => setattr9(e.target.value)} required/></td>
+                <td><input type="text" value={attr9} onChange={e => setattr9(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Plane Spezial ab 8 m</td>
-                <td><input type="text" placeholder={attr10} onChange={e => setattr10(e.target.value)} required/></td>
+                <td><input type="text" value={attr10} onChange={e => setattr10(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>W.B & Container Chassis 3 Achser</td>
-                <td><input type="text" placeholder={attr11} onChange={e => setattr11(e.target.value)} required/></td>
+                <td><input type="text" value={attr11} onChange={e => setattr11(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>W.B & Container Chassis 5 Achser</td>
-                <td><input type="text" placeholder={attr12} onChange={e => setattr12(e.target.value)} required/></td>
+                <td><input type="text" value={attr12} onChange={e => setattr12(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Tankfahrzeug bis 3 Achser</td>
-                <td><input type="text" placeholder={attr13} onChange={e => setattr13(e.target.value)} required/></td>
+                <td><input type="text" value={attr13} onChange={e => setattr13(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Tankfahrzeug 5 Achser</td>
-                <td><input type="text" placeholder={attr14} onChange={e => setattr14(e.target.value)} required/></td>
+                <td><input type="text" value={attr14} onChange={e => setattr14(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Kipper bis 3 Achser</td>
-                <td><input type="text" placeholder={attr15} onChange={e => setattr15(e.target.value)} required/></td>
+                <td><input type="text" value={attr15} onChange={e => setattr15(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Kipper 5 Achser</td>
-                <td><input type="text" placeholder={attr16} onChange={e => setattr16(e.target.value)} required/></td>
+                <td><input type="text" value={attr16} onChange={e => setattr16(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer 3 Achser</td>
-                <td><input type="text" placeholder={attr17} onChange={e => setattr17(e.target.value)} required/></td>
+                <td><input type="text" value={attr17} onChange={e => setattr17(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer bis 3 Achser mit Säure</td>
-                <td><input type="text" placeholder={attr18} onChange={e => setattr18(e.target.value)} required/></td>
+                <td><input type="text" value={attr18} onChange={e => setattr18(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer 5 Achser</td>
-                <td><input type="text" placeholder={attr19} onChange={e => setattr19(e.target.value)} required/></td>
+                <td><input type="text" value={attr19} onChange={e => setattr19(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer 5 Achser mit Säure</td>
-                <td><input type="text" placeholder={attr20} onChange={e => setattr20(e.target.value)} required/></td>
+                <td><input type="text" value={attr20} onChange={e => setattr20(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Müllfahrzeuge bis 3 Achser</td>
-                <td><input type="text" placeholder={attr21} onChange={e => setattr21(e.target.value)} required/></td>
+                <td><input type="text" value={attr21} onChange={e => setattr21(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Strake zVerschmutzung bis 3 Achser</td>
-                <td><input type="text" placeholder={attr22} onChange={e => setattr22(e.target.value)} required/></td>
+                <td><input type="text" value={attr22} onChange={e => setattr22(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Starke Verschmutzung 5 Achser</td>
-                <td><input type="text" placeholder={attr23} onChange={e => setattr23(e.target.value)} required/></td>
+                <td><input type="text" value={attr23} onChange={e => setattr23(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Innen-Reinigung Auflieger-Ladefläche mit Seitenwänden(ohne Dach)</td>
-                <td><input type="text" placeholder={attr24} onChange={e => setattr24(e.target.value)} required/></td>
+                <td><input type="text" value={attr24} onChange={e => setattr24(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Tank spezial</td>
-                    <td><input type="text" placeholder={attr25} onChange={e => setattr25(e.target.value)} required/></td>
+                    <td><input type="text" value={attr25} onChange={e => setattr25(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Felge spezial</td>
-                    <td><input type="text" placeholder={attr26} onChange={e => setattr26(e.target.value)} required/></td>
+                    <td><input type="text" value={attr26} onChange={e => setattr26(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Hebe-bühne</td>
-                <td><input type="text" placeholder={attr27} onChange={e => setattr27(e.target.value)} required/></td>
+                <td><input type="text" value={attr27} onChange={e => setattr27(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Innen Reinigung</td>
-                <td><input type="text" placeholder={attr28} onChange={e => setattr28(e.target.value)} required/></td>
+                <td><input type="text" value={attr28} onChange={e => setattr28(e.target.value)} required/></td>
                 </tr>
                 <tr>
                     <td>Spezial Reinigung mit Säure</td>
-                <td><input type="text" placeholder={attr29} onChange={e => setattr29(e.target.value)} required/></td>
+                <td><input type="text" value={attr29} onChange={e => setattr29(e.target.value)} required/></td>
                 </tr>
                 
                 </table>
