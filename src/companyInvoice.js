@@ -907,7 +907,7 @@ if(images.length>1){
                                     var newEntry = 
                                     {
                                         "name" : driverdata[i][0],
-                                        "date" : (driverdata[i].toString().split(",")[1].split("T")[0]), 
+                                        "date" : (driverdata[i][1].toString().split("T")[0]), 
                                         "platenumber" :driverdata[i][2],
                                         "trailorplatenumber" : driverdata[i][3],
                                         "services" : driverdata[i][4],
@@ -919,10 +919,12 @@ if(images.length>1){
                                 }
                             }
                             else if(images.length == 1 && driverdata[0]!=undefined){
+                                
+                                //console.log("testt" + driverdata[0].toString().split("T")[0])
                                 var newEntry = 
                                     {
                                         "name" : driverdata[0][0],
-                                        "date" : driverdata[0][1], 
+                                        "date" : driverdata[0][1].toString().split("T")[0], 
                                         "platenumber" :driverdata[0][2],
                                         "trailorplatenumber" : driverdata[0][3],
                                         "services" : driverdata[0][4],
