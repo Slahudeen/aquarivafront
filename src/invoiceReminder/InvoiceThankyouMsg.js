@@ -94,7 +94,7 @@ const InvoiceThankYouMsg = ({ invoice }) => (
         <View fixed style={styles.titleContainer}>
         <Text>Sehr geehrte Damen und Herren,</Text>
         <Text> </Text>
-        <Text>bei der Überprüfung unserer Zahlungseingänge haben wir festgestellt, dass folgende Rechnung aus dem Jahr 2022 immer noch nicht von Ihnen beglichen ist.</Text>
+        <Text>bei der Überprüfung unserer Zahlungseingänge haben wir festgestellt, dass folgende Rechnung aus dem Jahr 2023 immer noch nicht von Ihnen beglichen ist.</Text>
         <Text> </Text>
         <Text>Rechnung Nr.:            {invoice.invoice_no}                        vom {invoice.date}</Text>
         <Text> </Text>
