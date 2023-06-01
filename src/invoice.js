@@ -57,9 +57,17 @@ export default function Dashboard() {
     const [interiorcleaning, setinteriorcleaning] = useState(0);
     const current = new Date();
     const [year, setyear] = useState(moment().format("YYYY"));
-    let mo = moment().month();
-    mo = moment().month(mo-1).format("MMMM");
-    const [longMonth, setlongMonth] = useState(mo);
+    const mo = require('moment');
+    let localeData = mo.updateLocale('en', {
+        months: [
+            "Januar", "Februar", "Marz", "April", "Mai", "Juni", "Juli",
+            "August", "September", "Oktober", "November", "Dezember"
+        ]
+    });
+    let m = localeData.months();
+    
+   // m = localeData.month(m-1);
+    const [longMonth, setlongMonth] = useState(m[(moment().month())-1]);
     const [yearReceipt, setyearReceipt] = useState(moment().format("YYYY"));
     const [longMonthReceipt, setlongMonthReceipt] = useState(moment().format("MM"));
     const [dateReceipt, setDateReceipt] = useState(moment().format("DD"));
