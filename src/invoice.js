@@ -52,6 +52,12 @@ export default function Dashboard() {
     const [attr12_1, setattr12_1] = useState("");
     const [attr12_2, setattr12_2] = useState(0);
     const [attr12_3, setattr12_3] = useState(0);
+    const [attr14_1, setattr14_1] = useState("");
+    const [attr14_2, setattr14_2] = useState(0);
+    const [attr14_3, setattr14_3] = useState(0);
+    const [attr15_1, setattr15_1] = useState("");
+    const [attr15_2, setattr15_2] = useState(0);
+    const [attr15_3, setattr15_3] = useState(0);
     const [attr13_1, setattr13_1] = useState(" ");
     const [discount, setdiscount] = useState(0);
     const [interiorcleaning, setinteriorcleaning] = useState(0);
@@ -97,7 +103,7 @@ export default function Dashboard() {
   
       let pri =  (attr1 * 32) + (attr2 * 45) + (attr3 * 55) + (attr4 * 38) + (attr5 * 75) + (attr6 * 69) + (attr7 * interiorcleaning)
       + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
-      + (attr11_2 * attr11_3) + (attr12_2 * attr12_3) + (attr10 * 48) + (attr11 * 48) + (attr12 * 35) 
+      + (attr11_2 * attr11_3) + (attr12_2 * attr12_3)+ (attr14_2 * attr14_3)+ (attr15_2 * attr15_3) + (attr10 * 48) + (attr11 * 48) + (attr12 * 35) 
       + (attr13 * 49) + (attr14 * 100) + (attr15 * 95) + (attr16 * 99) + (attr17 * 69) + (attr18 * 85)
       + (attr19 * 60) + (attr20 * 69) + (attr21 * 70) + (attr22 * 40) + (attr23 * 57) + (attr24 * 127) 
       + (attr25 * 25) + (attr26 * 50) + (attr27 * 80);
@@ -363,36 +369,50 @@ export default function Dashboard() {
                 desc: attr12_1,
                 remarks: " " + getFormattedPrice(attr12_2 * attr12_3).replace(".",","),
             },
+            {
+                sno: 24,
+                qty: attr14_2,
+                rate: getFormattedPrice(Number(attr14_3)).replace(".", ","),
+                desc: attr14_1,
+                remarks: " " + getFormattedPrice(attr14_2 * attr14_3).replace(".",","),
+            },
+            {
+                sno: 25,
+                qty: attr15_2,
+                rate: getFormattedPrice(Number(attr15_3)).replace(".", ","),
+                desc: attr15_1,
+                remarks: " " + getFormattedPrice(attr15_2 * attr15_3).replace(".",","),
+            },
             { 
-            sno: 24,
+            sno: 26,
             qty:" ",
             rate: " ",
             desc: " ",
             remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
             },
             {
-           sno: 25,
+           sno: 27,
            qty:" ",
            rate: " ",
            desc: " ",
            remarks: "Rabatt ("+discount+"%)                                  " + getFormattedPrice(disc).replace(".",",")
              },
              { 
-             sno: 26,
+             sno: 28,
              qty:" ",
              rate: " ",
              desc: " ",
              remarks: "Summe Netto                              " + getFormattedPrice(newPri).replace(".",",")
              },
           {
-            sno: 27,
+            sno: 29,
             qty:" ",
             desc: " ",
             rate: " ",
             remarks: "MwSt. 19 %                                 " + getFormattedPrice(tax).replace(".",",")
         },
         {
-          sno: 28,
+          sno: 30,
           qty:" ",
           desc: " ",
           rate: " ",
@@ -839,6 +859,18 @@ export default function Dashboard() {
                     <td><input type="text" onChange={e => setattr12_2(e.target.value)} /></td>
                     <td><input type="text" onChange={e => setattr12_3(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr12_2 * attr12_3).replace(".",",")}</td>
+                </tr>
+                <tr>
+                    <td><input type="text" onChange={e => setattr14_1(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr14_2(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr14_3(e.target.value)} /></td>
+                    <td>{getFormattedPrice(attr14_2 * attr14_3).replace(".",",")}</td>
+                </tr>
+                <tr>
+                    <td><input type="text" onChange={e => setattr15_1(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr15_2(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr15_3(e.target.value)} /></td>
+                    <td>{getFormattedPrice(attr15_2 * attr15_3).replace(".",",")}</td>
                 </tr>
                 
                 <tr>
