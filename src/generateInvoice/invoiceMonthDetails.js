@@ -30,6 +30,7 @@ const BillTo = ({ invoice }) => (
         <Text style={styles.fontChange2}>{invoice.email}</Text>
         <Text style={styles.fontChange}>{invoice.categoryaddress1}</Text>
         <Text style={styles.fontChange2}>{invoice.categoryaddress2}</Text>
+        <Text style={styles.fontChange2}>{invoice.categoryaddress3}</Text>
     </View>
 );
 

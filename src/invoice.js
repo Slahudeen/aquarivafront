@@ -87,6 +87,7 @@ export default function Dashboard() {
     const [address2, setaddress2] = useState("");
     const [categoryaddress1, setcategoryaddress1] = useState("");
     const [categoryaddress2, setcategoryaddress2] = useState("");
+    const [categoryaddress3, setcategoryaddress3] = useState("");
     const [prices, setPrices]=useState([32,40,50,38,75,60,16.5]);
     const [checkedState, setCheckedState] = useState(
       new Array(prices.length).fill(false)
@@ -540,6 +541,7 @@ export default function Dashboard() {
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
+        categoryaddress3: categoryaddress3,
         trans_date: finaldate,
         items: [
           {
@@ -632,7 +634,7 @@ export default function Dashboard() {
                     <td>Zusätzliches Feld</td>
                     <td><input type="text" onChange={e => setcategoryaddress1(e.target.value)} /></td>
                     <td><input type="text" onChange={e => setcategoryaddress2(e.target.value)} /></td>
-                    <td>--</td>
+                    <td><input type="text" onChange={e => setcategoryaddress3(e.target.value)} /></td>
                 </tr>
                 
                 <tr>
