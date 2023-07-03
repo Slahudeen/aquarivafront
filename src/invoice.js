@@ -99,7 +99,7 @@ export default function Dashboard() {
       .utcOffset('+05:30')
       .format('YYYY-MM-DD')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
     // const fileName = customer + "(" + (date+invoiceno) + ")" +  ".pdf";
-    const fileName = customer + (invoiceno) + ".pdf";
+    const fileName = "Rechnung_" + (invoiceno) + ".pdf";
    
   
       let pri =  (attr1 * 32) + (attr2 * 45) + (attr3 * 55) + (attr4 * 38) + (attr5 * 75) + (attr6 * 69) + (attr7 * interiorcleaning)
