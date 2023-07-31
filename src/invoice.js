@@ -536,7 +536,7 @@ export default function Dashboard() {
         fullname: customer,
         address: address1,
         address2: address2, 
-        //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße " + longMonth + ", " + year,
+        //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + ", " + year,
         phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Juli" + ", " + year,
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
