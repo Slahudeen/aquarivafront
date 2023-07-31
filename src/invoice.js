@@ -541,7 +541,7 @@ export default function Dashboard() {
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
-        categoryaddress3: categoryaddress3,
+        categoryaddress3: categoryaddress3, 
         //trans_date: finaldate,
         trans_date: "01-08-2023",
         items: [
