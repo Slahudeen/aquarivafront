@@ -28,7 +28,7 @@ export default function Dashboard() {
       .utcOffset('+05:30')
       .format('YYYY-MM-DD')).replaceAll(" ", "")).replaceAll(":","")).replaceAll("-","");
     // const fileName = customer + "(" + (date+invoiceno) + ")" +  ".pdf";
-    const fileName = customer + ".pdf";
+    const fileName = "Zahlungserinnerung_" + customer + ".pdf";
     let newAddress = categoryaddress1;
     if(newAddress == ""){
         newAddress = newAddress;
