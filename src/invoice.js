@@ -542,8 +542,8 @@ export default function Dashboard() {
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
         categoryaddress3: categoryaddress3, 
-        trans_date: finaldate,
-        //trans_date: "01-08-2023",
+        // trans_date: finaldate,
+        trans_date: "02-10-2023",
         items: [
           {
               sno: "12",
