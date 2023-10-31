@@ -536,14 +536,14 @@ export default function Dashboard() {
         fullname: customer,
         address: address1,
         address2: address2, 
-        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
-        //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Juli" + ", " + year,
+        //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
+        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Oktober" + ", " + year,
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
         categoryaddress3: categoryaddress3, 
         // trans_date: finaldate,
-        trans_date: "02-10-2023",
+        trans_date: "02-11-2023",
         items: [
           {
               sno: "12",
