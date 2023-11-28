@@ -543,6 +543,11 @@ export default function Dashboard() {
         categoryaddress2: categoryaddress2,
         categoryaddress3: categoryaddress3, 
         // trans_date: finaldate,
+        // trans_date: finaldate,
+        //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
+        // categoryaddress1: newAddress,
+        // categoryaddress2: categoryaddress2,
+        // categoryaddress3: categoryaddress3, 
         trans_date: "02-11-2023",
         items: [
           {
