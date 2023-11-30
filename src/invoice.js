@@ -537,7 +537,7 @@ export default function Dashboard() {
         address: address1,
         address2: address2, 
         //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
-        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Oktober" + ", " + year,
+        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im November" + ", " + year,
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
@@ -548,7 +548,7 @@ export default function Dashboard() {
         // categoryaddress1: newAddress,
         // categoryaddress2: categoryaddress2,
         // categoryaddress3: categoryaddress3, 
-        trans_date: "02-11-2023",
+        trans_date: "01-12-2023",
         items: [
           {
               sno: "12",
