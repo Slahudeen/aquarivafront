@@ -45,6 +45,7 @@ export default function Dashboard() {
     const [attr27, setattr27] = useState(0);
     const [attr28, setattr28] = useState(0);
     const [attr29, setattr29] = useState(0);
+    const [attr30, setattr30] = useState(0);
     const [attr10_1, setattr10_1] = useState("");
     const [attr10_2, setattr10_2] = useState(0);
     const [attr10_3, setattr10_3] = useState(0);
@@ -87,6 +88,7 @@ export default function Dashboard() {
     const [dateReceipt, setDateReceipt] = useState(moment().format("DD"));
     // const [liftingplatform, setliftingplatform] = useState("");
     const [cleanignwithacid, setcleanignwithacid] = useState(0);
+    const [cleanignwithacid5, setcleanignwithacid5] = useState(0);
     const [tankspecial, settankspecial] = useState(0);
     const [rimspecial, setrimspecial] = useState(0);
     const [customer, setcustomer] = useState("");
@@ -111,7 +113,7 @@ export default function Dashboard() {
    
   
       let pri =  (attr1 * 32) + (attr2 * 45) + (attr3 * 55) + (attr4 * 38) + (attr5 * 75) + (attr6 * 69) + (attr7 * 25)
-      + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
+      + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (attr30 * cleanignwithacid5) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
       + (attr11_2 * attr11_3) + (attr12_2 * attr12_3)+ (attr14_2 * attr14_3)+ (attr15_2 * attr15_3) + (attr16_2 * attr16_3)+ (attr17_2 * attr17_3) 
       + (attr10 * 48) + (attr11 * 48) + (attr12 * 35) 
       + (attr13 * 49) + (attr14 * 100) + (attr15 * 95) + (attr16 * 99) + (attr17 * 69) + (attr18 * 85)
@@ -369,88 +371,95 @@ export default function Dashboard() {
                 sno: 31,
                 qty: attr9,
                 rate: getFormattedPrice(Number(cleanignwithacid)).replace(".", ","),
-                desc: "Spezial Reinigung mit Säure",
+                desc: "Spezial Reinigung mit Säure bis 3 Achser",
                 remarks: " " + getFormattedPrice(attr9 * cleanignwithacid).replace(".",","),
             },
             {
                 sno: 32,
+                qty: attr30,
+                rate: getFormattedPrice(Number(cleanignwithacid5)).replace(".", ","),
+                desc: "Spezial Reinigung mit Säure bis 5 Achser",
+                remarks: " " + getFormattedPrice(attr30 * cleanignwithacid5).replace(".",","),
+            },
+            {
+                sno: 33,
                 qty: attr10_2,
                 rate: getFormattedPrice(Number(attr10_3)).replace(".", ","),
                 desc: attr10_1,
                 remarks: " " + getFormattedPrice(attr10_2 * attr10_3).replace(".",","),
             },
             {
-                sno: 33,
+                sno: 34,
                 qty: attr11_2,
                 rate: getFormattedPrice(Number(attr11_3)).replace(".", ","),
                 desc: attr11_1,
                 remarks: " " + getFormattedPrice(attr11_2 * attr11_3).replace(".",","),
             },
             {
-                sno: 34,
+                sno: 35,
                 qty: attr12_2,
                 rate: getFormattedPrice(Number(attr12_3)).replace(".", ","),
                 desc: attr12_1,
                 remarks: " " + getFormattedPrice(attr12_2 * attr12_3).replace(".",","),
             },
             {
-                sno: 35,
+                sno: 36,
                 qty: attr14_2,
                 rate: getFormattedPrice(Number(attr14_3)).replace(".", ","),
                 desc: attr14_1,
                 remarks: " " + getFormattedPrice(attr14_2 * attr14_3).replace(".",","),
             },
             {
-                sno: 36,
+                sno: 37,
                 qty: attr15_2,
                 rate: getFormattedPrice(Number(attr15_3)).replace(".", ","),
                 desc: attr15_1,
                 remarks: " " + getFormattedPrice(attr15_2 * attr15_3).replace(".",","),
             },
             {
-                sno: 37,
+                sno: 38,
                 qty: attr16_2,
                 rate: getFormattedPrice(Number(attr16_3)).replace(".", ","),
                 desc: attr16_1,
                 remarks: " " + getFormattedPrice(attr16_2 * attr16_3).replace(".",","),
             },
             {
-                sno: 38,
+                sno: 39,
                 qty: attr17_2,
                 rate: getFormattedPrice(Number(attr17_3)).replace(".", ","),
                 desc: attr17_1,
                 remarks: " " + getFormattedPrice(attr17_2 * attr17_3).replace(".",","),
             },
             { 
-            sno: 39,
+            sno: 40,
             qty:" ",
             rate: " ",
             desc: " ",
             remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
             },
             {
-           sno: 40,
+           sno: 41,
            qty:" ",
            rate: " ",
            desc: " ",
            remarks: "Rabatt ("+discount+"%)                                  " + getFormattedPrice(disc).replace(".",",")
              },
              { 
-             sno: 41,
+             sno: 42,
              qty:" ",
              rate: " ",
              desc: " ",
              remarks: "Summe Netto                              " + getFormattedPrice(newPri).replace(".",",")
              },
           {
-            sno: 42,
+            sno: 43,
             qty:" ",
             desc: " ",
             rate: " ",
             remarks: "MwSt. 19 %                                 " + getFormattedPrice(tax).replace(".",",")
         },
         {
-          sno: 43,
+          sno: 44,
           qty:" ",
           desc: " ",
           rate: " ",
@@ -896,10 +905,16 @@ export default function Dashboard() {
                     <td>{getFormattedPrice(attr7 * 25).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>Spezial Reinigung mit Säure</td>
+                    <td>Spezial Reinigung mit Säure bis 3 Achser</td>
                 <td><input type="text" onChange={e => setattr9(e.target.value)} /></td>
                     <td><input type="text" onChange={e => setcleanignwithacid(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr9 * cleanignwithacid).replace(".",",")}</td>
+                </tr>
+                <tr>
+                    <td>Spezial Reinigung mit Säure bis 5 Achser</td>
+                <td><input type="text" onChange={e => setattr30(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setcleanignwithacid5(e.target.value)} /></td>
+                    <td>{getFormattedPrice(attr30 * cleanignwithacid5).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td><input type="text" onChange={e => setattr10_1(e.target.value)} /></td>
