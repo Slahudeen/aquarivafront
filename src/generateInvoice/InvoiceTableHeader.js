@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     description: {
-        width: '50%',
+        width: '60%',
         borderRightColor: borderColor,
         borderRightWidth: 1,
     },

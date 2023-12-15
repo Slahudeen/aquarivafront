@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         fontStyle: 'bold',
     },
     description: {
-        width: '50%',
+        width: '60%',
         textAlign: 'left',
         borderRightColor: borderColor,
         borderRightWidth: 1,

@@ -43,6 +43,8 @@ export default function Dashboard() {
     const [attr25, setattr25] = useState(0);
     const [attr26, setattr26] = useState(0);
     const [attr27, setattr27] = useState(0);
+    const [attr28, setattr28] = useState(0);
+    const [attr29, setattr29] = useState(0);
     const [attr10_1, setattr10_1] = useState("");
     const [attr10_2, setattr10_2] = useState(0);
     const [attr10_3, setattr10_3] = useState(0);
@@ -58,6 +60,12 @@ export default function Dashboard() {
     const [attr15_1, setattr15_1] = useState("");
     const [attr15_2, setattr15_2] = useState(0);
     const [attr15_3, setattr15_3] = useState(0);
+    const [attr16_1, setattr16_1] = useState("");
+    const [attr16_2, setattr16_2] = useState(0);
+    const [attr16_3, setattr16_3] = useState(0);
+    const [attr17_1, setattr17_1] = useState("");
+    const [attr17_2, setattr17_2] = useState(0);
+    const [attr17_3, setattr17_3] = useState(0);
     const [attr13_1, setattr13_1] = useState(" ");
     const [discount, setdiscount] = useState(0);
     const [interiorcleaning, setinteriorcleaning] = useState(0);
@@ -102,12 +110,13 @@ export default function Dashboard() {
     const fileName = "Rechnung_" + customer + "_" + (invoiceno) + ".pdf";
    
   
-      let pri =  (attr1 * 32) + (attr2 * 45) + (attr3 * 55) + (attr4 * 38) + (attr5 * 75) + (attr6 * 69) + (attr7 * interiorcleaning)
+      let pri =  (attr1 * 32) + (attr2 * 45) + (attr3 * 55) + (attr4 * 38) + (attr5 * 75) + (attr6 * 69) + (attr7 * 25)
       + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
-      + (attr11_2 * attr11_3) + (attr12_2 * attr12_3)+ (attr14_2 * attr14_3)+ (attr15_2 * attr15_3) + (attr10 * 48) + (attr11 * 48) + (attr12 * 35) 
+      + (attr11_2 * attr11_3) + (attr12_2 * attr12_3)+ (attr14_2 * attr14_3)+ (attr15_2 * attr15_3) + (attr16_2 * attr16_3)+ (attr17_2 * attr17_3) 
+      + (attr10 * 48) + (attr11 * 48) + (attr12 * 35) 
       + (attr13 * 49) + (attr14 * 100) + (attr15 * 95) + (attr16 * 99) + (attr17 * 69) + (attr18 * 85)
-      + (attr19 * 60) + (attr20 * 69) + (attr21 * 70) + (attr22 * 40) + (attr23 * 57) + (attr24 * 127) 
-      + (attr25 * 25) + (attr26 * 50) + (attr27 * 80);
+      + (attr19 * 60) + (attr20 * 69) + (attr21 * 70) + (attr22 * 40) + (attr23 * 57) + (attr24 * 103) 
+      + (attr25 * 25) + (attr26 * 50) + (attr27 * 80) + (attr28 * 57) + (attr29 * 32);
 
       let disc = (pri/100) * discount;
 
@@ -147,27 +156,34 @@ export default function Dashboard() {
         // },
             {
                 sno: 1,
-                qty: attr1,
+                qty: attr29,
                 rate: "32,00 €",
-                desc: "Transporter bis 3,5 t",
-                remarks: " " + getFormattedPrice(attr1 * 32).replace(".",","),
+                desc: "Sprinter",
+                remarks: " " + getFormattedPrice(attr29 * 32).replace(".",","),
             },
             {
                 sno: 2,
-                qty: attr2,
-                rate: "45,00 €",
-                desc: "LKW bis 7,5 t",
-                remarks: " " + getFormattedPrice(attr2 * 45).replace(".",","),
+                qty: attr1,
+                rate: "32,00 €",
+                desc: "Transporter mit Koffer/Plane/Pritsche bis 3,5t",
+                remarks: " " + getFormattedPrice(attr1 * 32).replace(".",","),
             },
             {
                 sno: 3,
-                qty: attr3,
-                rate: "55,00 €",
-                desc: "LKW ab 7,5 t",
-                remarks: " " + getFormattedPrice(attr3 * 55).replace(".",","),
+                qty: attr2,
+                rate: "45,00 €",
+                desc: "LKW mit Koffer/Plane/Pritsche bis 7,5t",
+                remarks: " " + getFormattedPrice(attr2 * 45).replace(".",","),
             },
             {
                 sno: 4,
+                qty: attr3,
+                rate: "55,00 €",
+                desc: "LKW mit Koffer/Plane/Pritsche ab 7,5t",
+                remarks: " " + getFormattedPrice(attr3 * 55).replace(".",","),
+            },
+            {
+                sno: 5,
                 qty: attr4,
                 rate: "38,00 €",
                 desc: "SZM solo",
@@ -175,249 +191,270 @@ export default function Dashboard() {
             },
 
             {
-                sno: 5,
+                sno: 6,
                 qty: attr10,
                 rate: "48,00 €",
                 desc: "SZM solo mit chassis",
                 remarks: " " + getFormattedPrice(attr10 * 48).replace(".",","),
             },
             {
-                sno: 6,
+                sno: 7,
                 qty: attr11,
                 rate: "48,00 €",
                 desc: "Auflieger Solo",
                 remarks: " " + getFormattedPrice(attr11 * 48).replace(".",","),
             },
             {
-                sno: 14,
-                qty: attr5,
-                rate: "75,00 €",
-                desc: "SZM+Hänger-zug",
-                remarks: " " + getFormattedPrice(attr5 * 75).replace(".",","),
-            },
-            {
-                sno: 15,
+                sno: 8,
                 qty: attr6,
                 rate: "69,00 €",
-                desc: "SZM+Auflieger",
+                desc: "Sattelzeug Komplett- Koffer/Plane/Pritsche",
                 remarks: " " + getFormattedPrice(attr6 * 69).replace(".",","),
             },
             {
-                sno: 7,
+                sno: 9,
+                qty: attr5,
+                rate: "75,00 €",
+                desc: "Hängerzeug Komplett- Koffer/Plane/Pritsche",
+                remarks: " " + getFormattedPrice(attr5 * 75).replace(".",","),
+            },
+            {
+                sno: 10,
                 qty: attr12,
                 rate: "35,00 €",
                 desc: "Plane Spezial bis 8 m",
                 remarks: " " + getFormattedPrice(attr12 * 35).replace(".",","),
             },
             {
-                sno: 8,
+                sno: 11,
                 qty: attr13,
                 rate: "49,00 €",
                 desc: "Plane Spezial ab 8 m",
                 remarks: " " + getFormattedPrice(attr13 * 49).replace(".",","),
             },
             {
-                sno: 8,
+                sno: 12,
                 qty: attr19,
                 rate: "60,00 €",
                 desc: "W.B & Container Chassis 3 Achser",
                 remarks: " " + getFormattedPrice(attr19 * 60).replace(".",","),
             },
             {
-                sno: 10,
+                sno: 13,
                 qty: attr15,
                 rate: "95,00 €",
                 desc: "W.B & Container Chassis 5 Achser",
                 remarks: " " + getFormattedPrice(attr15 * 95).replace(".",","),
             },
             {
-                sno: 10,
+                sno: 14,
                 qty: attr20,
                 rate: "69,00 €",
                 desc: "Tankfahrzeug bis 3 Achser",
                 remarks: " " + getFormattedPrice(attr20 * 69).replace(".",","),
             },
             {
-                sno: 9,
+                sno: 15,
                 qty: attr14,
                 rate: "100,00 €",
                 desc: "Tankfahrzeug 5 Achser",
                 remarks: " " + getFormattedPrice(attr14 * 100).replace(".",","),
             },
             {
-                sno: 9,
+                sno: 16,
                 qty: attr21,
                 rate: "70,00 €",
                 desc: "Tankfahrzeug 5 Achser",
                 remarks: " " + getFormattedPrice(attr21 * 70).replace(".",","),
             },
             {
-                sno: 13,
+                sno: 17,
                 qty: attr18,
                 rate: "85,00 €",
                 desc: "Kipper 5 Achser",
                 remarks: " " + getFormattedPrice(attr18 * 85).replace(".",","),
             },
             {
-                sno: 12,
+                sno: 18,
                 qty: attr17,
                 rate: "69,00 €",
                 desc: "Abroller & Absetzer 3 Achser",
                 remarks: " " + getFormattedPrice(attr17 * 69).replace(".",","),
             },
             {
-                sno: 12,
+                sno: 19,
                 qty: attr22,
                 rate: "40,00 €",
                 desc: "Abroller & Absetzer bis 3 Achser mit Säure",
                 remarks: " " + getFormattedPrice(attr22 * 40).replace(".",","),
             },
             {
-                sno: 11,
+                sno: 20,
                 qty: attr16,
                 rate: "99,00 €",
                 desc: "Abroller & Absetzer 5 Achser",
                 remarks: " " + getFormattedPrice(attr16 * 99).replace(".",","),
             },
             {
-                sno: 11,
+                sno: 21,
                 qty: attr23,
                 rate: "57,00 €",
                 desc: "Abroller & Absetzer 5 Achser mit Säure",
                 remarks: " " + getFormattedPrice(attr23 * 57).replace(".",","),
             },
             {
-                sno: 11,
+                sno: 22,
                 qty: attr24,
-                rate: "127,00 €",
+                rate: "103,00 €",
                 desc: "Müllfahrzeuge bis 3 Achser",
-                remarks: " " + getFormattedPrice(attr24 * 127).replace(".",","),
+                remarks: " " + getFormattedPrice(attr24 * 103).replace(".",","),
             },
             {
-                sno: 11,
+                sno: 23,
+                qty: attr28,
+                rate: "57,00 €",
+                desc: "Müllfahrzeuge bis 3 Achser mit Säure",
+                remarks: " " + getFormattedPrice(attr28 * 57).replace(".",","),
+            },
+            {
+                sno: 24,
                 qty: attr25,
                 rate: "25,00 €",
-                desc: "Strake zVerschmutzung bis 3 Achser",
+                desc: "Strake Verschmutzung bis 3 Achser",
                 remarks: " " + getFormattedPrice(attr25 * 25).replace(".",","),
             },
             {
-                sno: 11,
+                sno: 25,
                 qty: attr26,
                 rate: "50,00 €",
                 desc: "Starke Verschmutzung 5 Achser",
                 remarks: " " + getFormattedPrice(attr26 * 50).replace(".",","),
             },
             {
-                sno: 11,
+                sno: 26,
                 qty: attr27,
                 rate: "80,00 €",
                 desc: "Innen-Reinigung Auflieger-Ladefläche mit Seitenwänden(ohne Dach)",
                 remarks: " " + getFormattedPrice(attr27 * 80).replace(".",","),
             },
             {
-                sno: 19,
+                sno: 27,
                 qty: tankspecial,
                 rate: "11,00 €",
                 desc: "Tank spezial",
                 remarks: " " + getFormattedPrice(tankspecial * 11).replace(".",","),
             },
             {
-                sno: 20,
+                sno: 28,
                 qty: rimspecial,
                 rate: "4,00 €",
                 desc: "Felge spezial",
                 remarks: " " + getFormattedPrice(rimspecial * 4).replace(".",","),
             },
             {
-                sno: 16,
+                sno: 29,
                 qty: attr8,
                 rate: "16,50 €",
                 desc: "Hebe-bühne",
                 remarks: " " + getFormattedPrice(attr8 * 16.50).replace(".",","),
             },
             {
-                sno: 17,
+                sno: 30,
                 qty: attr7,
-                rate: getFormattedPrice(Number(interiorcleaning)).replace(".", ","),
-                desc: "Innen Reinigung",
-                remarks: " " + getFormattedPrice(attr7 * interiorcleaning).replace(".",","),
+                rate: "25,00 €",
+                desc: "Reinigung Stapler",
+                remarks: " " + getFormattedPrice(attr7 * 25).replace(".",","),
             },
             {
-                sno: 18,
+                sno: 31,
                 qty: attr9,
                 rate: getFormattedPrice(Number(cleanignwithacid)).replace(".", ","),
                 desc: "Spezial Reinigung mit Säure",
                 remarks: " " + getFormattedPrice(attr9 * cleanignwithacid).replace(".",","),
             },
             {
-                sno: 21,
+                sno: 32,
                 qty: attr10_2,
                 rate: getFormattedPrice(Number(attr10_3)).replace(".", ","),
                 desc: attr10_1,
                 remarks: " " + getFormattedPrice(attr10_2 * attr10_3).replace(".",","),
             },
             {
-                sno: 22,
+                sno: 33,
                 qty: attr11_2,
                 rate: getFormattedPrice(Number(attr11_3)).replace(".", ","),
                 desc: attr11_1,
                 remarks: " " + getFormattedPrice(attr11_2 * attr11_3).replace(".",","),
             },
             {
-                sno: 23,
+                sno: 34,
                 qty: attr12_2,
                 rate: getFormattedPrice(Number(attr12_3)).replace(".", ","),
                 desc: attr12_1,
                 remarks: " " + getFormattedPrice(attr12_2 * attr12_3).replace(".",","),
             },
             {
-                sno: 24,
+                sno: 35,
                 qty: attr14_2,
                 rate: getFormattedPrice(Number(attr14_3)).replace(".", ","),
                 desc: attr14_1,
                 remarks: " " + getFormattedPrice(attr14_2 * attr14_3).replace(".",","),
             },
             {
-                sno: 25,
+                sno: 36,
                 qty: attr15_2,
                 rate: getFormattedPrice(Number(attr15_3)).replace(".", ","),
                 desc: attr15_1,
                 remarks: " " + getFormattedPrice(attr15_2 * attr15_3).replace(".",","),
             },
+            {
+                sno: 37,
+                qty: attr16_2,
+                rate: getFormattedPrice(Number(attr16_3)).replace(".", ","),
+                desc: attr16_1,
+                remarks: " " + getFormattedPrice(attr16_2 * attr16_3).replace(".",","),
+            },
+            {
+                sno: 38,
+                qty: attr17_2,
+                rate: getFormattedPrice(Number(attr17_3)).replace(".", ","),
+                desc: attr17_1,
+                remarks: " " + getFormattedPrice(attr17_2 * attr17_3).replace(".",","),
+            },
             { 
-            sno: 26,
+            sno: 39,
             qty:" ",
             rate: " ",
             desc: " ",
             remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
             },
             {
-           sno: 27,
+           sno: 40,
            qty:" ",
            rate: " ",
            desc: " ",
            remarks: "Rabatt ("+discount+"%)                                  " + getFormattedPrice(disc).replace(".",",")
              },
              { 
-             sno: 28,
+             sno: 41,
              qty:" ",
              rate: " ",
              desc: " ",
              remarks: "Summe Netto                              " + getFormattedPrice(newPri).replace(".",",")
              },
           {
-            sno: 29,
+            sno: 42,
             qty:" ",
             desc: " ",
             rate: " ",
             remarks: "MwSt. 19 %                                 " + getFormattedPrice(tax).replace(".",",")
         },
         {
-          sno: 30,
+          sno: 43,
           qty:" ",
           desc: " ",
           rate: " ",
-          remarks: "Gesamtbetrag                              " + getFormattedPrice(finalTotal).replace(".",",")
+          remarks: "Gesamtbetrag                           " + getFormattedPrice(finalTotal).replace(".",",")
       }
         ]
         const newItems = [{
@@ -649,23 +686,29 @@ export default function Dashboard() {
                     <th>Einzelpreis</th>
                     <th>Gesamt...</th>
                 </tr>
-                
                 <tr>
-                <td>Transporter bis 3,5 t</td>
+                <td>Sprinter</td>
+                <td><input type="text" onChange={e => setattr29(e.target.value)}/></td>
+                    {/* <td><input type="checkbox" onChange={e => setupto3point5tons(e.target.value)} required/></td> */}
+                    <td>32,00 €</td>
+                    <td>{getFormattedPrice(attr29 * 32).replace(".",",")}</td>
+                </tr>
+                <tr>
+                <td>Transporter mit Koffer/Plane/Pritsche bis 3,5t</td>
                 <td><input type="text" onChange={e => setattr1(e.target.value)}/></td>
                     {/* <td><input type="checkbox" onChange={e => setupto3point5tons(e.target.value)} required/></td> */}
                     <td>32,00 €</td>
                     <td>{getFormattedPrice(attr1 * 32).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>LKW bis 7,5 t</td>
+                    <td>LKW mit Koffer/Plane/Pritsche bis 7,5t</td>
                 <td><input type="text" onChange={e => setattr2(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => setupto7point5tons(e.target.value)} required/></td> */}
                     <td>45,00 €</td>
                     <td>{getFormattedPrice(attr2 * 45).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>LKW ab 7,5 t</td>
+                    <td>LKW mit Koffer/Plane/Pritsche ab 7,5t</td>
                 <td><input type="text" onChange={e => setattr3(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => setfrom7point5tons(e.target.value)} required/></td> */}
                     <td>55,00 €</td>
@@ -693,19 +736,20 @@ export default function Dashboard() {
                     <td>48,00 €</td>
                     <td>{getFormattedPrice(attr11 * 48).replace(".",",")}</td>
                 </tr>
+                
                 <tr>
-                    <td>SZM Hänger-zug</td>
-                <td><input type="text" onChange={e => setattr5(e.target.value)} /></td>
-                    {/* <td><input type="text" onChange={e => settrailertrain(e.target.value)} required/></td> */}
-                    <td>75,00 €</td>
-                    <td>{getFormattedPrice(attr5 * 75).replace(".",",")}</td>
-                </tr>
-                <tr>
-                    <td>SZM+Auflieger</td>
+                    <td>Sattelzeug Komplett- Koffer/Plane/Pritsche</td>
                 <td><input type="text" onChange={e => setattr6(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrailer(e.target.value)} required/></td> */}
                     <td>69,00 €</td>
                     <td>{getFormattedPrice(attr6 * 69).replace(".",",")}</td>
+                </tr>
+                <tr>
+                    <td>Hängerzeug Komplett- Koffer/Plane/Pritsche</td>
+                <td><input type="text" onChange={e => setattr5(e.target.value)} /></td>
+                    {/* <td><input type="text" onChange={e => settrailertrain(e.target.value)} required/></td> */}
+                    <td>75,00 €</td>
+                    <td>{getFormattedPrice(attr5 * 75).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Plane Spezial bis 8 m</td>
@@ -795,11 +839,18 @@ export default function Dashboard() {
                     <td>Müllfahrzeuge bis 3 Achser</td>
                 <td><input type="text" onChange={e => setattr24(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
-                    <td>127,00 €</td>
-                    <td>{getFormattedPrice(attr24 * 127).replace(".",",")}</td>
+                    <td>103,00 €</td>
+                    <td>{getFormattedPrice(attr24 * 103).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>Strake zVerschmutzung bis 3 Achser</td>
+                    <td>Müllfahrzeuge bis 3 Achser mit Säure</td>
+                <td><input type="text" onChange={e => setattr28(e.target.value)} /></td>
+                    {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
+                    <td>57,00 €</td>
+                    <td>{getFormattedPrice(attr28 * 57).replace(".",",")}</td>
+                </tr>
+                <tr>
+                    <td>Strake Verschmutzung bis 3 Achser</td>
                 <td><input type="text" onChange={e => setattr25(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
                     <td>25,00 €</td>
@@ -839,10 +890,10 @@ export default function Dashboard() {
                     <td>{getFormattedPrice(attr8 * 16.50).replace(".",",")}</td>
                 </tr>
                 <tr>
-                    <td>Innen Reinigung</td>
+                    <td>Reinigung Stapler</td>
                 <td><input type="text" onChange={e => setattr7(e.target.value)} /></td>
-                    <td><input type="text" onChange={e => setinteriorcleaning(e.target.value)} /></td>
-                    <td>{getFormattedPrice(attr7 * interiorcleaning).replace(".",",")}</td>
+                    <td>25,00 €</td>
+                    <td>{getFormattedPrice(attr7 * 25).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Spezial Reinigung mit Säure</td>
@@ -879,6 +930,18 @@ export default function Dashboard() {
                     <td><input type="text" onChange={e => setattr15_2(e.target.value)} /></td>
                     <td><input type="text" onChange={e => setattr15_3(e.target.value)} /></td>
                     <td>{getFormattedPrice(attr15_2 * attr15_3).replace(".",",")}</td>
+                </tr>
+                <tr>
+                    <td><input type="text" onChange={e => setattr16_1(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr16_2(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr16_3(e.target.value)} /></td>
+                    <td>{getFormattedPrice(attr16_2 * attr16_3).replace(".",",")}</td>
+                </tr>
+                <tr>
+                    <td><input type="text" onChange={e => setattr17_1(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr17_2(e.target.value)} /></td>
+                    <td><input type="text" onChange={e => setattr17_3(e.target.value)} /></td>
+                    <td>{getFormattedPrice(attr17_2 * attr17_3).replace(".",",")}</td>
                 </tr>
                 
                 <tr>
