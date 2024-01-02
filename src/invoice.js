@@ -436,7 +436,7 @@ export default function Dashboard() {
             qty:" ",
             rate: " ",
             desc: " ",
-            remarks: "Summe Netto                              " + getFormattedPrice(pri).replace(".",",")
+            remarks: "Summe Netto                            " + getFormattedPrice(pri).replace(".",",")
             },
             {
            sno: 41,
@@ -450,7 +450,7 @@ export default function Dashboard() {
              qty:" ",
              rate: " ",
              desc: " ",
-             remarks: "Summe Netto                              " + getFormattedPrice(newPri).replace(".",",")
+             remarks: "Summe Netto                            " + getFormattedPrice(newPri).replace(".",",")
              },
           {
             sno: 43,
