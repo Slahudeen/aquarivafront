@@ -113,7 +113,7 @@ export default function Dashboard() {
     const fileName = "Rechnung_" + customer + "_" + (invoiceno) + ".pdf";
    
   
-      let pri =  (attr1 * 32) + (attr2 * 45) + (attr3 * 55) + (attr4 * 38) + (attr5 * 75) + (attr6 * 69) + (attr7 * 25)
+      let pri =  (attr1 * 40) + (attr2 * 45) + (attr3 * 55) + (attr4 * 38) + (attr5 * 75) + (attr6 * 69) + (attr7 * 25)
       + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (attr30 * cleanignwithacid5) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
       + (attr11_2 * attr11_3) + (attr12_2 * attr12_3)+ (attr14_2 * attr14_3)+ (attr15_2 * attr15_3) + (attr16_2 * attr16_3)+ (attr17_2 * attr17_3) 
       + (attr10 * 48) + (attr11 * 48) + (attr12 * 35) 
@@ -167,9 +167,9 @@ export default function Dashboard() {
             {
                 sno: 2,
                 qty: attr1,
-                rate: "32,00 €",
+                rate: "40,00 €",
                 desc: "Transporter mit Koffer/Plane/Pritsche bis 3,5t",
-                remarks: " " + getFormattedPrice(attr1 * 32).replace(".",","),
+                remarks: " " + getFormattedPrice(attr1 * 40).replace(".",","),
             },
             {
                 sno: 3,
@@ -708,8 +708,8 @@ export default function Dashboard() {
                 <td>Transporter mit Koffer/Plane/Pritsche bis 3,5t</td>
                 <td><input type="text" onChange={e => setattr1(e.target.value)}/></td>
                     {/* <td><input type="checkbox" onChange={e => setupto3point5tons(e.target.value)} required/></td> */}
-                    <td>32,00 €</td>
-                    <td>{getFormattedPrice(attr1 * 32).replace(".",",")}</td>
+                    <td>40,00 €</td>
+                    <td>{getFormattedPrice(attr1 * 40).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>LKW mit Koffer/Plane/Pritsche bis 7,5t</td>
