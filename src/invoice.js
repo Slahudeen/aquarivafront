@@ -584,7 +584,7 @@ export default function Dashboard() {
         address: address1,
         address2: address2, 
         //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
-        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Dezember" + ", " + "2023.",
+        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Dezember" + " " + "2023.",
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
