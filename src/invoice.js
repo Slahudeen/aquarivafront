@@ -72,6 +72,7 @@ export default function Dashboard() {
     const [interiorcleaning, setinteriorcleaning] = useState(0);
     const current = new Date();
     const [year, setyear] = useState(moment().format("YYYY"));
+    console.log("year isss " + year);
     const mo = require('moment');
     let localeData = mo.updateLocale('en', {
         months: [
@@ -583,18 +584,19 @@ export default function Dashboard() {
         address: address1,
         address2: address2, 
         //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
-        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im November" + ", " + year,
+        phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im Dezember" + ", " + "2023.",
         email: "Für die ausgeführten Dienstleistungen berechnen wir wie folgt:",
         categoryaddress1: newAddress,
         categoryaddress2: categoryaddress2,
         categoryaddress3: categoryaddress3, 
         // trans_date: finaldate,
-        // trans_date: finaldate,
+        trans_date: finaldate,
         //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
         // categoryaddress1: newAddress,
         // categoryaddress2: categoryaddress2,
         // categoryaddress3: categoryaddress3, 
-        trans_date: "01-12-2023",
+        //trans_date: "01-12-2023",
+        
         items: [
           {
               sno: "12",
