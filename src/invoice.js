@@ -577,7 +577,7 @@ export default function Dashboard() {
     else{
         newAddress = "Leistungsempfänger:\n" + newAddress;
     }
-    //let finaldate = moment().date(dateReceipt).month(longMonthReceipt-1).year(yearReceipt).format("DD-MM-YYYY");
+    let finaldate = moment().date(dateReceipt).month(longMonthReceipt-1).year(yearReceipt).format("DD-MM-YYYY");
     const InvoiceData = {
         invoice_no: invoiceno,
         fullname: customer,
@@ -590,8 +590,8 @@ export default function Dashboard() {
         categoryaddress2: categoryaddress2,
         categoryaddress3: categoryaddress3, 
         // trans_date: finaldate,
-        // trans_date: finaldate,
-        trans_date: "03-06-2024",
+        trans_date: finaldate,
+        // trans_date: "03-06-2024",
         //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
         // categoryaddress1: newAddress,
         // categoryaddress2: categoryaddress2,
