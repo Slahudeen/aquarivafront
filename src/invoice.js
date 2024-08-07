@@ -267,7 +267,7 @@ export default function Dashboard() {
                 sno: 16,
                 qty: attr21,
                 rate: "70,00 €",
-                desc: "Tankfahrzeug 5 Achser",
+                desc: "Kipper bis 3 Achser",
                 remarks: " " + getFormattedPrice(attr21 * 70).replace(".",","),
             },
             {
