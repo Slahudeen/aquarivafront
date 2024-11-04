@@ -117,7 +117,7 @@ export default function Dashboard() {
       + (attr8 * 16.50) + (attr9 * cleanignwithacid) + (attr30 * cleanignwithacid5) + (tankspecial * 11) + (rimspecial * 4) + (attr10_2 * attr10_3)
       + (attr11_2 * attr11_3) + (attr12_2 * attr12_3)+ (attr14_2 * attr14_3)+ (attr15_2 * attr15_3) + (attr16_2 * attr16_3)+ (attr17_2 * attr17_3) 
       + (attr10 * 48) + (attr11 * 48) + (attr12 * 35) 
-      + (attr13 * 49) + (attr14 * 100) + (attr15 * 95) + (attr16 * 99) + (attr17 * 69) + (attr18 * 85)
+      + (attr13 * 49) + (attr14 * 100) + (attr15 * 95) + (attr16 * 99) + (attr17 * 69) + (attr18 * 95)
       + (attr19 * 60) + (attr20 * 69) + (attr21 * 70) + (attr22 * 40) + (attr23 * 57) + (attr24 * 103) 
       + (attr25 * 25) + (attr26 * 50) + (attr27 * 80) + (attr28 * 57) + (attr29 * 32);
 
@@ -273,9 +273,9 @@ export default function Dashboard() {
             {
                 sno: 17,
                 qty: attr18,
-                rate: "85,00 €",
+                rate: "95,00 €",
                 desc: "Kipper 5 Achser",
-                remarks: " " + getFormattedPrice(attr18 * 85).replace(".",","),
+                remarks: " " + getFormattedPrice(attr18 * 95).replace(".",","),
             },
             {
                 sno: 18,
@@ -817,8 +817,8 @@ export default function Dashboard() {
                     <td>Kipper 5 Achser</td>
                 <td><input type="text" onChange={e => setattr18(e.target.value)} /></td>
                     {/* <td><input type="text" onChange={e => settrucksolo(e.target.value)} required/></td> */}
-                    <td>85,00 €</td>
-                    <td>{getFormattedPrice(attr18 * 85).replace(".",",")}</td>
+                    <td>95,00 €</td>
+                    <td>{getFormattedPrice(attr18 * 95).replace(".",",")}</td>
                 </tr>
                 <tr>
                     <td>Abroller & Absetzer 3 Achser</td>
