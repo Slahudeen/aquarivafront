@@ -592,7 +592,7 @@ export default function Dashboard() {
         categoryaddress3: categoryaddress3, 
         // // trans_date: finaldate,
         // trans_date: finaldate,
-        trans_date: "05-03-2025",
+        trans_date: "04-03-2025",
         //phone: "Vielen Dank für Ihren Besuch in unserer Waschstraße im " + longMonth + " " + year +".",
         // categoryaddress1: newAddress,
         // categoryaddress2: categoryaddress2,
