@@ -11,7 +11,6 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
-      - name: deploying
-        run: npm run deploy test:ci
+      - run: npm run deploy test:ci
         env:
          CI: ""
