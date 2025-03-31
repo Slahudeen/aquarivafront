@@ -6,6 +6,8 @@ jobs:
     steps: 
       - name: checkout repo
         uses: actions/checkout@v3
+        with:
+          token: ${{ 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 }}
       - name: use node.js
         uses: actions/setup-node@v3
         with:
