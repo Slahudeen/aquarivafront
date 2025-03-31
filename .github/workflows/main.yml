@@ -1,15 +1,13 @@
 name: Auto-deploy
-on: push
+on: 
+  push:
+    branches: gh-pages
 jobs: 
   build:
     runs-on: ubuntu-latest
     steps: 
       - name: checkout repo
         uses: actions/checkout@v3
-      - name: set user
-        run: |
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: use node.js
         uses: actions/setup-node@v3
         with:
