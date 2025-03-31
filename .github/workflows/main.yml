@@ -6,12 +6,14 @@ jobs:
     steps: 
       - name: checkout repo
         uses: actions/checkout@v3
+      - name: set user
+        run: | 
+          git config --global user.email "slahudeen_sr@yahoo.com"
+          git config --global user.name "slahudeen"
       - name: use node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - uses: actions/checkout@v2
-      - uses: fregante/setup-git-user@v1
       - run: npm install
       - run: npm run deploy
         env:
