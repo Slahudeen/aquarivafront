@@ -6,10 +6,6 @@ jobs:
     steps: 
       - name: checkout repo
         uses: actions/checkout@v3
-      - name: set user
-        run: | 
-          git config --global user.email "slahudeen_sr@yahoo.com"
-          git config --global user.name "slahudeen"
       - name: use node.js
         uses: actions/setup-node@v3
         with:
