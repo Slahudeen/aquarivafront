@@ -6,13 +6,11 @@ jobs:
     steps: 
       - name: checkout repo
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.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 }}
       - name: use node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
       - run: npm install
-      - run: npm run deploy test:ci
+      - run: npm run deploy
         env:
          CI: ""
