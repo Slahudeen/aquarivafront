@@ -11,6 +11,7 @@ jobs:
         with:
           node-version: '18.x'
       - run: git config --global user.email "slahudeen_sr@yahoo.com"
+      - run: git config --global user.name "Slahudeen Rasheed"
       - run: npm install
       - run: npm run deploy
         env:
