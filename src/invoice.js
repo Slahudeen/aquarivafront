@@ -68,7 +68,7 @@ export default function Dashboard() {
     const [attr17_2, setattr17_2] = useState(0);
     const [attr17_3, setattr17_3] = useState(0);
     const [attr13_1, setattr13_1] = useState(" ");
-    const [discount, setdiscount] = useState(0);
+    const [discount, setdiscount] = useState(0); 
     const [interiorcleaning, setinteriorcleaning] = useState(0);
     const current = new Date();
     const [year, setyear] = useState(moment().format("YYYY"));
