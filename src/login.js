@@ -21,25 +21,40 @@ export default function Login({ setToken , requestStatus}){
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
   const [error, setErrorMessage] = useState();
+  const navigate = useNavigate();
   // const logout = () => {
   //   localStorage.removeItem('token');
   //   navigate('/login');
   //   // setIsLoggedin(false);
   // };
   
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const token = await loginUser({
-      username,
-      password
-    });
+  // const handleSubmit = async e => {
+  //   e.preventDefault();
+  //   const token = await loginUser({
+  //     username,
+  //     password
+  //   });
     
-    setToken(token);
-    const message = localStorage.getItem('token');
-    if(message.split("User not found")){
-      setErrorMessage("Invalid username or password ❌")
+  //   setToken(token);
+  //   const message = localStorage.getItem('token');
+  //   if(message.split("User not found")){
+  //     setErrorMessage("Invalid username or password ❌")
+  //   }
+  // }
+
+  const validEmail = "faiq";
+  const validPassword = "CHfaiq5k";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (username === validEmail && password === validPassword) {
+      setErrorMessage("✅ Sign in successful!");
+      setTimeout(() => {
+        navigate("/create"); // redirect after 1 second
+      }, 1000);
+    } else {
+      setErrorMessage("❌ Invalid email or password");
     }
-  }
+  };
 
     return (
         <div className="container1">

@@ -18,23 +18,24 @@ import Prices from './prices';
 
 
 function App () {
-  const { token, setToken } = useToken();
+  // const { token, setToken } = useToken();
   const navigate = useNavigate();
   //const token = getToken();
 
-  if(!token){
-    return <><Login setToken={setToken} /></>
-  }
+  // if(!token){
+  //   return <><Login setToken={setToken} /></>
+  // }
   const logout = () => {
-    localStorage.removeItem('token');
-    //window.location.reload(false);
-    window.location.href = window.location.href;
+    // localStorage.removeItem('token');
+    // //window.location.reload(false);
+    // window.location.href = window.location.href;
     // navigate('/aquarivafront');
     // setIsLoggedin(false);
+    navigate('/aquarivafront');
   };
   const dashboard = () => {
     //localStorage.removeItem('token');
-     navigate('/aquarivafront');
+     navigate('/aquarivafront/login');
     // setIsLoggedin(false);
   };
   const newRecord = () => {
