@@ -126,7 +126,9 @@ export default function Dashboard() {
       let newPri = pri - disc;
 
       let tax = (newPri/100) * 19;
-      let finalTotal = newPri + tax;
+      tax = Math.round(tax*100) / 100;
+      let totall = newPri + tax;
+      let finalTotal = Math.round(totall*100) / 100;
     //   console.log(pri);
     //   console.log(disc);
     //   console.log(newPri);
